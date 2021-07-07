@@ -21,9 +21,11 @@ An app that helps the user seeking to travel, 'visualize' their destination coun
 
 
 
+
 ### Functionality: 
 
 The user inputs their current location and their destination country, the app returns all of the information.
+
 
 
 
@@ -32,6 +34,7 @@ The user inputs their current location and their destination country, the app re
 -Cover page with logo, input boxes for present location and destination, footer 
 
 -Second page with destination title, a greeting in the destination language with current time, dynamic links (tabs displayed on top, content renders below) for each service, book a flight dynamic link, footer
+
 
 
 
@@ -44,6 +47,7 @@ The user inputs their current location and their destination country, the app re
 -currency exchange: local currency to destination's currency
 
 -health watch (coronavirus): cases, etc. 5 days
+
 
 
 
