@@ -1,5 +1,5 @@
 ### Travel Vision 
-App project @ Wild Code School, June 2021 EN remote: Salvatore, Natalie, Lorianne
+App project @ Wild Code School, June 2021 EN remote: [Salvatore](https://github.com/sal9110), [Natalie](https://github.com/Natalito96), [Lorianne](https://github.com/Grailsidhe)
 
 
 ## Concept: 
