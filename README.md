@@ -1,8 +1,8 @@
-### Travel Vision 
+## Travel Vision 
 App project @ Wild Code School, June 2021 EN remote: [Salvatore](https://github.com/sal9110), [Natalie](https://github.com/Natalito96), [Lorianne](https://github.com/Grailsidhe)
 
 
-## Concept: 
+### Concept: 
 
 An app that helps the user seeking to travel, 'visualize' their destination country. It will display:
 
@@ -21,13 +21,13 @@ An app that helps the user seeking to travel, 'visualize' their destination coun
 
 
 
-## Functionality: 
+### Functionality: 
 
 The user inputs their current location and their destination country, the app returns all of the information.
 
 
 
-## Basic layout: 
+### Basic layout: 
 
 -Cover page with logo, input boxes for present location and destination, footer 
 
@@ -35,7 +35,7 @@ The user inputs their current location and their destination country, the app re
 
 
 
-## Components: 
+### Components: 
 
 -weather widget: 3 - 7 day forecast 
 
@@ -47,7 +47,7 @@ The user inputs their current location and their destination country, the app re
 
 
 
-## APIs: 
+### APIs: 
 
 -[Greeting in different languages](https://fourtonfish.com/project/hellosalut-api/)
 
