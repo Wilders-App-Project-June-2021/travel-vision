@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+###Travel Vision 
+App project @ Wild Code School, June 2021 EN remote: Salvatore, Natalie, Lorianne
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##Concept: 
 
-In the project directory, you can run:
+An app that helps the user seeking to travel, 'visualize' their destination country. It will display:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-Weather forecast 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-News headlines 
 
-### `npm test`
+-Currency exchange rates 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Health watch (Coronavirus stats) 
 
-### `npm run build`
+-Current time 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Bonus: book a flight link (displaying various online flight booking website links)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Functionality: 
 
-### `npm run eject`
+The user inputs their current location and their destination country, the app returns all of the information.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Basic layout: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-Cover page with logo, input boxes for present location and destination, footer 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-Second page with destination title, a greeting in the destination language with current time, dynamic links (tabs displayed on top, content renders below) for each service, book a flight dynamic link, footer
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##Components: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-weather widget: 3 - 7 day forecast 
 
-### Code Splitting
+-news headlines: 5 headlines with small description 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-currency exchange: local currency to destination's currency: 
 
-### Analyzing the Bundle Size
+-health watch (coronavirus): cases, etc. 5 days
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+##APIs: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-[Greeting in different languages](https://fourtonfish.com/project/hellosalut-api/)
 
-### Advanced Configuration
+-[Corona info](https://quarantine.country/coronavirus/api/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-[Weather](https://www.metaweather.com/api/)
 
-### Deployment
+-[Currency exchange](https://www.vatcomply.com/documentation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-[Flags, etc](https://github.com/lennertVanSever/graphcountries)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-[Current news](https://newsapi.org/)
