@@ -41,3 +41,14 @@ The user inputs their current location and their destination country, the app re
 - [Currency exchange](https://www.vatcomply.com/documentation)
 - [Flags, etc](https://github.com/lennertVanSever/graphcountries)
 - [Current news](https://newsapi.org/)
+
+### Tools used:
+
+- Visual Studio Code
+- Trello
+- Jira
+- React
+- Axios
+- Figma
+- Photoshop
+- Google Docs
