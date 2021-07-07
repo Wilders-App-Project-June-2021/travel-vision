@@ -1,0 +1,18 @@
+.wrapper {
+    margin: 30px;
+}
+.logo {
+    width: 200px;
+}
+.blue {
+    color: rgb(56, 76, 255)
+}
+.pink {
+    color: rgb(253, 74, 106);
+}
+.city-country{
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
