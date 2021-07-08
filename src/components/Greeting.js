@@ -2,10 +2,6 @@ import "./Styles.css";
 import React from 'react'
 
 
-
-
-
-
 let theGreeting = "Hola";
 let city = "Madrid";
 let country = "Spain";
@@ -13,14 +9,18 @@ let country = "Spain";
 
 const Greeting = ()=>{
 
-    let time = new Date ()
-    let newTime = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-    const [currentTime, setCurrentTime]= React.useState(newTime)
+   
+    const [currentTime, setCurrentTime]= React.useState(getTime())
 
-    // console.log(new Date().toLocaleString())
+
+    function getTime(){
+        const time = new Date ()
+        const newTime = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+        return newTime
+    }
     
-    // setInterval(()=> {},1000)
-
+    setInterval(()=> setCurrentTime(getTime()),1000)
+   
 
     return (
         <div className="wrapper">
