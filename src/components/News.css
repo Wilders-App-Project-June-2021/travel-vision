@@ -1,0 +1,28 @@
+
+.news{
+    border-bottom: 2px solid black;
+    margin: 1em;
+    display:flex;
+    flex-direction: column;
+}
+
+h3 , p{
+    margin: 0.5rem;
+    text-align: left;
+    
+}
+h3{
+    margin: 0;
+}
+
+.img-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+img{
+    margin-top: -2em;
+    margin-bottom: 1em;
+    width: 7%;
+    
+}

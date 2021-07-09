@@ -2,6 +2,7 @@
 import "./Styles.css"
 import axios from "axios"
 import React, {useEffect, useState} from "react"
+import './Cover.css'
 
 const Cover = ()=>{
 
@@ -28,16 +29,15 @@ const Cover = ()=>{
 
     return (
         <div className="wrapper">
-
             <img className="logo" src="../img/landscape.png" alt="Logo" />
-
-            <div> 
-            <input type="text" id="country" value="" placeholder="Destination Country"></input>
-            <br /><br />
-            <input type="text" id="city" value="" placeholder="Destination City"></input>
-            <br /><br />
-            <button onClick={()=>handleCityRequest()}>GO</button>
+            <h1>Travel Vision</h1>
+            <div className ="input-wrapper"> 
+            <input type="text" id="country"  placeholder="Destination Country"></input>
+            
+            <input type="text" id="city"  placeholder="Destination City"></input>
             </div>
+            <button onClick={()=>handleCityRequest()}>GO</button>
+            
 
 
         </div>
