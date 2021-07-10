@@ -2,7 +2,7 @@ import React from "react";
 import "./Main.css";
 import "./Styles.css";
 import Greeting from "./Greeting";
-// import Weather from "./Weather";
+import WeatherInfo from "./WeatherInfo";
 // import Currency from "./Currency";
 // import Health from "./Health";
 // import Footer from "./Footer"
@@ -30,10 +30,10 @@ const Main = ()=>{
             </div>
             </div>
         </div>
-        
+
         <div className="main-components">
 
-        {/* {Components /} */}
+        <WeatherInfo />
 
         </div>
 
