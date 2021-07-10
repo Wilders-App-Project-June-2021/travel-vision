@@ -20,12 +20,11 @@
     height: 120vh;
 }
 
-.input-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.logo{
+    margin-top: 2em;
+    width: auto;
+    height: 30vh;
 }
-
 
 .title{
     font-family: 'Pacifico', cursive;
@@ -36,15 +35,35 @@
     font-weight: 900;
 }
 
- input, button {
-     width: 40%;
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+ .input-country, .input-city, button {
+     width: 30%;
     margin: 1em;
     padding: 1em;
     border-radius: 20px;
-    box-shadow: black 1px 1px 3px;
+    box-shadow: black 1px 2px 3px;
     text-align: center;
-    background-color: #99e6fc;
+    background-color: #ace9fc;
 }
+.input-country{
+    width:36%;
+    border: solid 2px black ;
+    text-align-last:center;
+}
+
+/* @media screen and (min-width:860px){
+   
+    .input-wrapper{
+        display: block;
+    }
+
+} */
 
 button{
     width: 25%;
@@ -54,15 +73,6 @@ button{
 }
 
 
-.logo{
-    margin-top: 2em;
-    width: auto;
-    height: 35vh;
-}
 
-/* @media screen and (min-width:860px){
-   
-    .input-wrapper{
-        display: block;
-    }
-} */
+
+
