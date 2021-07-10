@@ -1,4 +1,4 @@
-import "../styles.css";
+import "./Styles.css";
 import React, { useState, useEffect } from "react";
 import Weather from "./Weather";
 import axios from "axios";

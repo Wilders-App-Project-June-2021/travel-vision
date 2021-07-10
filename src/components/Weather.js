@@ -1,4 +1,4 @@
-import "../styles.css";
+import "./Styles.css";
 import React from "react";
 
 function Weather(props) {
