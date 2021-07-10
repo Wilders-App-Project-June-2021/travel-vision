@@ -35,10 +35,13 @@ function WeatherInfo() {
         <Weather
           item={item}
           key={index}
+
           city={item.city.name}
-          icon={`"http://website.com/${item.list[21].weather[0].icon}.var"`}
           temp={item.list[21].main.temp}
           feelsLike={item.list[21].main.feels_like}
+
+          date={item.list[21].main.city.dt_txt}
+          icon={`"http://website.com/${item.list[21].weather[0].icon}.var"`}
           tempMin={item.list[21].main.temp_min}
           tempMax={item.list[21].main.temp_max}
         />
