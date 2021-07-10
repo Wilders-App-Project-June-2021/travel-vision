@@ -29,6 +29,15 @@ function WeatherInfo() {
       });
   };
 
+
+const getDate = (date)=>{
+    let d = new Date(date);
+    let day = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(d);
+    let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+    return `${day} ${da}`
+}
+
+
   return (
     <div>
       {/* {weatherArray.map((item, index) => (
@@ -40,7 +49,7 @@ function WeatherInfo() {
           temp={item.list[21].main.temp}
           feelsLike={item.list[21].main.feels_like}
 
-          date={item.list[21].main.city.dt_txt}
+          date={getDate(item.list.dt_txt)}
           icon={`"http://website.com/${item.list[21].weather[0].icon}.var"`}
           tempMin={item.list[21].main.temp_min}
           tempMax={item.list[21].main.temp_max}
