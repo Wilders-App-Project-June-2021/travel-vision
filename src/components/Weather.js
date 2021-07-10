@@ -3,28 +3,23 @@ import React from "react";
 
 function Weather(props) {
   return (
-    <div className="Weather" id={props.key}>
-      <p>
-        <b>City:</b> {props.city}
-      </p>
-      <p>
-        <b>Ap Id:</b> {props.apID}
-      </p>
-      <p>
-        <b>Icon:</b> <img src="{props.icon}" alt="" />
-      </p>
-      <p>
-        <b>Temp:</b> {props.temp}
-      </p>
-      <p>
-        <b>Feels like:</b> {props.feelsLike}
-      </p>
-      <p>
-        <b>Temp Min:</b> {props.temp_min}
-      </p>
-      <p>
-        <b>Temp Max:</b> {props.temp_max}
-      </p>
+    <div className="Weather weather-container" id={props.key}>
+
+        <div class="weather-div">
+            <div class="day-weather">
+                {props.day}
+            </div>
+            <div class="day-weather box">
+                <img src={props.icon} alt="" />
+            </div>
+            <div class="day-weather pink">
+                {props.temp_max}
+            </div>
+            <div class="day-weather blue">
+                {props.temp_min} 
+            </div>
+        </div>
+
     </div>
   );
 }

@@ -36,7 +36,7 @@ function WeatherInfo() {
           item={item}
           key={index}
           city={item.city.name}
-          icon={`http://website.com/${item.list[21].weather[0].icon}.var`}
+          icon={`"http://website.com/${item.list[21].weather[0].icon}.var"`}
           temp={item.list[21].main.temp}
           feelsLike={item.list[21].main.feels_like}
           tempMin={item.list[21].main.temp_min}
@@ -50,8 +50,8 @@ function WeatherInfo() {
 
 export default WeatherInfo;
 
-// { Example of data (x40), I picked item 21 because it's in the middle,
-// and if 40 is an hourly forecast, I figured the middle would work
+// Example of data (x40)
+// I picked item 21 because it's the middle of each day
 
 // "list":[{
 
@@ -76,5 +76,3 @@ export default WeatherInfo;
 //   "sunrise":1625892814,
 //   "sunset":1625946384
 //   }
-
-// }
