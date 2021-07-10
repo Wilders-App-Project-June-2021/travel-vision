@@ -29,17 +29,15 @@ const Cover = ()=>{
 
     return (
         <div className="wrapper">
-            <img className="logo" src="../img/landscape.png" alt="Logo" />
-            <h1>Travel Vision</h1>
-            <div className ="input-wrapper"> 
-            <input type="text" id="country"  placeholder="Destination Country"></input>
-            
-            <input type="text" id="city"  placeholder="Destination City"></input>
+            <div className="second-bg">
+                <img className="logo" src="../img/landscape.png" alt="Logo" />
+                <h1 className="title">Travel Vision</h1>
+                <div className ="input-wrapper"> 
+                    <input type="text" id="country"  placeholder="Country"></input>
+                    <input type="text" id="city"  placeholder="City"></input>
+                </div>
+                <button onClick={()=>handleCityRequest()}>GO</button>
             </div>
-            <button onClick={()=>handleCityRequest()}>GO</button>
-            
-
-
         </div>
 
     )
