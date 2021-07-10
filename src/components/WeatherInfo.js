@@ -30,12 +30,12 @@ function WeatherInfo() {
   };
 
 
-const getDate = (date)=>{
-    let d = new Date(date);
-    let day = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(d);
-    let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
-    return `${day} ${da}`
-}
+    const getDate = (date)=>{
+        let d = new Date(date);
+        let day = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(d);
+        let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+        return `${day} ${da}`
+    }
 
 
   return (
@@ -49,8 +49,10 @@ const getDate = (date)=>{
           temp={item.list[21].main.temp}
           feelsLike={item.list[21].main.feels_like}
 
-          date={getDate(item.list.dt_txt)}
-          icon={`"http://website.com/${item.list[21].weather[0].icon}.var"`}
+          header={item.list[21].weather[0].main}
+          date={getDate(item.list[21].dt_txt)}
+          icon={`"https://openweathermap.org/img/wn/${item.list[21].weather[0].icon}.png"`}
+          alt={`"item.list[21].weather[0].description"`}
           tempMin={item.list[21].main.temp_min}
           tempMax={item.list[21].main.temp_max}
         />
@@ -62,8 +64,9 @@ const getDate = (date)=>{
 
 export default WeatherInfo;
 
+
 // Example of data (x40)
-// I picked item 21 because it's the middle of each day
+// I picked item.list[21] because it's the middle of each day
 
 // "list":[{
 
@@ -88,3 +91,4 @@ export default WeatherInfo;
 //   "sunrise":1625892814,
 //   "sunset":1625946384
 //   }
+// Icons: https://openweathermap.org/weather-conditions#How-to-get-icon-URL
