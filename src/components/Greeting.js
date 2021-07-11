@@ -23,7 +23,7 @@ const Greeting = ()=>{
    
 
     return (
-        <div className="wrapper">
+        <div className="">
             <h1>{theGreeting}! The time in</h1>
             <p className="city-country pink">{city}, {country}</p>
             <h1>is <b className="pink">{currentTime}</b></h1>
