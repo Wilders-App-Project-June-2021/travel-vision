@@ -1,0 +1,43 @@
+/* WEATHER STYLES */
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.day-weather {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 3px;
+    margin: 3px;
+    border-radius: 9px;
+    border: solid 1px rgba(0, 0, 0, 0.192);
+    background-color: rgb(255, 255, 255);
+}
+.weather-header {
+    padding: 3px;
+    font-weight: bold;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: rgb(255, 213, 221);
+    font-size: 15px;
+}
+.weather-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.weather-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 5px;
+    height: 40px;
+    width: 45px;
+    text-align: center;
+    font-size: 14px;
+}
