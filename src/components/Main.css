@@ -20,7 +20,7 @@
   border-bottom: solid 5px rgb(0, 0, 0);
 }
 
-.div {
+.tab-div {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -41,23 +41,21 @@
   border-right: solid 2px rgb(0, 0, 0);
   border-left: solid 2px rgb(0, 0, 0);
   border-bottom: solid 2px rgb(0, 0, 0);
+  cursor: pointer;
+}
+.tab-div:hover {
+  background-color: rgb(214, 240, 250);
 }
 
-.div:hover {
-  /* background-color: rgb(214, 240, 250); */
-  border-bottom: solid 2px rgb(0, 0, 0);
-  background-color: rgb(255, 213, 221);
-}
-
-.div:active {
+.active{
   background-color: rgb(214, 240, 250);
   border-bottom: solid 2px rgb(214, 240, 250);
   box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(31, 114, 146); */
 }
 
 .main-components {
   background-color: rgb(214, 240, 250);
+  padding-top: 10px;
+  padding-bottom: 10px;
   height: 500px;
 }

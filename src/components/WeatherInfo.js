@@ -6,19 +6,20 @@ import axios from "axios";
 // formatting: https://openweathermap.org/api/hourly-forecast#list/
 // full url: https://api.openweathermap.org/data/2.5/forecast?q=Madrid,ES&appid=3bc542e8c782c67d428b24c156b77cab
 
+
+
+const cityName = "Madrid";
+const countryCode = "ES";
+
 function WeatherInfo() {
   const [weatherArray, setweatherArray] = useState({});
 
   const fetchWeatherInfo = () => {
-    // const [countCode, setcountCode] = useState({});
-    // const [cityName, setcityName] = useState({});
-    const cityName = "Madrid";
-    const countCode = "ES";
     const key = "3bc542e8c782c67d428b24c156b77cab";
 
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${countCode}&appid=${key}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${countryCode}&appid=${key}`
       )
       .then((weather) => {
         setweatherArray(weather.data);
