@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Axios from "axios"
+import axios from "axios"
 import Cover from "./components/Cover"
 import Greeting from "./components/Greeting"
 import News from "./components/News";
@@ -16,7 +16,7 @@ function App() {
 
   const getCityInfo=(e)=>{
     e.preventDefault()
-    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=3bc542e8c782c67d428b24c156b77cab`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=3bc542e8c782c67d428b24c156b77cab`)
     .then((result) =>{ 
         setCityInfo(result.data)
         setError(false)
@@ -36,10 +36,8 @@ const handleCityinput =(e)=>{
   console.log(cities)
 }
 
-
   return (
     <div className="App">
-
      { !cityInfo&&<Cover 
       getCityInfo={getCityInfo}
       handleCityinput={handleCityinput}
