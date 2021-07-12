@@ -15,7 +15,7 @@ const Cover = (props)=>{
 
     // It triggers the request on button click 
     const handleCityRequest=()=>{
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=process.env.REACT_APP_WEATHER_API`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=${process.env.REACT_APP_WEATHER_API}`)
         .then((result) => 
             setCityInfo(result.data))
         .catch(error => console.log('error', error))
@@ -40,7 +40,7 @@ const Cover = (props)=>{
                         <input className="input-city" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.handleCityinput(e)}></input>
                         {props.error? <h1>Sorry we couldn't find this city, try again</h1>:null}
                     </div>
-                    <button type="submit" >GO</button>
+                    <button className="submit" type="submit" >GO</button>
                 </form>
             </div>
         </div>

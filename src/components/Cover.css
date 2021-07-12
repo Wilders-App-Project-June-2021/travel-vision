@@ -42,8 +42,8 @@
 }
 
 
- .input-country, .input-city, button {
-     width: 30%;
+ .input-country, .input-city, .submit {
+    width: 30%;
     margin: 1em;
     padding: 1em;
     border-radius: 20px;
@@ -65,7 +65,7 @@
 
 } */
 
-button{
+.submit{
     width: 25%;
     border-radius: 50px;
     background-color: #ee6161;

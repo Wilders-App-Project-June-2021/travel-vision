@@ -45,16 +45,10 @@ const handleCityinput =(e)=>{
       error={error}
       />}
       
-      {cityInfo&&<Greeting/>}
+      {/* {cityInfo&&<Main/>} */}
+
+      <Main/>
       {/* <News/> */}
-  
-
-    {/* Main page code */}
-      <div>
-        <h1>___________Main.js____________</h1>
-        <Main />
-      </div>
-
 
     </div>
   );

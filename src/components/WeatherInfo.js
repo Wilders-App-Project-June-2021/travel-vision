@@ -59,7 +59,6 @@ function WeatherInfo() {
           tempMax={item.list[21].main.temp_max}
         />
       ))}
-      <button onClick={() => fetchWeatherInfo()}>Call Info</button>
     </div>
   );
 }

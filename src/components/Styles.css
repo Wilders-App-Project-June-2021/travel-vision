@@ -11,11 +11,11 @@
     color: rgb(253, 74, 106);
 }
 .city-country{
-    font-size: 45px;
+    font-size: 11vw;
     font-weight: bold;
-    margin-top: -2px;
-    margin-bottom: -2px;
+    margin-top: -15px;
+    margin-bottom: -1px;
 }
-h1 {
+.greeting {
     font-size: 7vw;
 }
