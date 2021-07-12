@@ -5,7 +5,7 @@ import Weather from "./Weather";
 import axios from "axios";
 
 // formatting: https://openweathermap.org/api/hourly-forecast#list/
-// full url: https://api.openweathermap.org/data/2.5/forecast?q=Madrid,ES&appid=3bc542e8c782c67d428b24c156b77cab
+// full url: https://api.openweathermap.org/data/2.5/forecast?q=Madrid,ES&appid=process.env.EACT_APP_WEATHER_API
 
 
 
@@ -16,7 +16,7 @@ function WeatherInfo() {
   const [weatherArray, setweatherArray] = useState({});
 
   const fetchWeatherInfo = () => {
-    const key = "3bc542e8c782c67d428b24c156b77cab";
+    const key = "process.env.EACT_APP_WEATHER_API";
 
     axios
       .get(

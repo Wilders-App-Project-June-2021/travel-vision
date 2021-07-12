@@ -9,21 +9,22 @@ import WeatherInfo from "./WeatherInfo";
 
 
 /* TAB BUTTONS ACTIVE/INACTIVE */
-// const tabs = document.getElementsByClassName("tab-div");
-// for (let i = 0; i < tabs.length; i++) {
-//   tabs[i].addEventListener("click", function() {
-//   const current = document.getElementsByClassName("active");
-//   current[0].className = current[0].className.replace(" active", "");
-//   this.className += " active";
-//   });
-// }
-
 const tabs = document.getElementsByClassName("tab-div");
-const activeTabs = tabs.map((item, index) => tabs[index].addEventListener("click", function() {
-    const current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-    }))
+for (let i = 0; i < tabs.length; i++) {
+  tabs[i].addEventListener("click", function() {
+  const current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+
+// const tabs = document.getElementsByClassName("tab-div");
+// tabs.map((item, index)=>{
+//   tabs[index].addEventListener("click", function() {
+//     const current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active" })
+// })
 
 
 
