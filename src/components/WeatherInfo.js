@@ -41,7 +41,7 @@ function WeatherInfo() {
 
   return (
     <div>
-      {/* {weatherArray.map((item, index) => (
+      {!weatherArray&&weatherArray.map((item, index) => (
         <Weather
           item={item}
           key={index}
@@ -57,7 +57,7 @@ function WeatherInfo() {
           tempMin={item.list[21].main.temp_min}
           tempMax={item.list[21].main.temp_max}
         />
-      ))} */}
+      ))}
       <button onClick={() => fetchWeatherInfo()}>Call Info</button>
     </div>
   );
