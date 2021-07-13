@@ -21,7 +21,6 @@ function App() {
     e.preventDefault()
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`)
     .then((result) =>{ 
-      console.log(result)
         setCityInfo(result.data)
         setError(false)
         setLatitude(Number(result.data.coord.lat).toFixed(2))
@@ -36,14 +35,13 @@ function App() {
 
 const handleCountryInput =(e)=>{
   setCountryCode(e.target.value)
-  // setCountryName(e.target) to be completed
 
-  console.log(e)
+  let index = e.target.selectedIndex
+  setCountryName(e.target.childNodes[index].getAttribute('id')) 
 }
 
 const handleCityinput =(e)=>{
   setCities(e.target.value)
-  console.log(cities)
 }
 
 
@@ -62,6 +60,7 @@ const handleCityinput =(e)=>{
       longitude={longitude}
       cities={cities}
       countryCode={countryCode}
+      countryName={countryName}
       />}
 
       {/* <Main 

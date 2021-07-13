@@ -39,6 +39,8 @@ function WeatherInfo(props) {
     <div>
       {weatherInfo && weatherInfo.map((item, index) => (
         <Weather
+          key={index}
+          id={index}
           header={item.weather[0].description}
           date={getDate(item.dt)}
           icon={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
