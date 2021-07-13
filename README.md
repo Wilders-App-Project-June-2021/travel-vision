@@ -21,7 +21,7 @@ The user inputs their current location and their destination country, the app re
 
 ### Basic layout: 
 
-- Cover page with logo, input boxes for present location and destination, footer 
+- Cover page with logo, input boxes for present location and destination
 - Second page with destination title, a greeting in the destination language with current time, dynamic links (tabs displayed on top, content renders below) for each service, book a flight dynamic link, footer
 
 
