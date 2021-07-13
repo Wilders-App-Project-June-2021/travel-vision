@@ -7,14 +7,30 @@ import axios from "axios";
 // formatting: https://openweathermap.org/api/hourly-forecast#list/
 // full url: https://api.openweathermap.org/data/2.5/forecast?q=Madrid,ES&appid=process.env.EACT_APP_WEATHER_API
 
+function WeatherInfo(props) {
+  const [weatherInfo, setWeatherInfo] = useState(null);
+  
+
+   useEffect(()=>{
+     axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
+    // axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,alerts&appid=3bc542e8c782c67d428b24c156b77cab`)
+       .then((weather) => {
+         setWeatherInfo(weather.data.daily);
+         console.log(weather.data);
+       })
+       .catch((error) => {
+         console.log(error);
+       });
+
+   },[])
+
+   
 
 
-// const cityName = {props.cities};
-// const countryCode = {props.country};
-
-function WeatherInfo() {
-
-
+    // https://api.openweathermap.org/data/2.5/onecall?lat=41.89&lon=12.48&exclude=hourly,minutely,alerts&appid=3bc542e8c782c67d428b24c156b77cab
+    
+console.log(weatherInfo)
+  
 
 
 
@@ -50,25 +66,25 @@ function WeatherInfo() {
     }
 
 
+    const convertKelvin=(temperature)=>{
+      return Math.abs(temperature -273.15)
+    }
+
   return (
     <div>
-      {!weatherArray&&weatherArray.map((item, index) => (
+      {/* {weatherInfo && weatherInfo.map((item, index) => (
         <Weather
           item={item}
           key={index}
-
-          city={item.city.name}
-          temp={item.list[21].main.temp}
-          feelsLike={item.list[21].main.feels_like}
-
-          header={item.list[21].weather[0].main}
-          date={getDate(item.list[21].dt_txt)}
-          icon={`"https://openweathermap.org/img/wn/${item.list[21].weather[0].icon}.png"`}
-          alt={`"item.list[21].weather[0].description"`}
-          tempMin={item.list[21].main.temp_min}
-          tempMax={item.list[21].main.temp_max}
+          
+          header={item.weather[0].main}
+          date={getDate(item.daily[0].dt)}
+          icon={`"https://openweathermap.org/img/wn/${item.weather[0].icon}.png"`}
+          alt={`"item.weather[0].description"`}
+          tempMin={convertKelvin(item.daily.temp.min)}
+          tempMax={convertKelvin(item.daily.temp.max)}
         />
-      ))}
+      ))} */}
     </div>
   );
 }

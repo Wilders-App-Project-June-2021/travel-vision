@@ -10,25 +10,35 @@ import Main from "./components/Main"
 function App() {
 
   const [cities, setCities]= useState("")
-  const [country, setCountry]= useState("-")
+  const [countryName,setCountryName] = useState("")
+  const [countryCode, setCountryCode]= useState("-")
   const [cityInfo,setCityInfo]= useState("")
   const [error,setError]=useState(false)
+  const [longitude,setLongitude]= useState("")
+  const [latitude,setLatitude]=useState("")
 
   const getCityInfo=(e)=>{
     e.preventDefault()
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=${process.env.REACT_APP_API_KEY}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`)
     .then((result) =>{ 
+      console.log(result)
         setCityInfo(result.data)
         setError(false)
+        setLatitude(Number(result.data.coord.lat).toFixed(2))
+        setLongitude(Number(result.data.coord.lon).toFixed(2))
       })
     .catch(error => {
       setError(true)
     })
 } 
 
+// api.openweathermap.org/data/2.5/forecast/daily?q={city name},{state code}&cnt={cnt}&appid={API key}
+
 const handleCountryInput =(e)=>{
-  setCountry(e.target.value)
-  console.log(country)
+  setCountryCode(e.target.value)
+  // setCountryName(e.target) to be completed
+
+  console.log(e)
 }
 
 const handleCityinput =(e)=>{
@@ -36,18 +46,28 @@ const handleCityinput =(e)=>{
   console.log(cities)
 }
 
+
   return (
     <div className="App">
-     {/* { !cityInfo&&<Cover 
+     { !cityInfo&&<Cover 
       getCityInfo={getCityInfo}
       handleCityinput={handleCityinput}
       handleCountryInput={handleCountryInput}
       error={error}
-      />} */}
+      />}
       
-      {/* {cityInfo&&<Main/>} */}
+      {(longitude && latitude) &&
+      <Main
+      latitude={latitude}
+      longitude={longitude}
+      cities={cities}
+      countryCode={countryCode}
+      />}
 
-      <Main/>
+      {/* <Main 
+      latitude={latitude}
+      longitude={longitude}
+      /> */}
       {/* <News/> */}
 
     </div>
