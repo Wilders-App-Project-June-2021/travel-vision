@@ -38,12 +38,12 @@ const handleCityinput =(e)=>{
 
   return (
     <div className="App">
-     { !cityInfo&&<Cover 
+     {/* { !cityInfo&&<Cover 
       getCityInfo={getCityInfo}
       handleCityinput={handleCityinput}
       handleCountryInput={handleCountryInput}
       error={error}
-      />}
+      />} */}
       
       {/* {cityInfo&&<Main/>} */}
 

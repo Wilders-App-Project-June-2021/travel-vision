@@ -2,6 +2,7 @@ import React, {useState}from "react";
 import "./Main.css";
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
+import News from "./News";
 // import Currency from "./Currency";
 // import Health from "./Health";
 // import Footer from "./Footer"
@@ -74,6 +75,7 @@ const Main = ()=>{
         <div className="main-components">
 
         <WeatherInfo />
+        {activeTab[0].news && <News/>}
 
         </div>
 
