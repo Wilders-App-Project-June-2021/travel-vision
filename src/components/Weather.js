@@ -11,16 +11,16 @@ function Weather(props) {
             </div>
             <div className="weather-div">
                 <div className="weather-detail">
-                    {props.day}
+                    {props.date}
                 </div>
                 <div className="weather-detail">
-                    <img src={props.icon} alt={props.description} />
+                    <img  className="weather-icon" src={props.icon} alt={props.alt} />
                 </div>
                 <div className="weather-detail pink">
-                    {props.temp_max}
+                    {props.tempMax}
                 </div>
                 <div className="weather-detail blue">
-                    {props.temp_min} 
+                    {props.tempMin} 
                 </div>
             </div>
         </div>

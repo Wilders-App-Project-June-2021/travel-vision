@@ -77,9 +77,9 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        <WeatherInfo 
+        {activeTab[1].weather && <WeatherInfo 
         latitude={props.latitude}
-        longitude={props.longitude}/>
+        longitude={props.longitude}/>}
         {activeTab[0].news && <News/>}
 
         </div>

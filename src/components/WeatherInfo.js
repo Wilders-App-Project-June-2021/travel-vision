@@ -16,7 +16,6 @@ function WeatherInfo(props) {
     // axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,alerts&appid=3bc542e8c782c67d428b24c156b77cab`)
        .then((weather) => {
          setWeatherInfo(weather.data.daily);
-         console.log(weather.data);
        })
        .catch((error) => {
          console.log(error);
@@ -24,17 +23,8 @@ function WeatherInfo(props) {
 
    },[])
 
-   
-
-
-    // https://api.openweathermap.org/data/2.5/onecall?lat=41.89&lon=12.48&exclude=hourly,minutely,alerts&appid=3bc542e8c782c67d428b24c156b77cab
-    
-console.log(weatherInfo)
-  
-
-
     const getDate = (date)=>{
-        let d = new Date(date);
+        let d = new Date(date * 1000);
         let day = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(d);
         let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
         return `${day} ${da}`
@@ -42,24 +32,21 @@ console.log(weatherInfo)
 
 
     const convertKelvin=(temperature)=>{
-      return Math.abs(temperature -273.15)
+      return parseInt(Math.abs(temperature -273.15))
     }
 
   return (
     <div>
-      {/* {weatherInfo && weatherInfo.map((item, index) => (
+      {weatherInfo && weatherInfo.map((item, index) => (
         <Weather
-          item={item}
-          key={index}
-          
-          header={item.weather[0].main}
-          date={getDate(item.daily[0].dt)}
-          icon={`"https://openweathermap.org/img/wn/${item.weather[0].icon}.png"`}
-          alt={`"item.weather[0].description"`}
-          tempMin={convertKelvin(item.daily.temp.min)}
-          tempMax={convertKelvin(item.daily.temp.max)}
+          header={item.weather[0].description}
+          date={getDate(item.dt)}
+          icon={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+          alt={`${item.weather[0].description}`}
+          tempMin={convertKelvin(item.temp.min)}
+          tempMax={convertKelvin(item.temp.max)}
         />
-      ))} */}
+      ))} 
     </div>
   );
 }
