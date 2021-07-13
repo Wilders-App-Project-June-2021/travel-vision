@@ -16,7 +16,7 @@ function App() {
 
   const getCityInfo=(e)=>{
     e.preventDefault()
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=3bc542e8c782c67d428b24c156b77cab`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=${process.env.REACT_APP_API_KEY}`)
     .then((result) =>{ 
         setCityInfo(result.data)
         setError(false)

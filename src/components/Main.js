@@ -29,11 +29,22 @@ import WeatherInfo from "./WeatherInfo";
 
 const Main = ()=>{
 
-    const [activeTab,setActiveTab]= useState(false)
+    const tabClasses=[
+        {news : true} ,
+        {weather : false} ,
+        {currency : false} ,
+        {health : false} 
+       ]
+
+    const [activeTab,setActiveTab]= useState([...tabClasses])
 
     const getActive = (e)=>{
-        console.log(e.target.id)
-        setActiveTab(!activeTab)
+        let copy =[...tabClasses]
+        copy[0].news=false
+        const id = e.target.id;
+        const a = copy.find((item)=> item.hasOwnProperty(id) )
+        a[e.target.id] = !a[e.target.id]
+        setActiveTab(copy)
     }
 
     return (
@@ -45,17 +56,17 @@ const Main = ()=>{
 
         <div className="Tabs">
             <div className="tabs-container">
-            <button className={!activeTab? "tab-div active":"tab-div"} id="news-tab" onClick={(e) => getActive(e)}>
-                <h3 className="tab-text" id="news-tab">News</h3>
+            <button className={activeTab[0].news? "tab-div active":"tab-div"} id="news" onClick={(e) => getActive(e)}>
+                <h3 className="tab-text" id="news">News</h3>
             </button>
-            <button className={activeTab? "tab-div active":"tab-div"} id="weather-tab" onClick={(e) => getActive(e)}>
-                <h3 className="tab-text">Weather</h3>
+            <button className={activeTab[1].weather? "tab-div active":"tab-div"} id="weather" onClick={(e) => getActive(e)}>
+                <h3 className="tab-text" id="weather">Weather</h3>
             </button>
-            <button className={activeTab? "tab-div active":"tab-div"} id="currency-tab" onClick={(e) => getActive(e)}>
-                <h3 className="tab-text">Currency</h3>
+            <button className={activeTab[2].currency? "tab-div active":"tab-div"} id="currency" onClick={(e) => getActive(e)}>
+                <h3 className="tab-text" id="currency" >Currency</h3>
             </button>
-            <button className={activeTab? "tab-div active":"tab-div"} id="health-tab" onClick={(e) => getActive(e)}>
-                <h3 className="tab-text">Health Watch</h3>
+            <button className={activeTab[3].health? "tab-div active":"tab-div"} id="health" onClick={(e) => getActive(e)}>
+                <h3 className="tab-text" id="health">Health Watch</h3>
             </button>
             </div>
         </div>
