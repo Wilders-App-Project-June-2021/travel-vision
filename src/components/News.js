@@ -15,7 +15,7 @@ return(
             Here will go a brief descriptions of the article
             Here will go a brief descriptions of the article
         </p>
-        <img  className="news-icon" src={logo} alt="news-link"/></div>
+        <img  className="news-icon" src={logo} alt="news-link"/><a></a></div>
         </div>
         <div className="news">
         <h3 className="news-title">Title</h3>
