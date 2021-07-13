@@ -28,7 +28,7 @@ import News from "./News";
 
 
 
-const Main = ()=>{
+const Main = (props)=>{
 
     const tabClasses=[
         {news : true} ,
@@ -51,7 +51,10 @@ const Main = ()=>{
     return (
     <div className="container">
 
-        <Greeting />
+        <Greeting
+        cities={props.cities}
+        country={props.country}
+         />
 
         
 
@@ -74,7 +77,9 @@ const Main = ()=>{
 
         <div className="main-components">
 
-        <WeatherInfo />
+        <WeatherInfo 
+        latitude={props.latitude}
+        longitude={props.longitude}/>
         {activeTab[0].news && <News/>}
 
         </div>

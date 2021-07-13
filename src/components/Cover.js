@@ -33,7 +33,7 @@ const Cover = (props)=>{
                 <h1 className="title">Travel Vision</h1>
                 <form onSubmit={(e)=>props.getCityInfo(e)}>
                     <div className ="input-wrapper"> 
-                        <select className="input-country" id="country" placeholder= "Country" required onChange={(e)=>props.handleCountryInput(e) } >
+                        <select className="input-country"  placeholder= "Country" required onChange={(e)=>props.handleCountryInput(e) } >
                             <option value="">Select a Country</option>
                             {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} </option>)}
                         </select>
