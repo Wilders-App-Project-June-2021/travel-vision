@@ -26,7 +26,7 @@ const Greeting = ()=>{
         <div className="">
             <h1 className="greeting">{theGreeting}! The time in</h1>
             <p className="city-country pink">{city}, {country}</p>
-            <h1>is <b className="pink greeting">{currentTime}</b></h1>
+            <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
         </div>
     )
     }

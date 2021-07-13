@@ -9,29 +9,39 @@ import axios from "axios";
 
 
 
-const cityName = "Madrid";
-const countryCode = "ES";
+// const cityName = {props.cities};
+// const countryCode = {props.country};
 
 function WeatherInfo() {
-  const [weatherArray, setweatherArray] = useState({});
-
-  const fetchWeatherInfo = () => {
-    const key = "process.env.EACT_APP_WEATHER_API";
-
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${countryCode}&appid=${key}`
-      )
-      .then((weather) => {
-        setweatherArray(weather.data);
-        console.log(weatherArray, weather);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
 
+
+
+
+
+
+
+
+  // const [weatherArray, setweatherArray] = useState({});
+
+  // const fetchWeatherInfo = () => {
+  //   const key = "process.env.EACT_APP_WEATHER_API";
+
+  //   axios
+  //     .get(
+  //       `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${countryCode}&appid=${key}`
+  //     )
+  //     .then((weather) => {
+  //       setweatherArray(weather.data);
+  //       console.log(weatherArray, weather);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
+
+  /* DATE FORMAT CHANGER */
     const getDate = (date)=>{
         let d = new Date(date);
         let day = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(d);
