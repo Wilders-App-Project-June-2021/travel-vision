@@ -32,7 +32,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 2em;
+    padding: 1.5em;
 }
 .weather-detail, .weather-date {
     display: flex;
