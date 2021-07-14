@@ -15,7 +15,7 @@ const Cover = (props)=>{
 
     // It triggers the request on button click 
     const handleCityRequest=()=>{
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=${process.env.REACT_APP_WEATHER_API}`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=${process.env.REACT_APP_API_KEY}`)
         .then((result) => 
             setCityInfo(result.data))
         .catch(error => console.log('error', error))

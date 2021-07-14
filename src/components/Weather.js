@@ -1,4 +1,3 @@
-import "./Styles.css";
 import "./Weather.css";
 import React from "react";
 
@@ -7,10 +6,10 @@ function Weather(props) {
     <div className="Weather weather-container" id={props.key}>
         <div className="day-weather">
             <div className="weather-header">
-                {props.header}
+                {props.header}: <small className="weather-header-detail">{props.alt}</small>
             </div>
             <div className="weather-div">
-                <div className="weather-detail">
+                <div className="weather-detail weather-date">
                     {props.date}
                 </div>
                 <div className="weather-detail">

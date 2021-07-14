@@ -1,4 +1,3 @@
-import "./Styles.css";
 import "./Weather.css";
 import React, { useState, useEffect } from "react";
 import Weather from "./Weather";
@@ -41,12 +40,12 @@ function WeatherInfo(props) {
         <Weather
           key={index}
           id={index}
-          header={item.weather[0].description}
+          header={item.weather[0].main}
           date={getDate(item.dt)}
           icon={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
           alt={`${item.weather[0].description}`}
-          tempMin={convertKelvin(item.temp.min)}
-          tempMax={convertKelvin(item.temp.max)}
+          tempMin={`${convertKelvin(item.temp.min)}°`}
+          tempMax={`${convertKelvin(item.temp.max)}°`}
         />
       ))} 
     </div>
