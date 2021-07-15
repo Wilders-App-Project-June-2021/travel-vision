@@ -28,6 +28,7 @@ function HealthInfo(props) {
    
   };
  
+  // https://newsapi.org/v2/top-headlines?country=de&category=health&q=coronavirus&language=en&apiKey=862d686e64564ff38a69a93c176de68e
 
 
   useEffect(() => {
