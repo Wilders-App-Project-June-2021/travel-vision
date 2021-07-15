@@ -53,7 +53,7 @@ const Main = (props)=>{
 
         <Greeting
         cities={props.cities}
-        country={props.country}
+        countryName={props.countryName}
          />
 
         
@@ -82,7 +82,7 @@ const Main = (props)=>{
         longitude={props.longitude}/>}
         {activeTab[0].news && <News/>}
         {activeTab[3].health && <HealthInfo
-        country={props.country}/>}
+        countryName={props.countryName}/>}
 
         </div>
 
