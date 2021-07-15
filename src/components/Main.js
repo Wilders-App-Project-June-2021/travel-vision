@@ -2,8 +2,9 @@ import React, {useState}from "react";
 import "./Main.css";
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
+import NewsList from "./NewsList";
 // import Currency from "./Currency";
-// import Health from "./Health";
+import HealthInfo from "./HealthInfo";
 // import Footer from "./Footer"
 
 
@@ -27,7 +28,7 @@ import WeatherInfo from "./WeatherInfo";
 
 
 
-const Main = ()=>{
+const Main = (props)=>{
 
     const tabClasses=[
         {news : true} ,
@@ -50,7 +51,10 @@ const Main = ()=>{
     return (
     <div className="container">
 
-        <Greeting />
+        <Greeting
+        cities={props.cities}
+        countryName={props.countryName}
+         />
 
         
 
@@ -73,7 +77,14 @@ const Main = ()=>{
 
         <div className="main-components">
 
-        <WeatherInfo />
+        {activeTab[1].weather && <WeatherInfo 
+        latitude={props.latitude}
+        longitude={props.longitude}/>}
+        {activeTab[0].news && <NewsList
+        countryName={props.countryName}
+        />}
+        {activeTab[3].health && <HealthInfo
+        countryName={props.countryName}/>}
 
         </div>
 

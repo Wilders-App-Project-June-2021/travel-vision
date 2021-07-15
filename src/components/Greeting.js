@@ -3,11 +3,9 @@ import React from 'react'
 
 
 let theGreeting = "Hola";
-let city = "Madrid";
-let country = "Spain";
 
 
-const Greeting = ()=>{
+const Greeting = (props)=>{
 
    
     const [currentTime, setCurrentTime]= React.useState(getTime())
@@ -15,7 +13,9 @@ const Greeting = ()=>{
 
     function getTime(){
         const time = new Date ()
-        const newTime = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+        const hours= (time.getHours()).toString().length < 2? "0" + time.getHours() : time.getHours()
+        const minutes =(time.getMinutes()).toString().length < 2? "0" + time.getMinutes() : time.getMinutes()
+        const newTime = `${hours}:${minutes}`
         return newTime
     }
     
@@ -25,8 +25,8 @@ const Greeting = ()=>{
     return (
         <div className="">
             <h1 className="greeting">{theGreeting}! The time in</h1>
-            <p className="city-country pink">{city}, {country}</p>
-            <h1>is <b className="pink greeting">{currentTime}</b></h1>
+            <p className="city-country pink">{props.cities}, {props.countryName}</p>
+            <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
         </div>
     )
     }

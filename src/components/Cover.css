@@ -1,3 +1,6 @@
+body {
+    margin: 0;
+}
 *{
     font-size: xx-large;
    
@@ -15,7 +18,7 @@
 }
 
 .second-bg{
-    background-color: #f0f1e78a;
+    background-color: #edf7c796;
     margin: 0;
     height: 120vh;
 }

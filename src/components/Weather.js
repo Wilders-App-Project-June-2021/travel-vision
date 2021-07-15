@@ -1,4 +1,3 @@
-import "./Styles.css";
 import "./Weather.css";
 import React from "react";
 
@@ -7,20 +6,20 @@ function Weather(props) {
     <div className="Weather weather-container" id={props.key}>
         <div className="day-weather">
             <div className="weather-header">
-                {props.header}
+                {props.header}: <small className="weather-header-detail">{props.alt}</small>
             </div>
             <div className="weather-div">
-                <div className="weather-detail">
-                    {props.day}
+                <div className="weather-detail weather-date">
+                    {props.date}
                 </div>
                 <div className="weather-detail">
-                    <img src={props.icon} alt={props.description} />
+                    <img  className="weather-icon" src={props.icon} alt={props.alt} />
                 </div>
                 <div className="weather-detail pink">
-                    {props.temp_max}
+                    {props.tempMax}
                 </div>
                 <div className="weather-detail blue">
-                    {props.temp_min} 
+                    {props.tempMin} 
                 </div>
             </div>
         </div>
