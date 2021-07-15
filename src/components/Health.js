@@ -69,7 +69,7 @@ function Health(props) {
 
   if(props.description){
   return (
-    <div id={props.key}>
+    <div className="health-container" id={props.key}>
         {coronaCases}
         {withNews}
     </div>
