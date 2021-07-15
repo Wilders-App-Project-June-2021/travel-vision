@@ -40,19 +40,19 @@ function HealthInfo(props) {
     <div>
       {!healthInfo.length > 0 && !healthNews.length > 0 ?
             <Health
-              key={healthInfo.ID}
-              countryName={props.countryName}
-              confirmed={healthInfo.TotalConfirmed}
-              newConfirmed={healthInfo.NewConfirmed}
-              recovered={healthInfo.TotalRecovered}
-              newRecovered={healthInfo.NewRecovered}
-              deaths={healthInfo.TotalDeaths}
-              newDeaths={healthInfo.NewDeaths}
-              title={healthNews.title}
-              description={healthNews.description}
-              url={healthNews.url}
-              image={healthNews.urlToImage}
-            /> :null
+            key={healthInfo.ID}
+            countryName={props.countryName}
+            confirmed={healthInfo.TotalConfirmed}
+            newConfirmed={healthInfo.NewConfirmed}
+            recovered={healthInfo.TotalRecovered}
+            newRecovered={healthInfo.NewRecovered}
+            deaths={healthInfo.TotalDeaths}
+            newDeaths={healthInfo.NewDeaths}
+            title={healthNews.title}
+            description={healthNews.description}
+            url={healthNews.url}
+            image={healthNews.urlToImage}
+          /> :null
 
           }
     </div>

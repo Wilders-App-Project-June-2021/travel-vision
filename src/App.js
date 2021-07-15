@@ -3,7 +3,7 @@ import './App.css';
 import axios from "axios"
 import Cover from "./components/Cover"
 import Greeting from "./components/Greeting"
-import News from "./components/News";
+import NewsList from "./components/NewsList";
 import { useState } from 'react';
 import Main from "./components/Main"
 
@@ -58,7 +58,7 @@ const handleCityinput =(e)=>{
       <Main
       latitude={latitude}
       longitude={longitude}
-      cities={cities}
+      cities={cityInfo.name}
       countryCode={countryCode}
       countryName={countryName}
       />}
@@ -67,7 +67,10 @@ const handleCityinput =(e)=>{
       latitude={latitude}
       longitude={longitude}
       /> */}
-      {/* <News/> */}
+      {/* {countryCode && 
+      <NewsList
+      countryName={countryName}
+      />} */}
 
     </div>
   );
