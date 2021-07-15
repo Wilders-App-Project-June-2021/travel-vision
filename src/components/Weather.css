@@ -21,7 +21,7 @@
     font-weight: bold;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background-color: rgb(255, 213, 221);
+    background-color: rgb(255, 183, 183);
     font-size: 3.5vw;
     text-align: left;
 }
@@ -54,6 +54,6 @@
 }
 .weather-icon{
     width: 300%;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 5px #222);
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
 }
