@@ -24,7 +24,7 @@ const Greeting = (props)=>{
    
 
     return (
-        <div className="">
+        <div className="greeting-container">
             <h1 className="greeting">{theGreeting}! The time in</h1>
             <p className="city-country pink">{props.cities}, {props.countryName}</p>
             <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
