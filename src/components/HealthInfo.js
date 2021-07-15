@@ -41,6 +41,7 @@ function HealthInfo(props) {
       {!healthInfo.length > 0 && !healthNews.length > 0 ?
             <Health
               key={healthInfo.ID}
+              countryName={props.countryName}
               confirmed={healthInfo.TotalConfirmed}
               newConfirmed={healthInfo.NewConfirmed}
               recovered={healthInfo.TotalRecovered}

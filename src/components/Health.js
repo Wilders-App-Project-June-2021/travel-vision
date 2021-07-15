@@ -6,7 +6,7 @@ function Health(props) {
 
   const coronaCases =
     <div className="health-cases-wrapper">
-    <h1>Current cases</h1>
+    <h1>Current Coronavirus Cases</h1>
     <ul>
       <li>New Confirmed: {`${props.newConfirmed}`}</li>
       <li>Total Confirmed: {`${props.confirmed}`}</li>
@@ -24,7 +24,7 @@ function Health(props) {
     <div className="health-news-wrapper">
     <div className="health-news">
     <h3 className="health-news-title">{`${props.title}`}</h3>
-    <img className="health-news-image" src={`${props.urlToImage}`} alt={`${props.title}`} />
+    <img className="health-news-image" src={`${props.image}`} alt={`${props.title}`} />
     <div className="health-text-icon-wrapper">
     <p className="health-news-description">
     {`${props.description}`}
