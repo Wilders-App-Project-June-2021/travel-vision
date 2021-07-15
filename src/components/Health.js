@@ -18,7 +18,7 @@ function Health(props) {
     </div>;
 
   const noNews =
-    <div className="no-news"><h1>There's no news!</h1></div>;
+    <div className="no-news"><h2>We could not find any current Coronavirus news articles for {`${props.countryName}`}.</h2></div>;
 
   const withNews =
     <div className="health-news-wrapper">
@@ -39,6 +39,7 @@ function Health(props) {
     <div id={props.key}>
         {coronaCases}
         {withNews}
+      {noNews}
     </div>
   )
   } else {
