@@ -3,18 +3,51 @@ import React from "react";
 import logo from './newspaper.svg'
 
 function Health(props) {
+  const today = new Date();
 
   const coronaCases =
     <div className="health-cases-wrapper">
-    <h1>Current Coronavirus Cases</h1>
-    <ul>
-      <li>New Confirmed: {`${props.newConfirmed}`}</li>
-      <li>Total Confirmed: {`${props.confirmed}`}</li>
-      <li>New Deaths: {`${props.newDeaths}`}</li>
-      <li>Total Deaths: {`${props.deaths}`}</li>
-      <li>New Recovered: {`${props.newRecovered}`}</li>
-      <li>Total Recovered: {`${props.recovered}`}</li>
-    </ul>
+
+      <div className="health-cases-div-container">
+        <div className="health-cases-div pale-pink">
+          <h1>Current Coronavirus Cases</h1>
+        </div>
+        <div className="health-cases-div">
+          <div className="health-case-detail bold pale-pink-2">
+            New
+          </div>
+          <div className="health-case-detail bold pale-pink-2">
+            Total
+          </div>
+        </div>
+          
+        <div className="health-cases-div">
+          <div className="health-case-detail">
+            <span className="bold shrink">Confirmed:</span> {`${props.newConfirmed}`}
+          </div>
+          <div className="health-case-detail">
+            {`${props.confirmed}`}
+          </div>
+        </div>
+            
+        <div className="health-cases-div">
+          <div className="health-case-detail">
+            <span className="bold shrink">Deaths:</span> {`${props.newDeaths}`}
+          </div>
+          <div className="health-case-detail">
+            {`${props.deaths}`}
+          </div>
+        </div>
+            
+        <div className="health-cases-div">
+          <div className="health-case-detail">
+            <span className="bold shrink">Recovered:</span> {`${props.newRecovered}`}
+          </div>
+          <div className="health-case-detail">
+            {`${props.recovered}`}
+          </div>
+        </div>
+      </div>
     </div>;
 
   const noNews =
