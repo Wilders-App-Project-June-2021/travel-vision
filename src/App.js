@@ -66,10 +66,7 @@ const getCountryInfo = () => {
   // flagEmoji1={countryInfo.emojiU}
   // flagEmoji2={countryInfo.emoji}
 
-useEffect(() => {
-  getCountryInfo();
-}, []);
-console.log(countryInfo.iso2)
+console.log(countryInfo)
 
   return (
     <div className="App">
