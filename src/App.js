@@ -37,7 +37,6 @@ function App() {
 
 const handleCountryInput =(e)=>{
   setCountryCode(e.target.value)
-
   let index = e.target.selectedIndex
   setCountryName(e.target.childNodes[index].getAttribute('id')) 
 }

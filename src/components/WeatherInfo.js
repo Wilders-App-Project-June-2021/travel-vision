@@ -7,19 +7,6 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 
 function WeatherInfo(props) {
-  const [weatherInfo, setWeatherInfo] = useState(null);
-  
-
-   useEffect(()=>{
-     axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
-       .then((weather) => {
-         setWeatherInfo(weather.data.daily);
-       })
-       .catch((error) => {
-         console.log(error);
-       });
-
-   },[])
 
     const getDate = (date)=>{
         let d = new Date(date * 1000);
@@ -35,7 +22,7 @@ function WeatherInfo(props) {
 
   return (
     <div>
-      {weatherInfo ? weatherInfo.map((item, index) => (
+      {props.weatherInfo ? props.weatherInfo.map((item, index) => (
         <Weather
           key={index}
           id={index}

@@ -1,28 +1,10 @@
 //😎 😎 😎 😎 😎 😎 😎 😎 😎
 import "./Styles.css"
 import axios from "axios"
-import React, {useEffect, useState} from "react"
 import './Cover.css'
 import nations from "../data/nations"
 
 const Cover = (props)=>{
-
-// COUNTRY AND CITY CODES 
-    const [cities, setCities]= useState("")
-    const [country, setCountry]= useState("")
-    const [cityInfo,setCityInfo]= useState("")
-
-
-    // It triggers the request on button click 
-    const handleCityRequest=()=>{
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${country}&appid=${process.env.REACT_APP_API_KEY}`)
-        .then((result) => 
-            setCityInfo(result.data))
-        .catch(error => console.log('error', error))
-    } 
-
-    // https://openweathermap.org/api
-
 
 // GREETING IN LANGUAGE CODE
 
