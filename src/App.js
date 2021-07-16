@@ -28,12 +28,30 @@ function App() {
         setLatitude(Number(result.data.coord.lat).toFixed(2))
         setLongitude(Number(result.data.coord.lon).toFixed(2))
       })
+
     .catch(error => {
       setError(true)
     })
-} 
 
+      }
 // api.openweathermap.org/data/2.5/forecast/daily?q={city name},{state code}&cnt={cnt}&appid={API key}
+
+
+  const getCountryInfo=() => {
+      axios.get(`https://api.countrystatecity.in/v1/countries/${countryName}`,
+      {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
+    .then((result) => {
+      setCountryInfo(result.data)
+      console.log(countryInfo)})
+    .catch((error) => console.log("error", error))
+  }
+  console.log(countryInfo)
+  // Props for Country Info
+    // countryLanguage={countryInfo.iso2}
+    // countryCurrency={countryInfo.currency}
+    // currencySymbol={countryInfo.currency_symbol}
+    // flagEmoji1={countryInfo.emojiU}
+    // flagEmoji2={countryInfo.emoji}
 
 const handleCountryInput =(e)=>{
   setCountryCode(e.target.value)
@@ -46,27 +64,6 @@ const handleCityinput =(e)=>{
   setCities(e.target.value)
 }
 
-// Country Info API
-const GEOkey = "process.env.REACT_APP_API_GEO_INFO";
-
-const getCountryInfo = () => {
-  axios
-    .get(`https://api.countrystatecity.in/v1/countries/${countryCode}`, {
-      headers: {
-        "X-CSCAPI-KEY": `${GEOkey}`
-      }
-    })
-    .then((result) => setCountryInfo(result.data))
-    .catch((error) => console.log("error", error));
-};
-// Props for Country Info
-  // countryLanguage={countryInfo.iso2}
-  // countryCurrency={countryInfo.currency}
-  // currencySymbol={countryInfo.currency_symbol}
-  // flagEmoji1={countryInfo.emojiU}
-  // flagEmoji2={countryInfo.emoji}
-
-console.log(countryInfo)
 
   return (
     <div className="App">
