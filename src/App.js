@@ -55,7 +55,7 @@ const handleCityinput =(e)=>{
       error={error}
       />}
       
-      {(longitude && latitude) ?
+      {(longitude && latitude) &&
       <Main
       latitude={latitude}
       longitude={longitude}
@@ -63,14 +63,7 @@ const handleCityinput =(e)=>{
       countryCode={countryCode}
       countryName={countryName}
       />
-      :
-      <Loader
-        type="Plane"
-        color="#00BFFF"
-        height={100}
-        width={300}
-        radius={500}  
-      />
+
     }
 
       {/* <Main 

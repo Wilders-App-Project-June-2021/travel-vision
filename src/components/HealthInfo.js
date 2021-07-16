@@ -40,14 +40,14 @@ function HealthInfo(props) {
     <div>
       {!apiResponse ?
           <Health
-            key={healthInfo.ID}
+            key={healthInfo && healthInfo.ID}
             countryName={props.countryName}
-            confirmed={healthInfo.TotalConfirmed}
-            newConfirmed={healthInfo.NewConfirmed}
-            recovered={healthInfo.TotalRecovered}
-            newRecovered={healthInfo.NewRecovered}
-            deaths={healthInfo.TotalDeaths}
-            newDeaths={healthInfo.NewDeaths}
+            confirmed={healthInfo && healthInfo.TotalConfirmed}
+            newConfirmed={healthInfo && healthInfo.NewConfirmed}
+            recovered={healthInfo && healthInfo.TotalRecovered}
+            newRecovered={healthInfo && healthInfo.NewRecovered}
+            deaths={healthInfo && healthInfo.TotalDeaths}
+            newDeaths={healthInfo && healthInfo.NewDeaths}
             title={healthNews && healthNews.title }
             description={healthNews && healthNews.description}
             url={healthNews && healthNews.url}
