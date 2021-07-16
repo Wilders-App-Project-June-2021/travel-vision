@@ -54,6 +54,7 @@ const Main = (props)=>{
         <Greeting
         cities={props.cities}
         countryName={props.countryName}
+        countryLanguage={props.countryLanguage}
          />
 
         

@@ -22,7 +22,6 @@ function HealthInfo(props) {
       axios.get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
       .then((response)=>{
         sethealthNews(response.data.articles[0])
-        // console.log(response.data.articles[0])
     })
     .catch((error) => {
         console.log(error);
@@ -30,8 +29,6 @@ function HealthInfo(props) {
    
   };
  
-  // https://newsapi.org/v2/top-headlines?country=de&category=health&q=coronavirus&language=en&apiKey=862d686e64564ff38a69a93c176de68e
-
 
   useEffect(() => {
     getData();

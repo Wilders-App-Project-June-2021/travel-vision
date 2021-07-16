@@ -1,10 +1,11 @@
+
 import React from "react";
 import './App.css';
 import axios from "axios"
 import Cover from "./components/Cover"
 import Greeting from "./components/Greeting"
 import NewsList from "./components/NewsList";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Main from "./components/Main"
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   const [error,setError]=useState(false)
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
+  const [countryInfo, setCountryInfo] = useState("");
 
   const getCityInfo=(e)=>{
     e.preventDefault()
@@ -44,6 +46,30 @@ const handleCityinput =(e)=>{
   setCities(e.target.value)
 }
 
+// Country Info API
+const GEOkey = "process.env.REACT_APP_API_GEO_INFO";
+
+const getCountryInfo = () => {
+  axios
+    .get(`https://api.countrystatecity.in/v1/countries/${countryCode}`, {
+      headers: {
+        "X-CSCAPI-KEY": `${GEOkey}`
+      }
+    })
+    .then((result) => setCountryInfo(result.data))
+    .catch((error) => console.log("error", error));
+};
+// Props for Country Info
+  // countryLanguage={countryInfo.iso2}
+  // countryCurrency={countryInfo.currency}
+  // currencySymbol={countryInfo.currency_symbol}
+  // flagEmoji1={countryInfo.emojiU}
+  // flagEmoji2={countryInfo.emoji}
+
+useEffect(() => {
+  getCountryInfo();
+}, []);
+console.log(countryInfo.iso2)
 
   return (
     <div className="App">
@@ -61,6 +87,7 @@ const handleCityinput =(e)=>{
       cities={cityInfo.name}
       countryCode={countryCode}
       countryName={countryName}
+      countryLanguage={countryInfo.iso2}
       />}
 
       {/* <Main 
