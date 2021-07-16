@@ -13,6 +13,7 @@ function HealthInfo(props) {
       .then((response) => {
         const filtered = response.data.Countries.filter((item) => item.Country === props.countryName)
         sethealthInfo(filtered[0]);
+        console.log(filtered)
       })
       .catch((error) => {
         console.log(error);
@@ -21,6 +22,7 @@ function HealthInfo(props) {
       axios.get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
       .then((response)=>{
         sethealthNews(response.data.articles[0])
+        // console.log(response.data.articles[0])
     })
     .catch((error) => {
         console.log(error);
@@ -36,10 +38,24 @@ function HealthInfo(props) {
   }, []);
 
 
+  const  healtComponent=
+  <Health
+  key={healthInfo.ID}
+  countryName={props.countryName}
+  confirmed={healthInfo.TotalConfirmed}
+  newConfirmed={healthInfo.NewConfirmed}
+  recovered={healthInfo.TotalRecovered}
+  newRecovered={healthInfo.NewRecovered}
+  deaths={healthInfo.TotalDeaths}
+  newDeaths={healthInfo.NewDeaths}
+/>
+
   return (
     <div>
-      {!healthInfo.length > 0 && !healthNews.length > 0 ?
-            <Health
+      {!healthInfo.length > 0 && !healthNews ?
+            healtComponent
+            : healthNews ?
+          <Health
             key={healthInfo.ID}
             countryName={props.countryName}
             confirmed={healthInfo.TotalConfirmed}
@@ -52,7 +68,7 @@ function HealthInfo(props) {
             description={healthNews.description}
             url={healthNews.url}
             image={healthNews.urlToImage}
-          /> :null
+        /> : null
 
           }
     </div>
