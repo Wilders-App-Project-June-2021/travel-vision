@@ -8,25 +8,6 @@ import HealthInfo from "./HealthInfo";
 // import Footer from "./Footer"
 
 
-/* TAB BUTTONS ACTIVE/INACTIVE */
-// const tabs = document.getElementsByClassName("tab-div");
-// for (let i = 0; i < tabs.length; i++) {
-//   tabs[i].addEventListener("click", function() {
-//   const current = document.getElementsByClassName("active");
-//   current[0].className = current[0].className.replace(" active", "");
-//   this.className += " active";
-//   });
-// }
-
-// const tabs = document.getElementsByClassName("tab-div");
-// tabs.map((item, index)=>{
-//   tabs[index].addEventListener("click", function() {
-//     const current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active" })
-// })
-
-
 
 const Main = (props)=>{
 
@@ -77,9 +58,12 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        {activeTab[1].weather && <WeatherInfo 
+        {activeTab[1].weather &&
+        <WeatherInfo 
         latitude={props.latitude}
-        longitude={props.longitude}/>}
+        longitude={props.longitude}
+        />
+    }
         {activeTab[0].news && <NewsList
         countryName={props.countryName}
         />}

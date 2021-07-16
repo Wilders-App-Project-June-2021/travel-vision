@@ -6,6 +6,8 @@ import Greeting from "./components/Greeting"
 import NewsList from "./components/NewsList";
 import { useState } from 'react';
 import Main from "./components/Main"
+import Loader from "react-loader-spinner"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 function App() {
 
@@ -54,14 +56,23 @@ const handleCityinput =(e)=>{
       error={error}
       />}
       
-      {(longitude && latitude) &&
+      {(longitude && latitude) ?
       <Main
       latitude={latitude}
       longitude={longitude}
       cities={cityInfo.name}
       countryCode={countryCode}
       countryName={countryName}
-      />}
+      />
+      :
+      <Loader
+        type="Plane"
+        color="#00BFFF"
+        height={100}
+        width={300}
+        radius={500}  
+      />
+    }
 
       {/* <Main 
       latitude={latitude}

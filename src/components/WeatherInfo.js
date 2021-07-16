@@ -2,6 +2,8 @@ import "./Weather.css";
 import React, { useState, useEffect } from "react";
 import Weather from "./Weather";
 import axios from "axios";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 
 function WeatherInfo(props) {
@@ -33,7 +35,7 @@ function WeatherInfo(props) {
 
   return (
     <div>
-      {weatherInfo && weatherInfo.map((item, index) => (
+      {weatherInfo ? weatherInfo.map((item, index) => (
         <Weather
           key={index}
           id={index}
@@ -44,7 +46,16 @@ function WeatherInfo(props) {
           tempMin={`${convertKelvin(item.temp.min)}°`}
           tempMax={`${convertKelvin(item.temp.max)}°`}
         />
-      ))} 
+      ))
+      :
+      <Loader
+          type="Plane"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          radius={500}  
+      />
+    } 
     </div>
   );
 }

@@ -2,6 +2,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import News from './News'
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 
 
@@ -21,7 +23,7 @@ useEffect(()=>{
 
 return(
     <div className="news-wrapper">
-        { countryNews.length > 0 && countryNews.map((news,index)=>{ 
+        { countryNews.length > 0 ? countryNews.map((news,index)=>{ 
            return <News 
             key={index}
             id={index}
@@ -29,7 +31,17 @@ return(
             description = {news.description}
             url={news.url}
             />
-        })}
+        })
+        :
+        <Loader
+            type="Plane"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            radius={500}  
+        />
+    
+    }
     </div>
 )
 
