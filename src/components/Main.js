@@ -47,17 +47,10 @@ const Main = (props)=>{
     return (
     <div className="container">
 
-<<<<<<< HEAD
-        <Greeting
-        cities={props.cities}
-        countryName={props.countryName}
-        countryLanguage={props.countryLanguage}
-=======
         {weatherInfo ?<Greeting
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
->>>>>>> main
          />
          :
          <Loader

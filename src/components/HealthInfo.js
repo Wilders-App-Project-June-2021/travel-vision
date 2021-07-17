@@ -34,7 +34,8 @@ function HealthInfo(props) {
     getData();
   }, []);
 
-
+  const notAvailable = (path => path === undefined ?  "caching in progress" : path)
+  
   return (
     <div>
       {!apiResponse ?
