@@ -19,6 +19,7 @@ function App() {
   const [error,setError]=useState(false)
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
+  const [theGreeting, setTheGreeting] = useState("Hello!")
   const [countryInfo, setCountryInfo] = useState("");
 
   const getCityInfo=(e)=>{
@@ -37,12 +38,23 @@ function App() {
 
   }
 
+const handleCountryInput =(e)=>{
+  setCountryCode(e.target.value)
+  let index = e.target.selectedIndex
+  setCountryName(e.target.childNodes[index].getAttribute('id')) 
+  } 
+
+  const handleCityinput =(e)=>{
+    setCities(e.target.value)
+  }
+
   const getCountryInfo = () => {
     axios.get(`https://api.countrystatecity.in/v1/countries/${countryName}`,
     {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
       .then((result) => setCountryInfo(result.data))
-      .catch((error) => console.log("error", error));
-    console.log(countryInfo);
+      axios.get(`https://fourtonfish.com/hellosalut/?lang=${countryInfo.iso2}`)
+      .then((result) => setTheGreeting(result.data))
+      .catch((error) => console.log("error", error))
   };
   useEffect(() => {
     getCountryInfo();
@@ -56,16 +68,6 @@ function App() {
     // flagEmoji2={countryInfo.emoji}
 
 // api.openweathermap.org/data/2.5/forecast/daily?q={city name},{state code}&cnt={cnt}&appid={API key}
-
-const handleCountryInput =(e)=>{
-  setCountryCode(e.target.value)
-  let index = e.target.selectedIndex
-  setCountryName(e.target.childNodes[index].getAttribute('id')) 
-  } 
-
-  const handleCityinput =(e)=>{
-    setCities(e.target.value)
-  }
 
 
   return (
@@ -84,7 +86,7 @@ const handleCountryInput =(e)=>{
       cities={cityInfo.name}
       countryCode={countryCode}
       countryName={countryName}
-      countryLanguage={countryInfo.iso2}
+      theGreeting={theGreeting}
       />}
 
       {/* <Main 

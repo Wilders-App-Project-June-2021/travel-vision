@@ -51,6 +51,7 @@ const Main = (props)=>{
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
+            theGreeting={props.theGreeting}
          />
          :
          <Loader

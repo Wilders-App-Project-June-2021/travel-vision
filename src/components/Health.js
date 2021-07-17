@@ -53,7 +53,7 @@ function Health(props) {
     <div className="no-news"><h2>We could not find any current Coronavirus news articles for {`${props.countryName}`}.</h2></div>;
 
     const noCoronaCases =
-    <div className="no-news"><h2>We could not find any current Coronavirus information for{`${props.countryName}`}.</h2></div>;
+    <div className="no-news"><h2>We could not find any current Coronavirus information for {`${props.countryName}`}.</h2></div>;
 
     const withNews =
     <div className="health-news-wrapper">
