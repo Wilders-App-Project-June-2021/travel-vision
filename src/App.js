@@ -33,19 +33,19 @@ function App() {
       setError(true)
     })
 
-      }
-// api.openweathermap.org/data/2.5/forecast/daily?q={city name},{state code}&cnt={cnt}&appid={API key}
-
-
-  const getCountryInfo=() => {
-      axios.get(`https://api.countrystatecity.in/v1/countries/${countryName}`,
-      {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
-    .then((result) => {
-      setCountryInfo(result.data)
-      console.log(countryInfo)})
-    .catch((error) => console.log("error", error))
   }
-  console.log(countryInfo)
+
+  const getCountryInfo = () => {
+    axios.get(`https://api.countrystatecity.in/v1/countries/${countryName}`,
+    {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
+      .then((result) => setCountryInfo(result.data))
+      .catch((error) => console.log("error", error));
+    console.log(countryInfo);
+  };
+  useEffect(() => {
+    getCountryInfo();
+  }, []);
+
   // Props for Country Info
     // countryLanguage={countryInfo.iso2}
     // countryCurrency={countryInfo.currency}
@@ -53,16 +53,18 @@ function App() {
     // flagEmoji1={countryInfo.emojiU}
     // flagEmoji2={countryInfo.emoji}
 
-const handleCountryInput =(e)=>{
-  setCountryCode(e.target.value)
+// api.openweathermap.org/data/2.5/forecast/daily?q={city name},{state code}&cnt={cnt}&appid={API key}
+
+  const handleCountryInput =(e)=>{
+    setCountryCode(e.target.value)
 
   let index = e.target.selectedIndex
   setCountryName(e.target.childNodes[index].getAttribute('id')) 
-}
+  } 
 
-const handleCityinput =(e)=>{
-  setCities(e.target.value)
-}
+  const handleCityinput =(e)=>{
+    setCities(e.target.value)
+  }
 
 
   return (

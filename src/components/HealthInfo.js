@@ -12,8 +12,7 @@ function HealthInfo(props) {
       .get(`https://api.covid19api.com/summary`)
       .then((response) => {
         const filtered = response.data.Countries.filter((item) => item.Country === props.countryName)
-        sethealthInfo(filtered[0]);
-        console.log(filtered)
+        sethealthInfo(filtered[0])
       })
       .catch((error) => {
         console.log(error);
@@ -22,6 +21,7 @@ function HealthInfo(props) {
       axios.get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
       .then((response)=>{
         sethealthNews(response.data.articles[0])
+        // console.log(response.data.articles[0])
     })
     .catch((error) => {
         console.log(error);
@@ -29,22 +29,24 @@ function HealthInfo(props) {
    
   };
  
+  // https://newsapi.org/v2/top-headlines?country=de&category=health&q=coronavirus&language=en&apiKey=862d686e64564ff38a69a93c176de68e
+
 
   useEffect(() => {
     getData();
   }, []);
 
-
+  const notAvailable = (path => path === undefined ?  "caching in progress" : path)
   const  healtComponent=
   <Health
   key={healthInfo.ID}
   countryName={props.countryName}
-  confirmed={healthInfo.TotalConfirmed}
-  newConfirmed={healthInfo.NewConfirmed}
-  recovered={healthInfo.TotalRecovered}
-  newRecovered={healthInfo.NewRecovered}
-  deaths={healthInfo.TotalDeaths}
-  newDeaths={healthInfo.NewDeaths}
+  confirmed={notAvailable(healthInfo.TotalConfirmed)}
+  newConfirmed={notAvailable(healthInfo.NewConfirmed)}
+  recovered={notAvailable(healthInfo.TotalRecovered)}
+  newRecovered={notAvailable(healthInfo.NewRecovered)}
+  deaths={notAvailable(healthInfo.TotalDeaths)}
+  newDeaths={notAvailable(healthInfo.NewDeaths)}
 />
 
   return (
@@ -55,12 +57,12 @@ function HealthInfo(props) {
           <Health
             key={healthInfo.ID}
             countryName={props.countryName}
-            confirmed={healthInfo.TotalConfirmed}
-            newConfirmed={healthInfo.NewConfirmed}
-            recovered={healthInfo.TotalRecovered}
-            newRecovered={healthInfo.NewRecovered}
-            deaths={healthInfo.TotalDeaths}
-            newDeaths={healthInfo.NewDeaths}
+            confirmed={notAvailable(healthInfo.TotalConfirmed)}
+            newConfirmed={notAvailable(healthInfo.NewConfirmed)}
+            recovered={notAvailable(healthInfo.TotalRecovered)}
+            newRecovered={notAvailable(healthInfo.NewRecovered)}
+            deaths={notAvailable(healthInfo.TotalDeaths)}
+            newDeaths={notAvailable(healthInfo.NewDeaths)}
             title={healthNews.title}
             description={healthNews.description}
             url={healthNews.url}
@@ -73,3 +75,12 @@ function HealthInfo(props) {
 }
 
 export default HealthInfo;
+
+/* REPLACE CODE FOR CORONA PROPS
+confirmed={healthInfo && notAvailable(healthInfo.TotalConfirmed)}
+newConfirmed={healthInfo && notAvailable(healthInfo.NewConfirmed)}
+recovered={healthInfo && notAvailable(healthInfo.TotalRecovered)}
+newRecovered={healthInfo && notAvailable(healthInfo.NewRecovered)}
+deaths={healthInfo && notAvailable(healthInfo.TotalDeaths)}
+newDeaths={healthInfo && notAvailable(healthInfo.NewDeaths)}
+*/
