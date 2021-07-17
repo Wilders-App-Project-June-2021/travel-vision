@@ -12,11 +12,11 @@ const Greeting = (props)=>{
     const [theGreeting, setTheGreeting] = React.useState("Hello!")
 
     function getTime(){
-        const time = new Date ()
-        const hours= (time.getHours()).toString().length < 2? "0" + time.getHours() : time.getHours()
-        const minutes =(time.getMinutes()).toString().length < 2? "0" + time.getMinutes() : time.getMinutes()
-        const newTime = `${hours}:${minutes}`
-        return newTime
+        const date = new Date ()
+        const time =date.toLocaleString('en-GB', { timeZone: props.timeZone }).split(",");
+        const newTime =[...time[1]]
+        newTime.splice(6,3)
+        return newTime.join('')
     }
     setInterval(()=> setCurrentTime(getTime()),1000)
    

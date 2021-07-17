@@ -1,4 +1,5 @@
-import React, {useState}from "react";
+import React, {useState,useEffect}from "react";
+import axios from "axios";
 import "./Main.css";
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
@@ -6,26 +7,8 @@ import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
 // import Footer from "./Footer"
-
-
-/* TAB BUTTONS ACTIVE/INACTIVE */
-// const tabs = document.getElementsByClassName("tab-div");
-// for (let i = 0; i < tabs.length; i++) {
-//   tabs[i].addEventListener("click", function() {
-//   const current = document.getElementsByClassName("active");
-//   current[0].className = current[0].className.replace(" active", "");
-//   this.className += " active";
-//   });
-// }
-
-// const tabs = document.getElementsByClassName("tab-div");
-// tabs.map((item, index)=>{
-//   tabs[index].addEventListener("click", function() {
-//     const current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active" })
-// })
-
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 
 const Main = (props)=>{
@@ -38,6 +21,19 @@ const Main = (props)=>{
        ]
 
     const [activeTab,setActiveTab]= useState([...tabClasses])
+    const [weatherInfo, setWeatherInfo] = useState(null);
+
+
+    useEffect(()=>{
+        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
+          .then((weather) => {
+            setWeatherInfo(weather.data)
+            
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },[])
 
     const getActive = (e)=>{
         let copy =[...tabClasses]
@@ -51,11 +47,27 @@ const Main = (props)=>{
     return (
     <div className="container">
 
+<<<<<<< HEAD
         <Greeting
         cities={props.cities}
         countryName={props.countryName}
         countryLanguage={props.countryLanguage}
+=======
+        {weatherInfo ?<Greeting
+            cities={props.cities}
+            countryName={props.countryName}
+            timeZone={weatherInfo.timezone}
+>>>>>>> main
          />
+         :
+         <Loader
+          type="Plane"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          radius={500}  
+      />
+         }
 
         
 
@@ -78,9 +90,13 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        {activeTab[1].weather && <WeatherInfo 
+        {activeTab[1].weather &&
+        <WeatherInfo 
+        weatherInfo={weatherInfo.daily}
         latitude={props.latitude}
-        longitude={props.longitude}/>}
+        longitude={props.longitude}
+        />
+    }
         {activeTab[0].news && <NewsList
         countryName={props.countryName}
         />}

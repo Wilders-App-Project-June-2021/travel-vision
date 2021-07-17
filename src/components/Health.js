@@ -52,6 +52,9 @@ function Health(props) {
   const noNews =
     <div className="no-news"><h2>We could not find any current Coronavirus news articles for {`${props.countryName}`}.</h2></div>;
 
+    const noCoronaCases =
+    <div className="no-news"><h2>We could not find any current Coronavirus information for{`${props.countryName}`}.</h2></div>;
+
     const withNews =
     <div className="health-news-wrapper">
     <div className="health-news">
@@ -66,21 +69,36 @@ function Health(props) {
     </div>
     </div>;
 
-  if(props.description){
+  if(props.description && props.confirmed){
   return (
     <div className="health-container" id={props.key}>
         {coronaCases}
         {withNews}
     </div>
   )
-  } else {
+  } else if (!props.description && props.confirmed){
     return (
       <div id={props.key}>
         {coronaCases}
         {noNews}
       </div>
     )
+  } else if(props.description && !props.confirmed){
+    return (
+    <div className="health-container" id={props.key}>
+        {noCoronaCases}
+        {withNews}
+    </div>
+    )
+  }else{
+    return (
+    <div className="health-container" id={props.key}>
+    {noCoronaCases}
+    {noNews}
+</div>)
+
   }
+  
 }
 
 export default Health;

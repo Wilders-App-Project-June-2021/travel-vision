@@ -7,6 +7,8 @@ import Greeting from "./components/Greeting"
 import NewsList from "./components/NewsList";
 import { useState, useEffect } from 'react';
 import Main from "./components/Main"
+import Loader from "react-loader-spinner"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 function App() {
 
@@ -55,9 +57,8 @@ function App() {
 
 // api.openweathermap.org/data/2.5/forecast/daily?q={city name},{state code}&cnt={cnt}&appid={API key}
 
-  const handleCountryInput =(e)=>{
-    setCountryCode(e.target.value)
-
+const handleCountryInput =(e)=>{
+  setCountryCode(e.target.value)
   let index = e.target.selectedIndex
   setCountryName(e.target.childNodes[index].getAttribute('id')) 
   } 
