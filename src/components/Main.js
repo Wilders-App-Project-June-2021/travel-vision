@@ -50,6 +50,7 @@ const Main = (props)=>{
         {weatherInfo ?<Greeting
             cities={props.cities}
             countryName={props.countryName}
+            countryCode={props.countryCode}
             timeZone={weatherInfo.timezone}
          />
          :
