@@ -1,8 +1,8 @@
-//😎 😎 😎 😎 😎 😎 😎 😎 😎
 import "./Styles.css"
 import axios from "axios"
 import './Cover.css'
 import nations from "../data/nations"
+import React from 'react'
 
 const Cover = (props)=>{
 

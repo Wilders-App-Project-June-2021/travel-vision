@@ -17,8 +17,11 @@ function HealthInfo(props) {
         axios
         .get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
         .then((covidNews)=>{
-          const filtered = covidData.data.Countries.filter((item) => item.Country === props.countryName)
-          setHealthInfo(filtered[0]);
+          if(covidData.data.Countries){
+            const filtered = covidData.data.Countries.filter((item) => item.Country === props.countryName)
+            console.log(covidData)
+            setHealthInfo(filtered[0]);
+          }
           sethealthNews(covidNews.data.articles[0])
           setApiResponse(false)
          })
