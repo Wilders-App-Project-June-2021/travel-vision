@@ -19,7 +19,7 @@ function App() {
   const [error,setError]=useState(false)
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
-  const [theGreeting, setTheGreeting] = useState("Hello!")
+  const [theGreeting, setTheGreeting] = useState("Hello")
   const [countryInfo, setCountryInfo] = useState("");
 
   const getCityInfo=(e)=>{
