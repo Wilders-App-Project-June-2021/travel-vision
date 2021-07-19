@@ -4,30 +4,23 @@ import logo from './newspaper.svg'
 
 
 
-const News = ({title,description,url}) => {
+const News = ({title,description,url, countryName}) => {
 
 return(
 
-<div className="news">
-        <h3 className="news-title">{title}</h3>
-            <div className="text-icon-wrapper">
-                <p className="news-description">
-                   {description}
-                </p>
-                <a href={url} className="news-link"> 
-                <img  className="news-icon" src={logo} alt="news-link"/>
-                </a>
-                
-            </div>
-</div>
-
- )
-
-   
-    
-
+        <div className="news">
+            <h3 className="news-title">{title}</h3>
+                <div className="text-icon-wrapper">
+                    <p className="news-description">
+                    {description}
+                    </p>
+                    <a href={url} className="news-link"> 
+                    <img  className="news-icon" src={logo} alt="news-link"/>
+                    </a>
+                </div>
+        </div>
+    )
 }
-
 
 
 export default News

@@ -2,7 +2,8 @@ import "./Styles.css"
 import axios from "axios"
 import './Cover.css'
 import nations from "../data/nations"
-import React from 'react'
+import "./vivify.min.css"
+import React from "react"
 
 const Cover = (props)=>{
 
@@ -11,8 +12,8 @@ const Cover = (props)=>{
     return (
         <div className="wrapper">
             <div className="second-bg">
-                <img className="logo" src="../img/landscape.png" alt="Logo" />
-                <h1 className="title">Travel Vision</h1>
+                <img className="logo swoopInTop" src="../img/landscape.png" alt="Logo" />
+                <h1 className="title driveInLeft">Travel Vision</h1>
                 <form onSubmit={(e)=>props.getCityInfo(e)}>
                     <div className ="input-wrapper"> 
                         <select className="input-country" id="country" placeholder= "Country" required onChange={(e)=>props.handleCountryInput(e) } >

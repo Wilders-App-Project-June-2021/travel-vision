@@ -3,7 +3,6 @@ import React from "react";
 import logo from './newspaper.svg'
 
 function Health(props) {
-  const today = new Date();
 
   const coronaCases =
     <div className="health-cases-wrapper">

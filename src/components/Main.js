@@ -1,6 +1,7 @@
 import React, {useState,useEffect}from "react";
 import axios from "axios";
 import "./Main.css";
+import "./vivify.min.css"
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
@@ -21,18 +22,21 @@ const Main = (props)=>{
        ]
 
     const [activeTab,setActiveTab]= useState([...tabClasses])
-    const [weatherInfo, setWeatherInfo] = useState(null);
+    const [weatherInfo, setWeatherInfo] = useState(null)
+    const [theGreeting, setTheGreeting] = useState("Hello");
 
 
     useEffect(()=>{
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
           .then((weather) => {
             setWeatherInfo(weather.data)
-            
           })
           .catch((error) => {
             console.log(error);
-          });
+          })
+          axios.get(`https://fourtonfish.com/hellosalut/?cc=${props.countryCode}`)
+          .then((result) => setTheGreeting(result.data))
+          .catch((error) => console.log("error", error));
       },[])
 
     const getActive = (e)=>{
@@ -47,10 +51,11 @@ const Main = (props)=>{
     return (
     <div className="container">
 
-        {weatherInfo ?<Greeting
+        {weatherInfo && theGreeting ?<Greeting
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
+            theGreeting={theGreeting}
          />
          :
          <Loader
@@ -90,7 +95,7 @@ const Main = (props)=>{
         longitude={props.longitude}
         />
     }
-        {activeTab[0].news && <NewsList
+        {activeTab[0].news && props.countryName && <NewsList
         countryName={props.countryName}
         />}
         {activeTab[3].health && <HealthInfo
