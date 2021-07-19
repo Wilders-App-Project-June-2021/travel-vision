@@ -95,7 +95,7 @@ const Main = (props)=>{
         longitude={props.longitude}
         />
     }
-        {activeTab[0].news && <NewsList
+        {activeTab[0].news && props.countryName && <NewsList
         countryName={props.countryName}
         />}
         {activeTab[3].health && <HealthInfo

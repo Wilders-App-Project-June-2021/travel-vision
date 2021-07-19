@@ -76,7 +76,7 @@ const handleCountryInput =(e)=>{
       error={error}
       />}
       
-      {(longitude && latitude && countryCode) &&
+      {(longitude && latitude && countryCode) && countryName &&
       <Main
       latitude={latitude}
       longitude={longitude}

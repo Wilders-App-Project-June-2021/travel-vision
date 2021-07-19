@@ -4,15 +4,9 @@ import logo from './newspaper.svg'
 
 
 
-const News = ({title,description,url, props}) => {
-    const noNews =
-    <div className="no-news"><h2>We could not find any current news articles for {`${props.countryName}`}.</h2></div>;
-    
-    if(!title){
-        return noNews
+const News = ({title,description,url, countryName}) => {
 
-    } else {
-        return(
+return(
 
         <div className="news">
             <h3 className="news-title">{title}</h3>
@@ -26,7 +20,6 @@ const News = ({title,description,url, props}) => {
                 </div>
         </div>
     )
-}
 }
 
 
