@@ -19,7 +19,6 @@ function App() {
   const [error,setError]=useState(false)
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
-  const [theGreeting, setTheGreeting] = useState("Hello")
   const [countryInfo, setCountryInfo] = useState("");
 
   const getCityInfo=(e)=>{
@@ -49,11 +48,9 @@ const handleCountryInput =(e)=>{
   }
 
   const getCountryInfo = () => {
-    axios.get(`https://api.countrystatecity.in/v1/countries/${countryName}`,
+    axios.get(`https://api.countrystatecity.in/v1/countries/${countryCode}`,
     {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
       .then((result) => setCountryInfo(result.data))
-      axios.get(`https://fourtonfish.com/hellosalut/?lang=${countryInfo.iso2}`)
-      .then((result) => setTheGreeting(result.data))
       .catch((error) => console.log("error", error))
   };
   useEffect(() => {
@@ -79,14 +76,13 @@ const handleCountryInput =(e)=>{
       error={error}
       />}
       
-      {(longitude && latitude) &&
+      {(longitude && latitude && countryCode) &&
       <Main
       latitude={latitude}
       longitude={longitude}
       cities={cityInfo.name}
       countryCode={countryCode}
       countryName={countryName}
-      theGreeting={theGreeting}
       />}
 
       {/* <Main 

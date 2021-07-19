@@ -30,6 +30,7 @@ return(
             title = {news.title}
             description = {news.description}
             url={news.url}
+            countryName={props.countryName}
             />
         })
         :
