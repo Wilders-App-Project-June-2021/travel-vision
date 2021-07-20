@@ -1,6 +1,7 @@
 import "./Styles.css";
 import React, {useState, useEffect}from "react";
 import axios from "axios"
+import hello from '../data/hello'
 
 
 
@@ -17,12 +18,19 @@ const Greeting = (props)=>{
         newTime.splice(6,3)
         return newTime.join('')
     }
+
+    const getGreeting = (code) =>{
+        const lowerCaseCode= code.toLowerCase()
+        const result=  hello.find((item)=> item[lowerCaseCode])
+       return result[lowerCaseCode]
+     }
+
     setInterval(()=> setCurrentTime(getTime()),1000)
-   
+
 
     return (
         <div className="greeting-container">
-            <h1 className="greeting">{props.theGreeting.hello}! The time in</h1>
+            <h1 className="greeting">{getGreeting(props.countryCode)}! The time in</h1>
             <p className="city-country pink">{props.cities}, {props.countryName}</p>
             <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
         </div>
@@ -32,19 +40,3 @@ const Greeting = (props)=>{
 
 export default Greeting
 
-
-/*
-
-componentWillMount(){
-    setInterval(function(){
-        this.setState({
-            curTime: new Date().toLocaleString()
-        })
-    }.bind(this), 1000);
-}
-
-*/
-
-/*
-setInterval(()=> this.setState({time:Date.now()},1000)
-*/

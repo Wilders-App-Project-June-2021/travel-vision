@@ -23,7 +23,6 @@ const Main = (props)=>{
 
     const [activeTab,setActiveTab]= useState([...tabClasses])
     const [weatherInfo, setWeatherInfo] = useState(null)
-    const [theGreeting, setTheGreeting] = useState("Hello");
 
 
     useEffect(()=>{
@@ -34,9 +33,6 @@ const Main = (props)=>{
           .catch((error) => {
             console.log(error);
           })
-          axios.get(`https://fourtonfish.com/hellosalut/?cc=${props.countryCode}`)
-          .then((result) => setTheGreeting(result.data))
-          .catch((error) => console.log("error", error));
       },[])
 
     const getActive = (e)=>{
@@ -51,11 +47,11 @@ const Main = (props)=>{
     return (
     <div className="container">
 
-        {weatherInfo && theGreeting ?<Greeting
+        {weatherInfo ? <Greeting
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
-            theGreeting={theGreeting}
+            countryCode={props.countryCode}
          />
          :
          <Loader
