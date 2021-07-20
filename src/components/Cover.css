@@ -29,6 +29,10 @@ body {
     height: 30vh;
 }
 
+.swoopInTop{
+    animation-duration: 2s !important;
+}
+
 .title{
     font-family: 'Pacifico', cursive;
     font-size: 100px;
@@ -37,6 +41,12 @@ body {
     margin-top: -2em;
     font-weight: 900;
 }
+
+.driveInLeft {
+    animation-duration: 3s !important;
+}
+
+
 
 .input-wrapper{
     display: flex;
