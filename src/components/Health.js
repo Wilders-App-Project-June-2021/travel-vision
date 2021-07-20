@@ -8,9 +8,10 @@ function Health(props) {
     <div className="health-cases-wrapper">
 
       <div className="health-cases-div-container">
-        <div className="health-cases-div pale-pink">
-          <h1>Current Coronavirus Cases</h1>
+        <div className="health-cases-div-title pale-pink bold">
+          Current Coronavirus Cases
         </div>
+        
         <div className="health-cases-div">
           <div className="health-case-detail bold pale-pink-2">
             New
