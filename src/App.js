@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import Main from "./components/Main"
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -70,20 +71,20 @@ const handleCountryInput =(e)=>{
   return (
     <div className="App">
      { !cityInfo&&<Cover 
-      getCityInfo={getCityInfo}
-      handleCityinput={handleCityinput}
-      handleCountryInput={handleCountryInput}
-      error={error}
+        getCityInfo={getCityInfo}
+        handleCityinput={handleCityinput}
+        handleCountryInput={handleCountryInput}
+        error={error}
       />}
       
       {(longitude && latitude && countryCode) && countryName &&
-      <Main
-      latitude={latitude}
-      longitude={longitude}
-      cities={cityInfo.name}
-      countryCode={countryCode}
-      countryName={countryName}
-      />}
+        <Main
+          latitude={latitude}
+          longitude={longitude}
+          cities={cityInfo.name}
+          countryCode={countryCode}
+          countryName={countryName}
+        />}
 
       {/* <Main 
       latitude={latitude}
@@ -93,7 +94,7 @@ const handleCountryInput =(e)=>{
       <NewsList
       countryName={countryName}
       />} */}
-
+<Footer />
     </div>
   );
 }

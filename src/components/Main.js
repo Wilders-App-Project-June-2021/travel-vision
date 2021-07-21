@@ -106,7 +106,7 @@ const Main = (props)=>{
 
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
 
     </div>
     )
