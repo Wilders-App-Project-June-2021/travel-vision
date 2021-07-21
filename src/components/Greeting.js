@@ -1,4 +1,4 @@
-import "./Styles.css";
+import "./Main.css";
 import React, {useState, useEffect}from "react";
 import axios from "axios"
 import hello from '../data/hello'
@@ -29,7 +29,7 @@ const Greeting = (props)=>{
 
     const greetingMobile = 
         <span>
-            <h1 className="greeting">{getGreeting(props.countryCode)}! The time in</h1>
+            <h1 className="greeting-hello">{getGreeting(props.countryCode)}! The time in</h1>
             <p className="city-country pink">{props.cities}, {props.countryName}</p>
             <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
         </span>

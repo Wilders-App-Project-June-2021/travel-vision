@@ -3,8 +3,9 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.wrapper{
+.wrapper {
     margin: 0;
     width: 100vw;
     height: 120vh;
@@ -12,84 +13,100 @@ body {
     background-size:cover;
     background-position: center;
 }
-
-.second-bg{
-    background-color: #edf7c796;
+.second-bg {
+    background-color: #f2faaf88;
     margin: 0;
     height: 120vh;
 }
-
-.logo{
+.logo {
     margin-top: 2em;
     width: auto;
     height: 30vh;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
 }
-
 .swoopInTop{
     animation-duration: 2s !important;
 }
-
-.title{
+.title {
     font-family: 'Pacifico', cursive;
     font-size: 100px;
-    text-shadow: black;
     color: black;
     margin-top: -2em;
     font-weight: 900;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
 }
-
 .driveInLeft {
     animation-duration: 3s !important;
 }
-
-
-
-.input-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.input-wrapper {
+    margin: auto;
 }
-
-
  .input-country, .input-city, .submit {
-    width: 30%;
+    width: 40%;
     margin: 1em;
     padding: 1em;
     border-radius: 20px;
-    box-shadow: black 1px 2px 3px;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
     text-align: center;
     background-color: #ace9fc;
+    font-family: 'Fredoka One', cursive;
+    font-size: 4vw;
 }
-.input-country{
-    width:36%;
+.input-country {
+    width:48%;
     border: solid 2px black ;
     text-align-last:center;
 }
-
 .input-country select, .input-country option {
-    font-size: 1.5vw;
+    font-family: 'Fredoka One', cursive;
+    font-size: 4vw;
 }
-
-input:focus, textarea:focus, select:focus{
+input:focus, textarea:focus, select:focus {
     outline: none;
-    }
-
-/* @media screen and (min-width:860px){
-   
-    .input-wrapper{
-        display: block;
-    }
-
-} */
-
-.submit{
-    width: 25%;
+}
+.submit {
+    width: 20%;
     border-radius: 50px;
     background-color: #ee6161;
     font-weight: 900;
 }
 
 
+
+@media screen and (min-width:800px) {
+   
+.logo {
+    margin-top: 10%;
+    width: 30vh;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+}
+.title {
+    font-size: 9vw;
+}
+.input-country, .input-city, .submit {
+    width: 28%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 2vw;
+}
+.input-country {
+    width:30%;
+}
+.input-country select, .input-country option {
+    font-size: 2vw;
+}
+.submit {
+    font-family: 'Fredoka One', cursive;
+    width: 10%;
+    background-color: #ee6161;
+}
+
+}
 
 
 

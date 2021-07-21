@@ -1,4 +1,4 @@
-import "./Main.css";
+import "./Footer.css";
 import "./vivify.min.css"
 import React, {useState, useEffect}from "react";
 

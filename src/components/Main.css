@@ -5,74 +5,43 @@ a {
   text-decoration: none;
   color: rgb(255, 100, 108);
 }
+a:hover {
+  color: rgb(255, 224, 225);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.wrapper {
+  margin: 30px;
+}
+.logo {
+  width: 200px;
+}
+.blue {
+  color: rgb(56, 76, 255)
+}
+.pink {
+  color: rgb(253, 74, 106);
+}
+
 .container {
   margin-bottom: 60px;
   margin-top: 60px;
-}
-
-/* HEADER STYLES */
-.title-desktop {
-  display: none;
-}
-.logo-img-desktop {
-  display: none;
-}
-.input-box-desktop {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: baseline;
-  margin-top: 3px;
-  background-color: rgb(82, 197, 222);
-  padding: 0 0 10px 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  font-size: 1.5vw;
-  font-weight: bold;
-}
-
-.input-city-desktop, .input-country-desktop {
-  margin: 0 0 0 5px;
-  border-radius: 7px;
-  width: 200px;
-  font-size: 1.5vw;
-  border: solid 1px;
-  color: grey;
-  padding: 5px;
-}
-.input-country-desktop select, .input-country-desktop option {
-  font-size: 1.5vw;
-  color: black;
-  background-color: rgb(214, 240, 250);
-  border-radius: 10px;
-}
-input:focus, textarea:focus, select:focus{
-  outline: none;
-}
-.go {
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: 4px;
-  background-color: rgb(255, 100, 108);
-  font-weight: bold;
-  font-size: 1.5vw;
-  text-align: center;
-  padding: 5px;
-  border: solid 1px black;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 
 /* GREETING */
 .greeting {
   font-size: 7vw;
-}
-.pink {
-  color: rgb(253, 74, 106);
+  font-family: 'Fredoka One', cursive;
 }
 .city-country{
   font-size: 11vw;
   margin: -20px 15px -15px 15px;
+  font-family: 'Fredoka One', cursive;
+}
+.greeting-hello {
+  font-family: 'Fredoka One', cursive;
 }
 .greeting-container {
   text-align: center;
@@ -121,6 +90,9 @@ input:focus, textarea:focus, select:focus{
   border-bottom: solid 2px rgb(214, 240, 250) !important;
   box-shadow: 2px -2px 2px rgba(53, 53, 53, 0.171);
 }
+.tab-text {
+  font-family: 'Fredoka One', cursive;
+}
 
 
 .main-components {
@@ -128,70 +100,6 @@ input:focus, textarea:focus, select:focus{
   padding: 10px;
 }
 
-  /* FOOTER STYLES */
-.footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-.footer {
-  background-color: rgb(82, 197, 222);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-image: url("/img/globe.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.flight-link {
-  margin-top: -190px;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 10px 30px 10px 30px;
-  background-color: rgb(255, 100, 108);
-  font-weight: bold;
-  font-size: 3vw;
-  text-align: center;
-  border: solid 1px black;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-}
-.flight-link:hover, .go:hover {
-  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
-  background-color: rgb(255, 151, 156);
-}
-.small {
-  color: rgb(122, 122, 122);
-  font-size: 10px;
-  margin: 15px 0 15px 0;
-}
-.made-by {
-  font-size: 2.5vw;
-  margin: 50px 0 0 0;
-}
-.students {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-.student-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.footer-img {
-  display: none;
-}
-.names {
-  font-size: 3vw;
-  margin-top: 25px;
-  font-weight: bold;
-}
 
 
 
@@ -208,96 +116,6 @@ input:focus, textarea:focus, select:focus{
   margin: 0 10% 0 10%;
   text-align: center;
 }
-  
-  
-  /* HEADER STYLES */
-.header-desktop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin-top: 40px;
-  height: 170px;
-  background-color: rgb(82, 197, 222);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background: url(https://images.unsplash.com/photo-1592252032050-34897f779223?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG1hcHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
-  background-size: cover;
-  background-position: center;
-}
-.header-filter {
-  background-color: #c7f7f796;
-  height: 100%;
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-.logo-desktop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.title-desktop {
-  display: block;
-  margin-top: -85px;
-  font-family: 'Pacifico', cursive;
-  font-size: 35px;
-  -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
-}
-.logo-img-desktop {
-  display: block;
-  margin-top: -20px;
-  height: 160px;
-  -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
-}
-.input-box-desktop {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: baseline;
-  margin-top: 3px;
-  background-color: rgb(82, 197, 222);
-  padding: 0 0 10px 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  font-size: 1.5vw;
-  font-weight: bold;
-}
-
-.input-city-desktop, .input-country-desktop {
-  margin: 0 0 0 5px;
-  border-radius: 7px;
-  width: 200px;
-  font-size: 1.5vw;
-  border: solid 1px;
-  color: grey;
-  padding: 5px;
-}
-.input-country-desktop select, .input-country-desktop option {
-  font-size: 1.5vw;
-  color: black;
-  background-color: rgb(214, 240, 250);
-  border-radius: 10px;
-}
-input:focus, textarea:focus, select:focus{
-  outline: none;
-}
-.go {
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: 4px;
-  background-color: rgb(255, 100, 108);
-  font-weight: bold;
-  font-size: 1.5vw;
-  text-align: center;
-  padding: 5px;
-  border: solid 1px black;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-}
-  
 
 /* GREETING */
 .greeting {
@@ -342,34 +160,4 @@ input:focus, textarea:focus, select:focus{
   border-bottom-right-radius: 8px;
   margin-bottom: 10px;
 }
-    
-    
-  /* FOOTER STYLES */
-
-.flight-link {
-  margin-top: -280px;
-  font-size: 2vw;
-}
-.small {
-  font-size: 10px;
-  margin: 10px 0 20px 0;
-}
-.made-by {
-  font-size: 14px;
-  margin: 50px 0 20px 0px;
-}
-.footer-img {
-  display: block;
-  height: 60px;
-  width: 60px;
-  margin-bottom: 15px;
-  border-radius: 100%;
-  background-color: rgb(255, 100, 108);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-}
-.names {
-  font-size: 1.5vw;
-  margin-top: 0px;
-}
-
 }
