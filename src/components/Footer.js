@@ -13,12 +13,12 @@ const Footer = ()=> {
                 <span className="made-by">Made by <a href="http://wildcodeschool.com" target="new">Wild Code School</a> Students</span>
                 <div className="students">
                     <div className="student-box">
-                        <a href="" target="new"><img class="footer-img" src="" alt="" /></a>
-                        <a href="" target="new"><p className="names">Lorianne</p></a>
+                        <a href="https://www.linkedin.com/in/lorianne-aguilar/" target="new"><img class="footer-img" src="./img/lorianne.jpg" alt="Lorianne" /></a>
+                        <a href="https://github.com/Grailsidhe" target="new"><p className="names">Lorianne</p></a>
                     </div>
                     <div className="student-box">
-                        <a href="" target="new"><img class="footer-img" src="" alt="" /></a>
-                        <a href="" target="new"><p className="names">Salvatore</p></a>
+                        <a href="https://github.com/sal9110" target="new"><img class="footer-img" src="./img/salvatore.png" alt="Salvatore" /></a>
+                        <a href="https://github.com/sal9110" target="new"><p className="names">Salvatore</p></a>
                     </div>
                     <div className="student-box">
                         <a href="" target="new"><img class="footer-img" src="" alt="" /></a>

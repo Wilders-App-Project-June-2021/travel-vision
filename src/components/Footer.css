@@ -96,7 +96,8 @@
     margin-bottom: 15px;
     border-radius: 100%;
     background-color: rgb(255, 100, 108);
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    filter: drop-shadow(1px 1px 1px #222);
   }
   .names {
     font-size: 1.8vw;
