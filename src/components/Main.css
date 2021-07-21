@@ -63,6 +63,26 @@ input:focus, textarea:focus, select:focus{
 }
 
 
+/* GREETING */
+.greeting {
+  font-size: 7vw;
+}
+.pink {
+  color: rgb(253, 74, 106);
+}
+.city-country{
+  font-size: 11vw;
+  margin: -20px 15px -15px 15px;
+}
+.greeting-container {
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 30px -15px 30px;
+  -webkit-filter: drop-shadow(2px 2px 2px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+}
+
+
 /* TABS */
 .tab-text {
   white-space: nowrap;
@@ -151,7 +171,7 @@ input:focus, textarea:focus, select:focus{
 }
 .made-by {
   font-size: 2.5vw;
-  margin: 50px 0 -10px 0;
+  margin: 50px 0 0 0;
 }
 .students {
   width: 100%;
@@ -287,17 +307,14 @@ input:focus, textarea:focus, select:focus{
   font-size: 4.5vw;
   margin: 0;
 }
-.pink {
-  color: rgb(253, 74, 106);
-}
-.city-country{
+.city-country {
   font-size: 4vw;
   margin: 0 15px 0 15px;
 }
 .greeting-container {
-  text-align: center;
-  font-weight: bold;
   margin: 30px 30px -15px 30px;
+  -webkit-filter: drop-shadow(0 0 0 #222);
+  filter: drop-shadow(0 0 0 #222);
 }
 
     

@@ -94,7 +94,7 @@ const handleCountryInput =(e)=>{
       <NewsList
       countryName={countryName}
       />} */}
-<Footer />
+{/* <Footer /> */}
     </div>
   );
 }
