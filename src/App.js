@@ -9,8 +9,6 @@ import { useState, useEffect } from 'react';
 import Main from "./components/Main"
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
-import Desktop from "./components/Desktop"
-// import '../components/Desktop.css'
 
 function App() {
 
@@ -86,15 +84,6 @@ const handleCountryInput =(e)=>{
       countryCode={countryCode}
       countryName={countryName}
       />}
-
-      {/* <Desktop
-      latitude={latitude}
-      longitude={longitude}
-      cities={cityInfo.name}
-      countryCode={countryCode}
-      countryName={countryName}
-       /> */}
-
 
       {/* <Main 
       latitude={latitude}
