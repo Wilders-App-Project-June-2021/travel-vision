@@ -3,7 +3,7 @@ import React from "react";
 
 function Weather(props) {
   return (
-    <div className="Weather weather-container" id={props.key}>
+    <div className="Weather weather-container fadeIn" id={props.key}>
         <div className="day-weather">
             <div className="weather-header">
                 {props.header}: <small className="weather-header-detail">{props.alt}</small>

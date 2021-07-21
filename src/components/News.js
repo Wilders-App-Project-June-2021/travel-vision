@@ -9,7 +9,7 @@ const News = ({title,description,url, countryName, newsImg}) => {
 
     return(
 
-        <div className="news">
+        <div className="news fadeIn">
         <h3 className="news-title">{`${title}`}</h3>
             <div className="text-icon-wrapper">
             <img className="news-img" src={`${newsImg}`} alt="News Image" />

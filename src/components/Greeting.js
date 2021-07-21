@@ -45,7 +45,7 @@ const Greeting = (props)=>{
 
     return (
 
-        <div className="greeting-container">
+        <div className="greeting-container swoopInTop">
         {greetingDesktop}
         </div>
     )

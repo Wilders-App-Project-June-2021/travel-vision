@@ -51,6 +51,9 @@ a:hover {
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
+.swoopInTop {
+  animation-duration: 2s !important;
+}
 
 
 /* TABS */

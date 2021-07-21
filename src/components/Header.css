@@ -2,6 +2,12 @@
 .title-desktop {
   display: none;
 }
+.jumpInLeft {
+  animation-duration: 2s !important;
+}
+.popInTop {
+  animation-duration: 2s !important;
+}
 .logo-img-desktop {
   display: none;
 }

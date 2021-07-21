@@ -12,8 +12,8 @@ const Header = ()=> {
             <div className="header-desktop">
                 <div className="header-filter">
                     <div className="logo-desktop">
-                        <img className="logo-img-desktop" src="../img/landscape.png" alt="" />
-                        <b className="title-desktop">Travel Vision</b>
+                        <img className="logo-img-desktop jumpInLeft" src="../img/landscape.png" alt="" />
+                        <b className="title-desktop popInTop">Travel Vision</b>
                     </div>
                 </div>
             </div>
