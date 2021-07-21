@@ -3,104 +3,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Fredoka+One&display=swap');
 
 .footer-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  .footer {
-    background-color: rgb(82, 197, 222);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-image: url("/img/globe.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-  .flight-link {
-    margin-top: -190px;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px 30px 10px 30px;
-    background-color: rgb(255, 100, 108);
-    font-weight: bold;
-    font-size: 3vw;
-    font-family: 'Fredoka One', cursive;
-    text-align: center;
-    border: solid 1px black;
-    -webkit-filter: drop-shadow(1px 1px 2px #222);
-    filter: drop-shadow(1px 1px 2px #222);
-  }
-  .flight-link:hover, .go:hover {
-    -webkit-filter: drop-shadow(1px 1px 1px #222);
-    filter: drop-shadow(1px 1px 1px #222);
-    background-color: rgb(255, 131, 137);
-  }
-  .small {
-    color: rgb(54, 54, 54);
-    font-size: 2.5vw;
-    margin: 10px 0 15px 0;
-  }
-  .made-by {
-    font-size: 3vw;
-    margin: 50px 0 0 0;
-    font-family: 'Advent Pro', sans-serif;
-    -webkit-filter: drop-shadow(1px 1px 1px #222);
-    filter: drop-shadow(1px 1px 1px #222);
-  }
-  .students {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .student-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-img {
-    display: none;
-  }
-  .names {
-    font-size: 4vw;
-    margin-top: 25px;
-    font-weight: bold;
-    font-family: 'Advent Pro', sans-serif;
-    -webkit-filter: drop-shadow(1px 1px 1px #222);
-    filter: drop-shadow(1px 1px 1px #222);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.footer {
+  background-color: rgb(82, 197, 222);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-image: url("/img/globe.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.flight-link {
+  margin-top: -190px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 30px 10px 30px;
+  background-color: rgb(255, 100, 108);
+  font-weight: bold;
+  font-size: 3vw;
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  border: solid 1px black;
+  -webkit-filter: drop-shadow(1px 1px 2px #222);
+  filter: drop-shadow(1px 1px 2px #222);
+}
+.flight-link:hover, .go:hover {
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
+  background-color: rgb(255, 131, 137);
+}
+.small {
+  color: rgb(54, 54, 54);
+  font-size: 2.5vw;
+  margin: 10px 0 15px 0;
+}
+.made-by {
+  font-size: 3vw;
+  margin: 50px 0 0 0;
+  font-family: 'Advent Pro', sans-serif;
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
+}
+.students {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.student-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.footer-img {
+  display: none;
+}
+.names {
+  font-size: 4vw;
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: 'Advent Pro', sans-serif;
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
+} 
   
-  
-  @media screen and (min-width:800px){
-  .flight-link {
-    margin-top: -280px;
-    font-size: 2vw;
-  }
-  .small {
-    font-size: 1.3vw;
-    margin: 10px 0 20px 0;
-  }
-  .made-by {
-    font-size: 1.8vw;
-    margin: 50px 0 20px 0px;
-  }
-  .footer-img {
-    display: block;
-    height: 60px;
-    width: 60px;
-    margin-bottom: 15px;
-    border-radius: 100%;
-    background-color: rgb(255, 100, 108);
-    -webkit-filter: drop-shadow(1px 1px 1px #222);
-    filter: drop-shadow(1px 1px 1px #222);
-  }
-  .names {
-    font-size: 1.8vw;
-    margin-top: 0px;
-  }
-  }
+@media screen and (min-width:800px){
+.flight-link {
+  margin-top: -280px;
+  font-size: 2vw;
+}
+.small {
+  font-size: 1.3vw;
+  margin: 10px 0 20px 0;
+}
+.made-by {
+  font-size: 1.8vw;
+  margin: 50px 0 20px 0px;
+}
+.footer-img {
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 15px;
+  border-radius: 100%;
+  background-color: rgb(255, 100, 108);
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
+}
+.names {
+  font-size: 1.8vw;
+  margin-top: 0px;
+}
+}

@@ -112,6 +112,9 @@
 .health-news-link{
   margin: auto;
 }
+.fadeIn{
+  animation-duration: .5s !important;
+}
 
 
 

@@ -38,7 +38,7 @@ body {
     filter: drop-shadow(2px 2px 2px #222);
 }
 .driveInLeft {
-    animation-duration: 5s !important;
+    animation-duration: 4s !important;
 }
 .input-wrapper {
     margin: auto;
