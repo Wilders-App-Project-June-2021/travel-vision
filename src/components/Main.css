@@ -32,23 +32,24 @@ a:hover {
 
 /* GREETING */
 .greeting {
-  font-size: 7vw;
+  font-size: 8vw;
   font-family: 'Fredoka One', cursive;
 }
-.city-country{
+.city-country {
   font-size: 11vw;
   margin: -20px 15px -15px 15px;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-hello {
+  font-size: 8vw;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-container {
   text-align: center;
   font-weight: bold;
   margin: 30px 30px -15px 30px;
-  -webkit-filter: drop-shadow(2px 2px 2px #222);
-  filter: drop-shadow(2px 2px 2px #222);
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
 }
 
 

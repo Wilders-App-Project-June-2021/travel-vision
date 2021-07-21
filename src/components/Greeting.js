@@ -46,7 +46,7 @@ const Greeting = (props)=>{
     return (
 
         <div className="greeting-container">
-        {greetingDesktop}
+        {greetingMobile}
         </div>
     )
     }
