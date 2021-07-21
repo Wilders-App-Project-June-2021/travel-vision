@@ -1,12 +1,14 @@
 import React, {useState,useEffect}from "react";
 import axios from "axios";
 import "./Main.css";
+import "./vivify.min.css"
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
-// import Footer from "./Footer"
+import Footer from "./Footer"
+import Header from "./Header"
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
@@ -21,18 +23,17 @@ const Main = (props)=>{
        ]
 
     const [activeTab,setActiveTab]= useState([...tabClasses])
-    const [weatherInfo, setWeatherInfo] = useState(null);
+    const [weatherInfo, setWeatherInfo] = useState(null)
 
 
     useEffect(()=>{
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
           .then((weather) => {
             setWeatherInfo(weather.data)
-            
           })
           .catch((error) => {
             console.log(error);
-          });
+          })
       },[])
 
     const getActive = (e)=>{
@@ -45,12 +46,16 @@ const Main = (props)=>{
     }
 
     return (
-    <div className="container">
+    <div className="container container-desktop">
 
-        {weatherInfo ?<Greeting
+
+        <Header />
+
+        {weatherInfo ? <Greeting
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
+            countryCode={props.countryCode}
          />
          :
          <Loader
@@ -83,22 +88,25 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        {activeTab[1].weather &&
-        <WeatherInfo 
-        weatherInfo={weatherInfo.daily}
-        latitude={props.latitude}
-        longitude={props.longitude}
-        />
-    }
-        {activeTab[0].news && <NewsList
-        countryName={props.countryName}
-        />}
-        {activeTab[3].health && <HealthInfo
-        countryName={props.countryName}/>}
+            {activeTab[1].weather &&
+                <WeatherInfo 
+                weatherInfo={weatherInfo.daily}
+                latitude={props.latitude}
+                longitude={props.longitude}
+                />
+            }
+            {activeTab[0].news && props.countryName && 
+                <NewsList
+                countryName={props.countryName}
+                />}
+            {activeTab[3].health && 
+                <HealthInfo
+                countryName={props.countryName}
+                />}
 
         </div>
 
-        {/* <Footer /> */}
+        <Footer />
 
     </div>
     )

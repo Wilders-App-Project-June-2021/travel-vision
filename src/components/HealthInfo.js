@@ -17,8 +17,11 @@ function HealthInfo(props) {
         axios
         .get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
         .then((covidNews)=>{
-          const filtered = covidData.data.Countries.filter((item) => item.Country === props.countryName)
-          setHealthInfo(filtered[0]);
+          if(covidData.data.Countries){
+            const filtered = covidData.data.Countries.filter((item) => item.Country === props.countryName)
+            console.log(covidData)
+            setHealthInfo(filtered[0]);
+          }
           sethealthNews(covidNews.data.articles[0])
           setApiResponse(false)
          })
@@ -34,20 +37,20 @@ function HealthInfo(props) {
     getData();
   }, []);
 
-
-
+  const notAvailable = (path => path === undefined ?  "caching in progress" : path)
+  
   return (
     <div>
       {!apiResponse ?
           <Health
             key={healthInfo && healthInfo.ID}
             countryName={props.countryName}
-            confirmed={healthInfo && healthInfo.TotalConfirmed}
-            newConfirmed={healthInfo && healthInfo.NewConfirmed}
-            recovered={healthInfo && healthInfo.TotalRecovered}
-            newRecovered={healthInfo && healthInfo.NewRecovered}
-            deaths={healthInfo && healthInfo.TotalDeaths}
-            newDeaths={healthInfo && healthInfo.NewDeaths}
+            confirmed={healthInfo && notAvailable(healthInfo.TotalConfirmed)}
+            newConfirmed={healthInfo && notAvailable(healthInfo.NewConfirmed)}
+            recovered={healthInfo && notAvailable(healthInfo.TotalRecovered)}
+            newRecovered={healthInfo && notAvailable(healthInfo.NewRecovered)}
+            deaths={healthInfo && notAvailable(healthInfo.TotalDeaths)}
+            newDeaths={healthInfo && notAvailable(healthInfo.NewDeaths)}
             title={healthNews && healthNews.title }
             description={healthNews && healthNews.description}
             url={healthNews && healthNews.url}

@@ -1,25 +1,71 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 100, 108);
+}
+a:hover {
+  color: rgb(255, 224, 225);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.wrapper {
+  margin: 30px;
+}
+.logo {
+  width: 200px;
+}
+.blue {
+  color: rgb(56, 76, 255)
+}
+.pink {
+  color: rgb(253, 74, 106);
+}
+
 .container {
   margin-bottom: 60px;
   margin-top: 60px;
 }
 
+
+/* GREETING */
+.greeting {
+  font-size: 8vw;
+  font-family: 'Fredoka One', cursive;
+}
+.city-country {
+  font-size: 11vw;
+  margin: -20px 15px -15px 15px;
+  font-family: 'Fredoka One', cursive;
+}
+.greeting-hello {
+  font-size: 8vw;
+  font-family: 'Fredoka One', cursive;
+}
+.greeting-container {
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 30px -15px 30px;
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
+}
+
+
+/* TABS */
 .tab-text {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   white-space: nowrap;
   font-size: 4vw;
 }
-
 .tabs-container {
   display: flex;
   margin-top: 60px;
-  width: 100%;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   border-bottom: solid 5px rgb(0, 0, 0);
 }
-
 .tab-div {
   display: flex;
   flex-wrap: nowrap;
@@ -28,33 +74,91 @@
   height: 80px;
   width: 100%;
   background-color: rgb(255, 100, 108);
-  margin-bottom: -5px;
-  margin-left: 1px;
-  margin-right: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: 0 1px -5px 1px;
+  padding: 0 15px 0 15px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
-  box-shadow: -2px -2px 2px rgba(53, 53, 53, 0.4);
-  border-top: solid 2px rgb(0, 0, 0);
-  border-right: solid 2px rgb(0, 0, 0);
-  border-left: solid 2px rgb(0, 0, 0);
-  border-bottom: solid 2px rgb(0, 0, 0);
+  -webkit-filter: drop-shadow(1px 0 0 #222);
+  border: solid 2px rgb(0, 0, 0);
   cursor: pointer;
 }
 .tab-div:hover {
   background-color: rgb(214, 240, 250);
 }
-
 .active{
   background-color: rgb(214, 240, 250);
-  border-bottom: solid 2px rgb(214, 240, 250);
-  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
+  border-bottom: solid 2px rgb(214, 240, 250) !important;
+  box-shadow: 2px -2px 2px rgba(53, 53, 53, 0.171);
 }
+.tab-text {
+  font-family: 'Fredoka One', cursive;
+}
+
 
 .main-components {
   background-color: rgb(214, 240, 250);
   padding: 10px;
-  height: 100%;
+}
+
+
+
+
+/* BIG SCREEN */
+@media screen and (min-width:800px){
+
+.container-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
+  filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
+  font-family: 'Segoe UI';
+  margin: 0 10% 0 10%;
+  text-align: center;
+}
+
+/* GREETING */
+.greeting {
+  font-size: 3vw;
+}
+.greeting-hello {
+  font-size: 4.5vw;
+  margin: 0;
+}
+.city-country {
+  font-size: 4vw;
+  margin: 0 15px 0 15px;
+}
+.greeting-container {
+  margin: 30px 30px -15px 30px;
+  -webkit-filter: drop-shadow(0 0 0 #222);
+  filter: drop-shadow(0 0 0 #222);
+}
+
+    
+  /* TABS STYLES */
+.tabs-container {
+  border-bottom: solid 1px rgb(0, 0, 0);
+}
+.tab-text {
+  font-size: 2vw;
+}
+.tab-div {
+  height: 45px;
+  width: 90%;
+  margin: 0 1px -5px 1px;
+  padding: 0 9px 0 9px;
+  border: solid 1px rgb(0, 0, 0);
+}
+  
+  
+.main-components {
+  height: 100vh;
+  border: solid 1px grey;
+  border-top: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 10px;
+}
 }

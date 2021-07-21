@@ -30,16 +30,21 @@ return(
             title = {news.title}
             description = {news.description}
             url={news.url}
+            countryName={props.countryName}
+            newsImg={news.urlToImage}
             />
         })
         :
-        <Loader
-            type="Plane"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            radius={500}  
-        />
+        <div className="no-news"><h2>We could not find any current news articles for {`${props.countryName}`}.</h2></div>
+
+        // <Loader
+        //     type="Plane"
+        //     color="#00BFFF"
+        //     height={100}
+        //     width={100}
+        //     radius={500}
+        //     timeout={4000}  
+        // />
     
     }
     </div>
