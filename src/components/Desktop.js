@@ -4,12 +4,14 @@ import React from "react";
 import Loader from "react-loader-spinner";
 import "./vivify.min.css";
 import "./Desktop.css";
+import "./Main.css";
 import nations from "../data/nations";
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
+import Footer from "./Footer";
 
 
 const Desktop = (props)=>{
@@ -137,16 +139,16 @@ const Desktop = (props)=>{
 
             <div className="Tabs-desktop">
                 <div id="tabs-container-desktop">
-                <button className={activeTab[0].news? "tab-div-desktop active":"tab-div-desktop"} id="news" onClick={(e) => getActive(e)} id="news-tab">
+                <button className={activeTab[0].news? "tab-div-desktop active":"tab-div-desktop"} id="news" onClick={(e) => getActive(e)}>
                     <h3 className="tab-text-desktop" id="news">News</h3>
                 </button>
-                <button className={activeTab[1].weather? "tab-div-desktop active":"tab-div-desktop"} id="weather" onClick={(e) => getActive(e)} id="weather-tab">
+                <button className={activeTab[1].weather? "tab-div-desktop active":"tab-div-desktop"} id="weather" onClick={(e) => getActive(e)}>
                     <h3 className="tab-text-desktop" id="weather">Weather</h3>
                 </button>
-                <button className={activeTab[2].currency? "tab-div-desktop active":"tab-div-desktop"} id="currency" onClick={(e) => getActive(e)} id="currency-tab">
+                <button className={activeTab[2].currency? "tab-div-desktop active":"tab-div-desktop"} id="currency" onClick={(e) => getActive(e)}>
                     <h3 className="tab-text-desktop" id="currency">Currency</h3>
                 </button>
-                <button className={activeTab[3].health? "tab-div-desktop active":"tab-div-desktop"} id="health" onClick={(e) => getActive(e)} id="health-tab">
+                <button className={activeTab[3].health? "tab-div-desktop active":"tab-div-desktop"} id="health" onClick={(e) => getActive(e)}>
                     <h3 className="tab-text-desktop" id="health">Health Watch</h3>
                 </button>
                 </div>
@@ -171,27 +173,7 @@ const Desktop = (props)=>{
 
             </div>
 
-            <div className="footer-wrapper-desktop">
-                <div className="footer-desktop">
-                        <span className="made-by-desktop">Made by <a href="http://wildcodeschool.com" target="new">Wild Code School</a> Students</span>
-                        <div className="students-desktop">
-                            <div className="student-box-desktop">
-                                <a href="" target="new"><img class="footer-img-desktop" src="" alt="" /></a>
-                                <p className="names-desktop">Lorianne</p>
-                            </div>
-                            <div className="student-box-desktop">
-                                <a href="" target="new"><img class="footer-img-desktop" src="" alt="" /></a>
-                                <p className="names-desktop">Salvatore</p>
-                            </div>
-                            <div className="student-box-desktop">
-                                <a href="" target="new"><img class="footer-img-desktop" src="" alt="" /></a>
-                                <p className="names-desktop">Natalie</p>
-                            </div>
-                        </div>
-                        <span className="small">@ 2021 Travel Vision</span>
-                </div>
-                <div className="flight-link-desktop">Book a flight</div>
-            </div>
+                <Footer />
         
         </div>
 

@@ -12,7 +12,7 @@
   font-size: 3.2vw;
 }
 .health-container {
-  margin-top: 15px;
+  margin: 4px;
 }
 .health-cases-div-container {
   background-color: white;
@@ -117,7 +117,7 @@
 
 
 @media screen and (min-width:800px){
-
+  
 .new-total {
   font-size: 2vw;
 }
