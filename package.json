@@ -1,4 +1,5 @@
 {
+  "homepage": "http://wilders-app-project-june-2021.github.io/travel-vision/",
   "name": "travel-vision",
   "version": "0.1.0",
   "private": true,
@@ -12,14 +13,16 @@
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
     "react-responsive": "^8.2.0",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "4.0.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
