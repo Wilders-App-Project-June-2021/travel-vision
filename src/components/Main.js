@@ -7,7 +7,8 @@ import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
-// import Footer from "./Footer"
+import Footer from "./Footer"
+import Header from "./Header"
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
@@ -45,7 +46,10 @@ const Main = (props)=>{
     }
 
     return (
-    <div className="container">
+    <div className="container container-desktop">
+
+
+        <Header />
 
         {weatherInfo ? <Greeting
             cities={props.cities}
@@ -84,22 +88,25 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        {activeTab[1].weather &&
-        <WeatherInfo 
-        weatherInfo={weatherInfo.daily}
-        latitude={props.latitude}
-        longitude={props.longitude}
-        />
-    }
-        {activeTab[0].news && props.countryName && <NewsList
-        countryName={props.countryName}
-        />}
-        {activeTab[3].health && <HealthInfo
-        countryName={props.countryName}/>}
+            {activeTab[1].weather &&
+                <WeatherInfo 
+                weatherInfo={weatherInfo.daily}
+                latitude={props.latitude}
+                longitude={props.longitude}
+                />
+            }
+            {activeTab[0].news && props.countryName && 
+                <NewsList
+                countryName={props.countryName}
+                />}
+            {activeTab[3].health && 
+                <HealthInfo
+                countryName={props.countryName}
+                />}
 
         </div>
 
-        {/* <Footer /> */}
+        <Footer />
 
     </div>
     )
