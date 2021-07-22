@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/travel-vision/static/css/main.de296c7a.chunk.css",
+    "main.js": "/travel-vision/static/js/main.ef4be431.chunk.js",
+    "main.js.map": "/travel-vision/static/js/main.ef4be431.chunk.js.map",
+    "runtime-main.js": "/travel-vision/static/js/runtime-main.ce7b3f0e.js",
+    "runtime-main.js.map": "/travel-vision/static/js/runtime-main.ce7b3f0e.js.map",
+    "static/css/2.ab75b8d7.chunk.css": "/travel-vision/static/css/2.ab75b8d7.chunk.css",
+    "static/js/2.5ab5b76b.chunk.js": "/travel-vision/static/js/2.5ab5b76b.chunk.js",
+    "static/js/2.5ab5b76b.chunk.js.map": "/travel-vision/static/js/2.5ab5b76b.chunk.js.map",
+    "index.html": "/travel-vision/index.html",
+    "static/css/2.ab75b8d7.chunk.css.map": "/travel-vision/static/css/2.ab75b8d7.chunk.css.map",
+    "static/css/main.de296c7a.chunk.css.map": "/travel-vision/static/css/main.de296c7a.chunk.css.map",
+    "static/js/2.5ab5b76b.chunk.js.LICENSE.txt": "/travel-vision/static/js/2.5ab5b76b.chunk.js.LICENSE.txt",
+    "static/media/newspaper.7d37d719.svg": "/travel-vision/static/media/newspaper.7d37d719.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce7b3f0e.js",
+    "static/css/2.ab75b8d7.chunk.css",
+    "static/js/2.5ab5b76b.chunk.js",
+    "static/css/main.de296c7a.chunk.css",
+    "static/js/main.ef4be431.chunk.js"
+  ]
+}
