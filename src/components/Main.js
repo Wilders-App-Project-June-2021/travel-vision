@@ -49,7 +49,7 @@ const Main = (props)=>{
     <div className="container container-desktop">
 
 
-        <Header />
+        {/* <Header /> */}
 
         {weatherInfo ? <Greeting
             cities={props.cities}
@@ -105,8 +105,8 @@ const Main = (props)=>{
                 />}
 
         </div>
-
-        <Footer />
+       
+        {/* <Footer /> */}
 
     </div>
     )

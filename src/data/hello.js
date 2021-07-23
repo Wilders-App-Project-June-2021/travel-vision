@@ -103,7 +103,7 @@ const greeting= [
 {'iq':'Chlomo'},
 {'ir':':Salam'},
 {'is': 'Halló'},
-{'it': 'Ciào'},
+{'it': 'Ciao'},
 {'jm': 'Hello'},
 {'jo':'Salam'},
 {'jp': 'Kon\'nichiwa'},
