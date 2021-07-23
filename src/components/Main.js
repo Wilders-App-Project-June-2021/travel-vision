@@ -51,21 +51,22 @@ const Main = (props)=>{
 
         <Header />
 
-        {weatherInfo ? <Greeting
+        {weatherInfo ?
+            <Greeting
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
             countryCode={props.countryCode}
-         />
-         :
-         <Loader
-          type="Plane"
-          color="#00BFFF"
-          height={100}
-          width={100}
-          radius={500}  
-      />
-         }
+            />
+            :
+            <Loader
+            type="Plane"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            radius={500}  
+            />
+        }
 
         
 
