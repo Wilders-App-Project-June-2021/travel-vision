@@ -21,7 +21,7 @@ function HealthInfo(props) {
         }
         setApiResponse(false)
         axios
-        .get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
+        .get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&from=${props.getDate()}pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
         .then((covidNews)=>{
           sethealthNews(covidNews.data.articles[0])
           setApiResponse(false)
@@ -46,6 +46,7 @@ function HealthInfo(props) {
           <Health
             key={healthInfo && healthInfo.ID}
             countryName={props.countryName}
+            countryCode={props.countryCode}
             confirmed={healthInfo && notAvailable(healthInfo.TotalConfirmed)}
             newConfirmed={healthInfo && notAvailable(healthInfo.NewConfirmed)}
             recovered={healthInfo && notAvailable(healthInfo.TotalRecovered)}
