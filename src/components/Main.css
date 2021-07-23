@@ -24,12 +24,6 @@ a:hover {
   color: rgb(253, 74, 106);
 }
 
-.container {
-  margin-bottom: 60px;
-  margin-top: 60px;
-  height: auto;
-}
-
 
 /* GREETING */
 .greeting {
@@ -117,18 +111,6 @@ a:hover {
 /* BIG SCREEN */
 @media screen and (min-width:800px){
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  -webkit-filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
-  filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
-  font-family: 'Segoe UI';
-  margin: 0 10% 0 10%;
-  text-align: center;
-  height: auto;
-}
-
 /* GREETING */
 .greeting {
   font-size: 3vw;
@@ -171,5 +153,25 @@ a:hover {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-bottom: 10px;
+}
+}
+
+
+
+@media screen and (min-width:1070px){
+
+.tab-text {
+  font-size: 23px;
+}
+
+/* GREETING */
+.greeting {
+  font-size: 40px;
+}
+.greeting-hello {
+  font-size: 45px;
+}
+.city-country {
+  font-size: 35px;
 }
 }

@@ -83,3 +83,17 @@
     width: 65px;
 }
 }
+
+@media screen and (min-width:1070px){
+.weather-header, .weather-header-detail {
+    font-size: 18px;
+}
+.weather-detail {
+    height: 20px;
+    width: 100px;
+    font-size: 20px;
+}
+.weather-date {
+    font-size: 20px;
+}
+}

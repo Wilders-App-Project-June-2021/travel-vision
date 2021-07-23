@@ -32,7 +32,7 @@
 .input-city-desktop, .input-country-desktop {
   margin: 7px 0 5px 5px;
   border-radius: 7px;
-  width: 150px;
+  width: 40%;
   font-size: 3vw;
   border: solid 1px;
   color: grey;
@@ -104,9 +104,6 @@ input:focus, textarea:focus, select:focus{
   -webkit-filter: drop-shadow(2px 2px 2px #222);
   filter: drop-shadow(2px 2px 2px #222);
 }
-
-
-
 .input-box-desktop {
   flex-direction: row;
   align-items: baseline;
@@ -116,7 +113,6 @@ input:focus, textarea:focus, select:focus{
   -webkit-filter: drop-shadow(0 0 0 #222);
   filter: drop-shadow(0 0 0 #222);
 }
-
 .input-city-desktop, .input-country-desktop {
   margin: 0 0 0 5px;
   width: 200px;
@@ -137,3 +133,10 @@ input:focus, textarea:focus, select:focus{
 
 
 
+@media screen and (min-width:1070px){
+
+.input-city-desktop, .input-country-desktop, .go, .input-box-desktop, .input-country-desktop select, .input-country-desktop option {
+  font-size: 20px;
+}
+
+}

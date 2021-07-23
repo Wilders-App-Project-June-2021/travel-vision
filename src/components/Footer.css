@@ -22,7 +22,7 @@
   background-position: center;
 }
 .flight-link {
-  margin-top: -190px;
+  margin-top: -250px;
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 30px 10px 30px;
@@ -34,6 +34,7 @@
   border: solid 1px black;
   -webkit-filter: drop-shadow(1px 1px 2px #222);
   filter: drop-shadow(1px 1px 2px #222);
+  position:fixed;
 }
 .flight-link:hover, .go:hover {
   -webkit-filter: drop-shadow(1px 1px 1px #222);
@@ -77,7 +78,6 @@
   
 @media screen and (min-width:800px){
 .flight-link {
-  margin-top: -280px;
   font-size: 2vw;
 }
 .small {
@@ -101,5 +101,21 @@
 .names {
   font-size: 1.8vw;
   margin-top: 0px;
+}
+}
+
+@media screen and (min-width:1070px){
+
+.flight-link {
+  font-size: 22px;
+}
+.small {
+  font-size: 12px;
+}
+.made-by {
+  font-size: 15px;
+}
+.names {
+  font-size: 20px;
 }
 }

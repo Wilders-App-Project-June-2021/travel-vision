@@ -24,10 +24,6 @@ const Footer = ()=> {
                         <a href="https://github.com/sal9110" target="new"><img class="footer-img" src={salvo} onMouseOver={()=>setSalvo(`${github}`)} onMouseOut={() => setSalvo('./img/salvatore.png')} alt="Salvatore" /></a>
                         <a href="http://linkedin.com/in/salvatore-patti-9b5198141 " target="new"><p className="names">Salvatore</p></a>
                     </div>
-                    <div className="student-box">
-                        <a href="" target="new"><img class="footer-img" src="" alt="" /></a>
-                        <a href="" target="new"><p className="names">Natalie</p></a>
-                    </div>
                 </div>
                 <span className="small">@ 2021 Travel Vision</span>
         </div>
