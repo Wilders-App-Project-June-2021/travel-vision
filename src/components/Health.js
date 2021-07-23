@@ -5,12 +5,13 @@ import logo from './newspaper.svg'
 function Health(props) {
 
   const coronaCases =
-    <div className="health-cases-wrapper">
+    <div className="health-cases-wrapper fadeIn">
 
       <div className="health-cases-div-container">
-        <div className="health-cases-div pale-pink">
-          <h1>Current Coronavirus Cases</h1>
+        <div className="health-cases-div-title pale-pink bold">
+          Current Coronavirus Cases
         </div>
+        
         <div className="health-cases-div">
           <div className="health-case-detail bold pale-pink-2">
             New
@@ -50,24 +51,27 @@ function Health(props) {
     </div>;
 
   const noNews =
-    <div className="no-news"><h2>We could not find any current Coronavirus news articles for {`${props.countryName}`}.</h2></div>;
+    <div className="no-news fadeIn"><h2>We could not find any current Coronavirus news articles for {`${props.countryName}`}.</h2></div>;
 
-    const noCoronaCases =
-    <div className="no-news"><h2>We could not find any current Coronavirus information for {`${props.countryName}`}.</h2></div>;
+  const noCoronaCases =
+    <div className="no-news fadeIn"><h2>We could not find any current Coronavirus information for {`${props.countryName}`}.</h2></div>;
 
-    const withNews =
-    <div className="health-news-wrapper">
-    <div className="health-news">
-    <h3 className="health-news-title">{`${props.title}`}</h3>
-    <img className="health-news-image" src={`${props.image}`} alt={`${props.title}`} />
-    <div className="health-text-icon-wrapper">
-    <p className="health-news-description">
-    {`${props.description}`}
-    </p>
-    <a href={`${props.url}`} className = "health-news-link" ><img className="health-news-icon" src={`${logo}`} alt={`${props.title}`}/></a>
-    </div>
-    </div>
+  const withNews =
+    <div className="health-news-wrapper fadeIn">
+      <div className="health-news">
+        <h3 className="health-news-title">{`${props.title}`}</h3>
+        <img className="health-news-image" src={`${props.image}`} alt={`${props.title}`} />
+        <div className="health-text-icon-wrapper">
+          <p className="health-news-description">
+            {`${props.description}`}
+          </p>
+          <a href={`${props.url}`} className = "health-news-link" ><img className="health-news-icon" src={`${logo}`} alt={`${props.title}`}/></a>
+        </div>
+      </div>
     </div>;
+
+
+
 
   if(props.description && props.confirmed){
   return (
@@ -78,7 +82,7 @@ function Health(props) {
   )
   } else if (!props.description && props.confirmed){
     return (
-      <div id={props.key}>
+      <div className="health-container"  id={props.key}>
         {coronaCases}
         {noNews}
       </div>

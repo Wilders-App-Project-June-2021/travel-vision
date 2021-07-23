@@ -31,6 +31,7 @@ return(
             description = {news.description}
             url={news.url}
             countryName={props.countryName}
+            newsImg={news.urlToImage}
             />
         })
         :

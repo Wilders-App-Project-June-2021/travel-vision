@@ -1,7 +1,7 @@
 .bold {
   font-weight: bold;
 }
-h1 {
+.health-cases-div {
   font-size: 4vw;
   padding: 10px;
 }
@@ -12,7 +12,7 @@ h1 {
   font-size: 3.2vw;
 }
 .health-container {
-  margin-top: 15px;
+  margin: 4px;
 }
 .health-cases-div-container {
   background-color: white;
@@ -23,11 +23,19 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+.health-cases-div-title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 15px;
+  font-size: 4vw;
+  margin-bottom: 2px;
+}
 .health-cases-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 .health-case-detail { 
   width: 50%;
@@ -36,10 +44,10 @@ h1 {
   font-size: 3.5vw;
   background-color: rgb(252, 235, 238);
 }
-.pale-pink{
+.pale-pink {
   background-color: rgb(255, 183, 183);
 }
-.pale-pink-2{
+.pale-pink-2 {
   background-color: rgb(248, 205, 205);
 }
 .health-news-wrapper, .health-cases-wrapper {
@@ -49,7 +57,7 @@ h1 {
   width: 100%;
   background-color: rgb(252, 235, 238);
 }
-.health-news, .no-news{
+.health-news, .no-news {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -66,34 +74,76 @@ h1 {
   background-color: rgb(252, 235, 238);
   text-align: left;
   padding-left: 20px;
+  font-size: 2vw;
 }
-.health-news-title{
+.health-news-title {
   margin: 0;
   text-align: left;
   padding: 10px;
   font-weight: bold;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: rgb(255, 183, 183);
   font-size: 4vw;
   box-shadow: 0px 1px 0px rgba(5, 5, 5, 0.192);
 }
-.health-text-icon-wrapper{
+.health-text-icon-wrapper {
   display: flex;
   justify-content: space-between;
 }
-.health-news-description{
+.health-news-description {
   padding: 0.5rem;
   margin: 2px;
   text-align: left;
   font-size: 3.5vw;
 }
-.health-news-icon{
+.health-news-icon {
   width: 50vh;
   max-width: 2em;
   max-width: 2.5em;
   padding: 20px;
 }
+.health-news-img {
+  height: 200px;
+  width: 200px;
+  margin: 5px 5px 5px 0;
+  background-color: rgb(236, 208, 208);
+}
 .health-news-link{
   margin: auto;
+}
+.fadeIn{
+  animation-duration: .5s !important;
+}
+
+
+
+
+@media screen and (min-width:800px){
+  
+.new-total {
+  font-size: 2vw;
+}
+.shrink {
+  font-size: 1.5vw;
+}
+.health-cases-div {
+  font-size: 2vw;
+}
+.health-cases-div-title {
+  font-size: 2vw;
+}
+.health-case-detail { 
+  font-size: 1.5vw;
+}
+.health-news-title {
+  font-size: 2vw;
+}
+.health-news-description {
+  font-size: 1.8vw;
+}
+.no-news {
+  font-size: 1.5vw;
+}
+
 }

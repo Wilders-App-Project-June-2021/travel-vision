@@ -1,4 +1,4 @@
-import "./Styles.css";
+import "./Main.css";
 import React, {useState, useEffect}from "react";
 import axios from "axios"
 import hello from '../data/hello'
@@ -27,12 +27,26 @@ const Greeting = (props)=>{
 
     setInterval(()=> setCurrentTime(getTime()),1000)
 
-
-    return (
-        <div className="greeting-container">
-            <h1 className="greeting">{getGreeting(props.countryCode)}! The time in</h1>
+    const greetingMobile = 
+        <span>
+            <h1 className="greeting-hello">{getGreeting(props.countryCode)}! The time in</h1>
             <p className="city-country pink">{props.cities}, {props.countryName}</p>
             <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
+        </span>
+
+    const greetingDesktop =
+        <span>
+            <p className="greeting-hello">{getGreeting(props.countryCode)}!</p>
+            <span className="greeting"> The time in</span>
+            <span className="city-country pink">{props.cities}, {props.countryName}</span>
+            <span className="greeting">is <b className="pink greeting">{currentTime}</b></span>
+        </span>
+
+
+    return (
+
+        <div className="greeting-container swoopInTop">
+        {greetingDesktop}
         </div>
     )
     }
