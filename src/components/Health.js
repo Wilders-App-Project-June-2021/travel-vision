@@ -47,6 +47,7 @@ function Health(props) {
             {`${props.recovered}`}
           </div>
         </div>
+        <img  className ="corona-graph" src={`https://corona.dnsforfamily.com/graph.png?c=${props.countryCode}`} alt={`corona graphs ${props.countryName}`}/>
       </div>
     </div>;
 

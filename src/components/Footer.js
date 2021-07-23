@@ -14,6 +14,7 @@ const Footer = ()=> {
 
     <div className="footer-wrapper">
         <div className="footer">
+            <div className="flight-link">Book a flight</div>
                 <span className="made-by">Made by <a href="http://wildcodeschool.com" target="new">Wild Code School</a> Students</span>
                 <div className="students">
                     <div className="student-box">
@@ -29,9 +30,11 @@ const Footer = ()=> {
                         <a href="" target="new"><p className="names">Natalie</p></a>
                     </div>
                 </div>
-                <span className="small">@ 2021 Travel Vision</span>
+                
+                {/* <span className="small">@ 2021 Travel Vision</span> */}
         </div>
-        <div className="flight-link">Book a flight</div>
+        {/* <div className="flight-link">Book a flight</div> */}
+        <span className="small">@ 2021 Travel Vision</span>
     </div>
 
     )

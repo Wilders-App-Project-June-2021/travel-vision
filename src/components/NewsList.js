@@ -13,11 +13,12 @@ const [countryNews,setCountyNews]= useState([])
 
 
 useEffect(()=>{
-    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.countryName}&language=en&sortBy=popularity&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
+    
+    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.countryName}&from=${props.getDate()}&language=en&sortBy=popularity&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
     .then(res=>{
        setCountyNews(res.data.articles)
     })
-},[])
+},[props.countryName])
 
 // FOR HEALTHWATCH https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=relevancy&apiKey=862d686e64564ff38a69a93c176de68e
 

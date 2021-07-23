@@ -68,9 +68,9 @@
     font-size: 1.7vw;
     padding: 5px;
 }
-.weather-div {
+/* .weather-div {
     padding: 15px;
-}
+} */
 .weather-detail, .weather-date {
     height: 20px;
     width: 80px;

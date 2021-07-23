@@ -1,0 +1,24 @@
+.wrapper {
+    margin: 30px;
+}
+.logo {
+    width: 200px;
+}
+.blue {
+    color: rgb(56, 76, 255)
+}
+.pink {
+    color: rgb(253, 74, 106);
+}
+.city-country{
+    font-size: 11vw;
+    font-weight: bold;
+    margin-top: -40px;
+    margin-bottom: -25px;
+}
+.greeting {
+    font-size: 7vw;
+}
+.greeting-container {
+    
+}
