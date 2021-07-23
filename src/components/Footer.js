@@ -17,11 +17,11 @@ const Footer = ()=> {
                 <span className="made-by">Made by <a href="http://wildcodeschool.com" target="new">Wild Code School</a> Students</span>
                 <div className="students">
                     <div className="student-box">
-                        <a href="https://github.com/Grailsidhe" target="new"><img class="footer-img" src={lorianne} onMouseOver={()=>setLorianne(`${github}`)} onMouseOut={() => setLorianne('./img/lorianne.jpg')} alt="Lorianne" /></a>
+                        <a href="https://github.com/Grailsidhe" target="new"><img className="footer-img" src={lorianne} onMouseOver={()=>setLorianne(`${github}`)} onMouseOut={() => setLorianne('./img/lorianne.jpg')} alt="Lorianne" /></a>
                         <a href="https://www.linkedin.com/in/lorianne-aguilar/" target="new"><p className="names">Lorianne</p></a>
                     </div>
                     <div className="student-box">
-                        <a href="https://github.com/sal9110" target="new"><img class="footer-img" src={salvo} onMouseOver={()=>setSalvo(`${github}`)} onMouseOut={() => setSalvo('./img/salvatore.png')} alt="Salvatore" /></a>
+                        <a href="https://github.com/sal9110" target="new"><img className="footer-img" src={salvo} onMouseOver={()=>setSalvo(`${github}`)} onMouseOut={() => setSalvo('./img/salvatore.png')} alt="Salvatore" /></a>
                         <a href="http://linkedin.com/in/salvatore-patti-9b5198141 " target="new"><p className="names">Salvatore</p></a>
                     </div>
                 </div>

@@ -7,16 +7,16 @@ body {
 
 .wrapper {
     margin: 0;
-    width: 100vw;
-    height: 120vh;
     background-image:url(https://images.unsplash.com/photo-1592252032050-34897f779223?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fG1hcHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
-    background-size:cover;
+    background-size: cover;
     background-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
 .second-bg {
     background-color: #f2faaf88;
     margin: 0;
-    height: 120vh;
+    height: 100vh;
 }
 .logo {
     margin-top: 2em;
@@ -30,7 +30,7 @@ body {
 }
 .title {
     font-family: 'Pacifico', cursive;
-    font-size: 100px;
+    font-size: 15vw;
     color: black;
     margin-top: -2em;
     font-weight: 900;
@@ -76,7 +76,7 @@ input:focus, textarea:focus, select:focus {
 
 
 
-@media screen and (min-width:800px) {
+/* @media screen and (min-width:770px) {
    
 .logo {
     margin-top: 10%;
@@ -106,7 +106,7 @@ input:focus, textarea:focus, select:focus {
     background-color: #ee6161;
 }
 
-}
+} */
 
 
 

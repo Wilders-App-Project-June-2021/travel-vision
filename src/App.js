@@ -2,8 +2,6 @@ import React from "react";
 import './App.css';
 import axios from "axios"
 import Cover from "./components/Cover"
-import Greeting from "./components/Greeting"
-import NewsList from "./components/NewsList";
 import { useState, useEffect } from 'react';
 import Main from "./components/Main"
 import Loader from "react-loader-spinner"
@@ -80,20 +78,20 @@ const handleCountryInput =(e)=>{
     <div className="App">
 
     { !cityInfo&&<Cover 
-        getCityInfo={getCityInfo}
-        handleCityinput={handleCityinput}
-        handleCountryInput={handleCountryInput}
-        error={error}
+          getCityInfo={getCityInfo}
+          handleCityinput={handleCityinput}
+          handleCountryInput={handleCountryInput}
+          error={error}
       />}
       
       <div className="container">
 
         {latitude && <Header
         //  getCityInfo={getCityInfo}
-        handleCityinput={handleCityinput}
-        handleCountryInput={handleCountryInput}
-        countryName={countryName}
-        error={error}
+          handleCityinput={handleCityinput}
+          handleCountryInput={handleCountryInput}
+          countryName={countryName}
+          error={error}
         />}
 
         {(longitude && latitude && countryCode) && countryName &&
@@ -106,15 +104,17 @@ const handleCountryInput =(e)=>{
           />}
 
         {/* <Main 
-        latitude={latitude}
-        longitude={longitude}
+          latitude={latitude}
+          longitude={longitude}
         /> */}
         {/* {countryCode && 
         <NewsList
-        countryName={countryName}
+          countryName={countryName}
         />} */}
-      {latitude && <Footer />}
-    </div>
+        {latitude && <Footer />}
+
+      </div>
+
     </div>
   );
 }

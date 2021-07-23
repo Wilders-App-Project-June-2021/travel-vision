@@ -102,16 +102,16 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: center;
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
 }
 
 
 
 
 /* BIG SCREEN */
-@media screen and (min-width:800px){
+/* @media screen and (min-width:770px){
 
-/* GREETING */
 .greeting {
   font-size: 3vw;
 }
@@ -130,7 +130,6 @@ a:hover {
 }
 
     
-  /* TABS STYLES */
 .tabs-container {
   border-bottom: solid 1px rgb(0, 0, 0);
 }
@@ -164,7 +163,6 @@ a:hover {
   font-size: 23px;
 }
 
-/* GREETING */
 .greeting {
   font-size: 40px;
 }
@@ -174,4 +172,4 @@ a:hover {
 .city-country {
   font-size: 35px;
 }
-}
+} */

@@ -74,7 +74,8 @@
   background-color: rgb(252, 235, 238);
   text-align: left;
   padding-left: 20px;
-  font-size: 2vw;
+  font-size: 4vw;
+  font-weight: bold;
 }
 .health-news-title {
   margin: 0;
@@ -115,10 +116,13 @@
 .fadeIn{
   animation-duration: .5s !important;
 }
+.corona-graph {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
 
-
-@media screen and (min-width:800px){
+/* @media screen and (min-width:770px){
   
 .shrink, .health-case-detail, .no-news {
   font-size: 1.5vw;
@@ -143,4 +147,4 @@
 .health-news-description {
   font-size: 18px;
 }
-}
+} */
