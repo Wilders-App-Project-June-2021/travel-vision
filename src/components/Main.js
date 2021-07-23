@@ -43,6 +43,11 @@ const Main = (props)=>{
         setActiveTab(copy)
     }
 
+    const getDate = () => {
+        let today= new Date
+    return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
+    }
+
     return (
     <div>
 
@@ -84,7 +89,7 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-            {activeTab[1].weather &&
+        {activeTab[1].weather &&
                 <WeatherInfo 
                 weatherInfo={weatherInfo.daily}
                 latitude={props.latitude}
@@ -94,10 +99,13 @@ const Main = (props)=>{
             {activeTab[0].news && props.countryName && 
                 <NewsList
                 countryName={props.countryName}
+                getDate={getDate}
                 />}
             {activeTab[3].health && 
                 <HealthInfo
                 countryName={props.countryName}
+                countryCode={props.countryCode}
+                getDate={getDate}
                 />}
 
         </div>

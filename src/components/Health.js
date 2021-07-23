@@ -47,6 +47,7 @@ function Health(props) {
             {`${props.recovered}`}
           </div>
         </div>
+        <img  className ="corona-graph" src={`https://corona.dnsforfamily.com/graph.png?c=${props.countryCode}`} alt={`corona graphs ${props.countryName}`}/>
       </div>
     </div>;
 
@@ -70,9 +71,6 @@ function Health(props) {
       </div>
     </div>;
 
-
-
-
   if(props.description && props.confirmed){
   return (
     <div className="health-container" id={props.key}>
@@ -82,7 +80,7 @@ function Health(props) {
   )
   } else if (!props.description && props.confirmed){
     return (
-      <div className="health-container"  id={props.key}>
+      <div id={props.key}>
         {coronaCases}
         {noNews}
       </div>
