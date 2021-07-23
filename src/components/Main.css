@@ -165,7 +165,7 @@ a:hover {
   
   
 .main-components {
-  height: 100vh;
+  min-height: 50vh;
   border: solid 1px grey;
   border-top: 0;
   border-bottom-left-radius: 8px;
