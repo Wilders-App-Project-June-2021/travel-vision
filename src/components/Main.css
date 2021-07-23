@@ -100,9 +100,15 @@ a:hover {
 }
 
 
+
 .main-components {
   background-color: rgb(214, 240, 250);
   padding: 10px;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
 }
 
 

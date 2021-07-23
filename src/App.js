@@ -1,4 +1,3 @@
-
 import React from "react";
 import './App.css';
 import axios from "axios"
@@ -9,6 +8,7 @@ import { useState, useEffect } from 'react';
 import Main from "./components/Main"
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Header from "./components/Header";
 import Footer from "./components/Footer"
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
   const [latitude,setLatitude]=useState("")
   const [countryInfo, setCountryInfo] = useState("");
 
+  
   const getCityInfo=(e)=>{
     e.preventDefault()
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`)
@@ -35,8 +36,13 @@ function App() {
     .catch(error => {
       setError(true)
     })
-
+    // if(e){e.preventDefault()} else {null}
   }
+  useEffect(()=>{
+    // setLongitude("")
+    // setLatitude("")
+    // getCityInfo()
+  },[])
 
 const handleCountryInput =(e)=>{
   setCountryCode(e.target.value)
@@ -48,12 +54,14 @@ const handleCountryInput =(e)=>{
     setCities(e.target.value)
   }
 
+  // CURRENCY
   const getCountryInfo = () => {
     axios.get(`https://api.countrystatecity.in/v1/countries/${countryCode}`,
     {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
       .then((result) => setCountryInfo(result.data))
       .catch((error) => console.log("error", error))
   };
+  
   useEffect(() => {
     getCountryInfo();
   }, []);
@@ -70,35 +78,45 @@ const handleCountryInput =(e)=>{
 
   return (
     <div className="App">
-     { !cityInfo&&<Cover 
+
+    { !cityInfo&&<Cover 
         getCityInfo={getCityInfo}
         handleCityinput={handleCityinput}
         handleCountryInput={handleCountryInput}
         error={error}
       />}
       
-      {(longitude && latitude && countryCode) && countryName &&
-        <Main
-          latitude={latitude}
-          longitude={longitude}
-          cities={cityInfo.name}
-          countryCode={countryCode}
-          countryName={countryName}
+      <div className="container">
+
+        {latitude && <Header
+        //  getCityInfo={getCityInfo}
+        handleCityinput={handleCityinput}
+        handleCountryInput={handleCountryInput}
+        countryName={countryName}
+        error={error}
         />}
 
-      {/* <Main 
-      latitude={latitude}
-      longitude={longitude}
-      /> */}
-      {/* {countryCode && 
-      <NewsList
-      countryName={countryName}
-      />} */}
-{/* <Footer /> */}
+        {(longitude && latitude && countryCode) && countryName &&
+          <Main
+            latitude={latitude}
+            longitude={longitude}
+            cities={cityInfo.name}
+            countryCode={countryCode}
+            countryName={countryName}
+          />}
+
+        {/* <Main 
+        latitude={latitude}
+        longitude={longitude}
+        /> */}
+        {/* {countryCode && 
+        <NewsList
+        countryName={countryName}
+        />} */}
+      {latitude && <Footer />}
+    </div>
     </div>
   );
 }
 
-
-
-export default App;
+export default App

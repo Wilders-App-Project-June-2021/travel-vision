@@ -7,8 +7,6 @@ import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
-import Footer from "./Footer"
-import Header from "./Header"
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
@@ -46,10 +44,7 @@ const Main = (props)=>{
     }
 
     return (
-    <div className="container">
-
-
-        <Header />
+    <div>
 
         {weatherInfo ?
             <Greeting
@@ -107,7 +102,6 @@ const Main = (props)=>{
 
         </div>
 
-        <Footer />
 
     </div>
     )
