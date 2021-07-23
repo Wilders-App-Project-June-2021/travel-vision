@@ -1,4 +1,3 @@
-/* HEADER STYLES */
 .header-desktop {
   display: none;
 }
@@ -20,19 +19,18 @@
   flex-direction: column;
   justify-content: center;
   background-color: rgb(82, 197, 222);
-  padding: 8px;
+  padding: 10px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  margin-top: -60px;
-  font-size: 3vw;
+  font-size: 3.5vw;
   font-weight: bold;
   -webkit-filter: drop-shadow(1px 1px 2px #222);
   filter: drop-shadow(1px 1px 2px #222);
 }
 .input-city-desktop, .input-country-desktop {
-  margin: 7px 0 5px 5px;
+  margin: 15px 0 10px 10px;
   border-radius: 7px;
-  width: 150px;
+  width: 40%;
   font-size: 3vw;
   border: solid 1px;
   color: grey;
@@ -61,7 +59,7 @@ input:focus, textarea:focus, select:focus{
 }
 
 
-@media screen and (min-width:800px){
+@media screen and (min-width:770px){
 .header-desktop {
   display: flex;
   flex-direction: column;
@@ -104,19 +102,16 @@ input:focus, textarea:focus, select:focus{
   -webkit-filter: drop-shadow(2px 2px 2px #222);
   filter: drop-shadow(2px 2px 2px #222);
 }
-
-
-
 .input-box-desktop {
   flex-direction: row;
   align-items: baseline;
+  margin-top: -60px;
   margin-top: 3px;
   padding: 5px;
   font-size: 1.5vw;
   -webkit-filter: drop-shadow(0 0 0 #222);
   filter: drop-shadow(0 0 0 #222);
 }
-
 .input-city-desktop, .input-country-desktop {
   margin: 0 0 0 5px;
   width: 200px;
@@ -136,4 +131,10 @@ input:focus, textarea:focus, select:focus{
 
 
 
+@media screen and (min-width:1070px){
 
+.input-city-desktop, .input-country-desktop, .go, .input-box-desktop, .input-country-desktop select, .input-country-desktop option {
+  font-size: 20px;
+}
+
+}

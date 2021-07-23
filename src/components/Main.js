@@ -53,18 +53,18 @@ const Main = (props)=>{
 
         {weatherInfo ?
             <Greeting
-            cities={props.cities}
-            countryName={props.countryName}
-            timeZone={weatherInfo.timezone}
-            countryCode={props.countryCode}
+                cities={props.cities}
+                countryName={props.countryName}
+                timeZone={weatherInfo.timezone}
+                countryCode={props.countryCode}
             />
             :
             <Loader
-            type="Plane"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            radius={500}  
+                type="Plane"
+                color="#00BFFF"
+                height={100}
+                width={100}
+                radius={500}  
             />
         }
 
@@ -89,7 +89,7 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        {activeTab[1].weather &&
+            {activeTab[1].weather &&
                 <WeatherInfo 
                 weatherInfo={weatherInfo.daily}
                 latitude={props.latitude}

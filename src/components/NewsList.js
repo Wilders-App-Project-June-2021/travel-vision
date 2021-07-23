@@ -35,7 +35,7 @@ return(
             />
         })
         :
-        <div className="no-news"><h2>We could not find any current news articles for {`${props.countryName}`}.</h2></div>
+        <div className="no-news">We could not find any current news articles for {`${props.countryName}`}.</div>
 
         // <Loader
         //     type="Plane"
