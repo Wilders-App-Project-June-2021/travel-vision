@@ -7,8 +7,6 @@ import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
-import Footer from "./Footer"
-import Header from "./Header"
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
@@ -50,12 +48,8 @@ const Main = (props)=>{
     return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
     }
 
-
     return (
-    <div className="container">
-
-
-        {/* <Header /> */}
+    <div>
 
         {weatherInfo ?
             <Greeting
@@ -95,7 +89,7 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-            {activeTab[1].weather &&
+        {activeTab[1].weather &&
                 <WeatherInfo 
                 weatherInfo={weatherInfo.daily}
                 latitude={props.latitude}
@@ -115,8 +109,6 @@ const Main = (props)=>{
                 />}
 
         </div>
-       
-        {/* <Footer /> */}
 
     </div>
     )
