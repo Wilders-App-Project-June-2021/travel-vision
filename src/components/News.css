@@ -59,7 +59,7 @@
 
 
 
-/* @media screen and (min-width:770px){
+@media screen and (min-width:770px){
 
 .news-title{
     font-size: 1.6vw;
@@ -100,4 +100,4 @@
     width: 200px;
 }
 
-} */
+}

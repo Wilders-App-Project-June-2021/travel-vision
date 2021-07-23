@@ -63,7 +63,7 @@
 
 
 
-/* @media screen and (min-width:770px){
+@media screen and (min-width:770px){
 
 .weather-header, .weather-header-detail {
     font-size: 1.7vw;
@@ -97,4 +97,4 @@
 .weather-date {
     font-size: 20px;
 }
-} */
+}

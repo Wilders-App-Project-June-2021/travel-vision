@@ -122,7 +122,7 @@
 }
 
 
-/* @media screen and (min-width:770px){
+@media screen and (min-width:770px){
   
 .shrink, .health-case-detail, .no-news {
   font-size: 1.5vw;
@@ -147,4 +147,4 @@
 .health-news-description {
   font-size: 18px;
 }
-} */
+}

@@ -11,9 +11,7 @@
 
 
 
-
-/* BIG SCREEN */
-/* @media screen and (min-width:770px){
+@media screen and (min-width:770px){
 
 .container {
   display: flex;
@@ -34,4 +32,4 @@
   width: 950px;
   margin: auto;
 }
-} */
+}
