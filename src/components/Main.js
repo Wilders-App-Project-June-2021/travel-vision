@@ -46,7 +46,7 @@ const Main = (props)=>{
     }
 
     return (
-    <div className="container container-desktop">
+    <div className="container">
 
 
         <Header />
