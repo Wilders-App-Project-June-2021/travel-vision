@@ -18,7 +18,7 @@ useEffect(()=>{
     .then(res=>{
        setCountyNews(res.data.articles)
     })
-},[])
+},[props.countryName])
 
 // FOR HEALTHWATCH https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=relevancy&apiKey=862d686e64564ff38a69a93c176de68e
 

@@ -23,6 +23,7 @@ function App() {
   const [latitude,setLatitude]=useState("")
   const [countryInfo, setCountryInfo] = useState("");
 
+  
   const getCityInfo=(e)=>{
     e.preventDefault()
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`)
@@ -36,8 +37,13 @@ function App() {
     .catch(error => {
       setError(true)
     })
-
+    // if(e){e.preventDefault()} else {null}
   }
+  useEffect(()=>{
+    // setLongitude("")
+    // setLatitude("")
+    // getCityInfo()
+  },[])
 
 const handleCountryInput =(e)=>{
   setCountryCode(e.target.value)
@@ -49,12 +55,14 @@ const handleCountryInput =(e)=>{
     setCities(e.target.value)
   }
 
+  // CURRENCY
   const getCountryInfo = () => {
     axios.get(`https://api.countrystatecity.in/v1/countries/${countryCode}`,
     {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
       .then((result) => setCountryInfo(result.data))
       .catch((error) => console.log("error", error))
   };
+  
   useEffect(() => {
     getCountryInfo();
   }, []);
@@ -72,7 +80,13 @@ const handleCountryInput =(e)=>{
   return (
     <div className="App">
 
-    {latitude && <Header />}
+    {latitude && <Header
+    //  getCityInfo={getCityInfo}
+     handleCityinput={handleCityinput}
+     handleCountryInput={handleCountryInput}
+     countryName={countryName}
+     error={error}
+     />}
 
      { !cityInfo&&<Cover 
         getCityInfo={getCityInfo}
