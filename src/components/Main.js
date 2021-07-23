@@ -7,8 +7,6 @@ import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 // import Currency from "./Currency";
 import HealthInfo from "./HealthInfo";
-import Footer from "./Footer"
-import Header from "./Header"
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
@@ -46,26 +44,24 @@ const Main = (props)=>{
     }
 
     return (
-    <div className="container container-desktop">
+    <div>
 
-
-        <Header />
-
-        {weatherInfo ? <Greeting
+        {weatherInfo ?
+            <Greeting
             cities={props.cities}
             countryName={props.countryName}
             timeZone={weatherInfo.timezone}
             countryCode={props.countryCode}
-         />
-         :
-         <Loader
-          type="Plane"
-          color="#00BFFF"
-          height={100}
-          width={100}
-          radius={500}  
-      />
-         }
+            />
+            :
+            <Loader
+            type="Plane"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            radius={500}  
+            />
+        }
 
         
 
@@ -106,7 +102,6 @@ const Main = (props)=>{
 
         </div>
 
-        <Footer />
 
     </div>
     )
