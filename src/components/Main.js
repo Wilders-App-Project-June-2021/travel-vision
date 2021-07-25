@@ -48,6 +48,11 @@ const Main = (props)=>{
     return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
     }
 
+    const getOlderDate = () => {
+        let today= new Date
+    return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()-2}`
+    }
+
     return (
     <div>
 
@@ -100,6 +105,7 @@ const Main = (props)=>{
                 <NewsList
                 countryName={props.countryName}
                 getDate={getDate}
+                getOlderDate={getOlderDate}
                 />}
             {activeTab[3].health && 
                 <HealthInfo
