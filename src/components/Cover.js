@@ -1,13 +1,11 @@
 import "./Main.css"
 import './Cover.css'
-import axios from "axios"
 import nations from "../data/nations"
 import "./vivify.min.css"
 import React from "react"
 
 const Cover = (props)=>{
 
-// GREETING IN LANGUAGE CODE
 
     return (
         <div className="wrapper">

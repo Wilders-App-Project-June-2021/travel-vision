@@ -52,10 +52,10 @@ function Health(props) {
     </div>;
 
   const noNews =
-    <div className="no-news fadeIn"><h2>We could not find any current Coronavirus news articles for {`${props.countryName}`}.</h2></div>;
+    <div className="no-news fadeIn">We could not find any current Coronavirus news articles for {`${props.countryName}`}.</div>;
 
   const noCoronaCases =
-    <div className="no-news fadeIn"><h2>We could not find any current Coronavirus information for {`${props.countryName}`}.</h2></div>;
+    <div className="no-news fadeIn">We could not find any current Coronavirus information for {`${props.countryName}`}.</div>;
 
   const withNews =
     <div className="health-news-wrapper fadeIn">
@@ -87,17 +87,18 @@ function Health(props) {
     )
   } else if(props.description && !props.confirmed){
     return (
-    <div className="health-container" id={props.key}>
-        {noCoronaCases}
-        {withNews}
-    </div>
+      <div className="health-container" id={props.key}>
+          {noCoronaCases}
+          {withNews}
+      </div>
     )
   }else{
     return (
-    <div className="health-container" id={props.key}>
-    {noCoronaCases}
-    {noNews}
-</div>)
+      <div className="health-container" id={props.key}>
+        {noCoronaCases}
+        {noNews}
+      </div>
+    )
 
   }
   

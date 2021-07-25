@@ -24,11 +24,6 @@ a:hover {
   color: rgb(253, 74, 106);
 }
 
-.container {
-  margin-bottom: 60px;
-  margin-top: 60px;
-}
-
 
 /* GREETING */
 .greeting {
@@ -99,6 +94,7 @@ a:hover {
 }
 
 
+
 .main-components {
   background-color: rgb(214, 240, 250);
   padding: 10px;
@@ -106,27 +102,15 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: center;
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
 }
 
 
 
 
-/* BIG SCREEN */
-@media screen and (min-width:800px){
+@media screen and (min-width:770px){
 
-.container-desktop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  -webkit-filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
-  filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
-  font-family: 'Segoe UI';
-  margin: 0 10% 0 10%;
-  text-align: center;
-}
-
-/* GREETING */
 .greeting {
   font-size: 3vw;
 }
@@ -145,7 +129,6 @@ a:hover {
 }
 
     
-  /* TABS STYLES */
 .tabs-container {
   border-bottom: solid 1px rgb(0, 0, 0);
 }
@@ -162,10 +145,30 @@ a:hover {
   
   
 .main-components {
+  min-height: 50vh;
   border: solid 1px grey;
   border-top: 0;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-bottom: 10px;
+}
+}
+
+
+
+@media screen and (min-width:1070px){
+
+.tab-text {
+  font-size: 23px;
+}
+
+.greeting {
+  font-size: 40px;
+}
+.greeting-hello {
+  font-size: 45px;
+}
+.city-country {
+  font-size: 35px;
 }
 }

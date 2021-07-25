@@ -3,5 +3,33 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vH;
+}
+.container {
+  margin: 0;
+  height: auto;
+}
+
+
+
+@media screen and (min-width:770px){
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
+  filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
+  font-family: 'Segoe UI';
+  margin: 0 10% 0 10%;
+  text-align: center;
+}
+}
+
+
+@media screen and (min-width:1070px){
+
+.container {
+  width: 950px;
+  margin: auto;
+}
 }

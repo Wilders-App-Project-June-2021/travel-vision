@@ -1,10 +1,7 @@
-
 import React from "react";
 import './App.css';
 import axios from "axios"
 import Cover from "./components/Cover"
-import Greeting from "./components/Greeting"
-import NewsList from "./components/NewsList";
 import { useState, useEffect } from 'react';
 import Main from "./components/Main"
 import Loader from "react-loader-spinner"
@@ -80,43 +77,46 @@ const handleCountryInput =(e)=>{
   return (
     <div className="App">
 
-    {latitude && <Header
-    //  getCityInfo={getCityInfo}
-     handleCityinput={handleCityinput}
-     handleCountryInput={handleCountryInput}
-     countryName={countryName}
-     error={error}
-     />}
-
-     { !cityInfo&&<Cover 
-        getCityInfo={getCityInfo}
-        handleCityinput={handleCityinput}
-        handleCountryInput={handleCountryInput}
-        error={error}
+    { !cityInfo&&<Cover 
+          getCityInfo={getCityInfo}
+          handleCityinput={handleCityinput}
+          handleCountryInput={handleCountryInput}
+          error={error}
       />}
       
-      {(longitude && latitude && countryCode) && countryName &&
-        <Main
-          latitude={latitude}
-          longitude={longitude}
-          cities={cityInfo.name}
-          countryCode={countryCode}
+      <div className="container">
+
+        {latitude && <Header
+        //  getCityInfo={getCityInfo}
+          handleCityinput={handleCityinput}
+          handleCountryInput={handleCountryInput}
           countryName={countryName}
+          error={error}
         />}
 
-      {/* <Main 
-      latitude={latitude}
-      longitude={longitude}
-      /> */}
-      {/* {countryCode && 
-      <NewsList
-      countryName={countryName}
-      />} */}
-    {latitude && <Footer />}
+        {(longitude && latitude && countryCode) && countryName &&
+          <Main
+            latitude={latitude}
+            longitude={longitude}
+            cities={cityInfo.name}
+            countryCode={countryCode}
+            countryName={countryName}
+          />}
+
+        {/* <Main 
+          latitude={latitude}
+          longitude={longitude}
+        /> */}
+        {/* {countryCode && 
+        <NewsList
+          countryName={countryName}
+        />} */}
+        {latitude && <Footer />}
+
+      </div>
+
     </div>
   );
 }
 
-
-
-export default App;
+export default App

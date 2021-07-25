@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import News from './News'
@@ -14,7 +13,7 @@ const [countryNews,setCountyNews]= useState([])
 
 useEffect(()=>{
     
-    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.countryName}&from=${props.getDate()}&language=en&sortBy=popularity&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
+    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.countryName}&from=${props.getDate()}&to=${props.getOlderDate()}&language=en&sortBy=popularity&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
     .then(res=>{
        setCountyNews(res.data.articles)
     })
@@ -36,7 +35,7 @@ return(
             />
         })
         :
-        <div className="no-news"><h2>We could not find any current news articles for {`${props.countryName}`}.</h2></div>
+        <div className="no-news">We could not find any current news articles for {`${props.countryName}`}.</div>
 
         // <Loader
         //     type="Plane"
