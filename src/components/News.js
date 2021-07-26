@@ -16,7 +16,7 @@ const News = ({title,description,url, countryName, newsImg}) => {
                 <p className="news-description">
                 {`${description}`}
                 </p>
-                <a href={`${url}`} className="news-link"> 
+                <a href={`${url}`} className="news-link" target="new"> 
                 <img  className="news-icon" src={`${logo}`} alt="news-link"/>
                 </a>
             </div>

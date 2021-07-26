@@ -2,6 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Fredoka+One&display=swap');
 
+
+.a {
+  text-decoration: none;
+  color: rgb(255, 100, 108);
+}
+.a:hover {
+  color: rgb(255, 224, 225);
+}
+
 .footer-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,11 +38,15 @@
   background-color: rgb(255, 100, 108);
   font-weight: bold;
   font-size: 3.5vw;
-  font-family: 'Fredoka One', cursive;
   text-align: center;
   border: solid 1px black;
   -webkit-filter: drop-shadow(1px 1px 2px #222);
   filter: drop-shadow(1px 1px 2px #222);
+}
+.flight-a {
+  color: black;
+  text-decoration: none;
+  font-family: 'Fredoka One', cursive;
 }
 .flight-link:hover, .go:hover {
   -webkit-filter: drop-shadow(1px 1px 1px #222);
