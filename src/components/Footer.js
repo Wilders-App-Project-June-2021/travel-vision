@@ -27,7 +27,7 @@ const Footer = ()=> {
                 </div>
                 <span className="small">@ 2021 Travel Vision</span>
         </div>
-        <div className="flight-link">Book a flight</div>
+        <div className="flight-link"><a href="https://www.skyscanner.fr/" target="new">Book a flight</a></div>
     </div>
 
     )
