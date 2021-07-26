@@ -102,8 +102,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  -webkit-filter: drop-shadow(1px 1px 1px #222);
-  filter: drop-shadow(1px 1px 1px #222);
 }
 
 
@@ -169,6 +167,6 @@ a:hover {
   font-size: 45px;
 }
 .city-country {
-  font-size: 35px;
+  font-size: 42px;
 }
 }

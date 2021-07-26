@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 .header-desktop {
   display: none;
 }
@@ -56,6 +59,7 @@ input:focus, textarea:focus, select:focus{
   padding: 5px;
   border: solid 1px black;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  font-family: 'Fredoka One', cursive;
 }
 
 
