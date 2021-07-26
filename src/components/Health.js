@@ -66,7 +66,7 @@ function Health(props) {
           <p className="health-news-description">
             {`${props.description}`}
           </p>
-          <a href={`${props.url}`} className = "health-news-link" ><img className="health-news-icon" src={`${logo}`} alt={`${props.title}`}/></a>
+          <a href={`${props.url}`} className = "health-news-link" target="new"><img className="health-news-icon" src={`${logo}`} alt={`${props.title}`}/></a>
         </div>
       </div>
     </div>;
