@@ -42,6 +42,7 @@
   margin: 2px;
   padding: 10px;
   font-size: 3.5vw;
+  border-radius: 3px;
 }
 .pale-pink {
   background-color: rgb(250, 215, 210);
@@ -122,8 +123,11 @@
 
 @media screen and (min-width:770px) {
   
-.shrink, .health-case-detail, .no-news {
+.shrink {
   font-size: 1.5vw;
+}
+.health-case-detail, .no-news {
+  font-size: 1.8vw;
 }
 .health-cases-div, .new-total, .health-cases-div-title, .health-news-title {
   font-size: 2vw;
@@ -133,8 +137,7 @@
 }
 .corona-graph {
   display: block;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
 }
 
 }
