@@ -1,3 +1,4 @@
+
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -18,17 +19,22 @@
 }
 
 /* GREETING */
-.greeting {
-  font-size: 8vw;
-  font-family: 'Fredoka One', cursive;
+.greetingMobile {
+  display: block;
 }
-.city-country {
-  font-size: 11vw;
-  margin: -20px 15px -15px 15px;
+.greetingDesktop {
+  display: none;
+}
+.greeting, .greeting-hello {
+  font-size: 8vw;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-hello {
-  font-size: 8vw;
+  margin-bottom: 5px;
+}
+.city-country {
+  font-size: 11vw;
+  margin: 0px 15px -15px 15px;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-container {
@@ -97,9 +103,14 @@
 
 
 
-
 @media screen and (min-width:770px) and (max-width:1070px){
 
+.greetingMobile {
+  display: none;
+}
+.greetingDesktop {
+  display: block;
+}
 .greeting {
   font-size: 3vw;
 }
@@ -149,6 +160,12 @@
 
 .tab-text {
   font-size: 23px;
+}
+.greetingMobile {
+  display: none;
+}
+.greetingDesktop {
+  display: block;
 }
 .greeting {
   font-size: 40px;
