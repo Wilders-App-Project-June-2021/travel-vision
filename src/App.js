@@ -34,38 +34,17 @@ function App() {
 
     .catch(error => {
       setError(true)
-      setLatitude(null)
-      setLongitude(null)
+      // setLatitude(null)
+      // setLongitude(null)
     })
     e && e.preventDefault() 
-    // if(e){e.preventDefault()} else {null}
   }
 
   useEffect(()=>{
-    // setLongitude("")
-    // setLatitude("")
-    // getCityInfo()
-    
-    
      if(cities.length>0){getCityInfo()}
-     
 
-  },[cities || latitude && longitude])
+  },[cities ])
 
-
-// const handleCountryInput =(e)=>{
-//   setCountryCode(e.target.value)
-//   let index = e.target.selectedIndex
-//   setCountryName(e.target.childNodes[index].getAttribute('id')) 
-//   } 
-
-//   const handleCityinput =(e)=>{
-//     let reviewedCity = e.target.value ? e.target.value[0].toUpperCase() : ""
-//     for(let i= 1; i<e.target.value.length ; i++){
-//       reviewedCity+= e.target.value[i].toLowerCase()
-//     }
-//     setCities(reviewedCity)
-//   }
 
    let countryCodeInfo = ""
    let countryNameInfo = ""
@@ -74,28 +53,25 @@ function App() {
      countryCodeInfo = e.target.value
     const index = e.target.selectedIndex
     countryNameInfo = e.target.childNodes[index].getAttribute('id')
+    console.log(countryCodeInfo)
   }
-
-  
 
   const cityInputHandler = (e) =>{
     city= e.target.value ? e.target.value[0].toUpperCase() : ""
     for(let i= 1; i<e.target.value.length ; i++){
       city+= e.target.value[i].toLowerCase()
+      console.log (city)
     }
   }
 
   const submitInfo = (e) => {
     e.preventDefault()
-    // setCities("")
-    // setCountryCode("")
-    // setCountryName("")
-    // setLatitude(null)
-    // setLongitude(null)
+    console.log(e.target[0].value = "")
     setCountryCode(countryCodeInfo)
     setCountryName(countryNameInfo)
     setCities(city)
-    getCityInfo()
+    e.target[0].value = ""
+    e.target[1].value = ""
   }
 
   // CURRENCY
@@ -125,11 +101,7 @@ function App() {
 
     { !render && 
       <Cover 
-          // getCityInfo={getCityInfo}
-          // handleCityinput={handleCityinput}
-          // handleCountryInput={handleCountryInput}
           error={error}
-
           countryInputHandler={countryInputHandler}
           cityInputHandler={cityInputHandler}
           submitInfo={submitInfo}
@@ -139,26 +111,29 @@ function App() {
 
         {render && 
         <Header
-          // getCityInfo={getCityInfo}
-          // handleCityinput={handleCityinput}
-          // handleCountryInput={handleCountryInput}
           countryName={countryName}
           error={error}
-
-
           countryInputHandler={countryInputHandler}
           cityInputHandler={cityInputHandler}
           submitInfo={submitInfo}
         />}
 
-        {render &&
+        {(render && !error) ?
           <Main
             latitude={latitude}
             longitude={longitude}
             cities={cities}
             countryCode={countryCode}
             countryName={countryName}
-          />}
+          />:
+          <Loader
+                type="Plane"
+                color="#00BFFF"
+                height={100}
+                width={100}
+                radius={500}  
+            />
+            }
 
         {
         render &&
