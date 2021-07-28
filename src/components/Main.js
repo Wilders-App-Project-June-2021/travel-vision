@@ -58,7 +58,7 @@ const Main = (props)=>{
     return (
     <div>
 
-        {weatherInfo ?
+        {weatherInfo && !props.error ?
             <Greeting
                 cities={props.cities}
                 countryName={props.countryName}
@@ -76,7 +76,9 @@ const Main = (props)=>{
         }
 
         
-
+        {props.error ?
+        <h1>Sorry we couldn't find {props.cities}, try again</h1>
+        :<>
         <div className="Tabs">
             <div className="tabs-container">
             <button className={activeTab[0].news? "tab-div active":"tab-div"} id="news" onClick={(e) => getActive(e)}>
@@ -94,7 +96,8 @@ const Main = (props)=>{
             </div>
         </div>
 
-        <div className="main-components">
+         <div className="main-components">
+        
 
             {activeTab[1].weather &&
                 <WeatherInfo 
@@ -116,9 +119,11 @@ const Main = (props)=>{
                 getDate={getDate}
                 />}
 
-        </div>
+            </div>
 
+       </> }
     </div>
+            
     )
 }
 

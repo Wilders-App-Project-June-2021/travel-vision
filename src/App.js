@@ -21,8 +21,7 @@ function App() {
   const [render,setRender]=useState(false)
 
   
-  const getCityInfo=(e)=>{
-   
+  const getCityInfo=()=>{
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`)
     .then((result) =>{ 
         setCityInfo(result.data)
@@ -37,12 +36,11 @@ function App() {
       // setLatitude(null)
       // setLongitude(null)
     })
-    e && e.preventDefault() 
   }
 
   useEffect(()=>{
      if(cities.length>0){getCityInfo()}
-
+    
   },[cities ])
 
 
@@ -53,20 +51,17 @@ function App() {
      countryCodeInfo = e.target.value
     const index = e.target.selectedIndex
     countryNameInfo = e.target.childNodes[index].getAttribute('id')
-    console.log(countryCodeInfo)
   }
 
   const cityInputHandler = (e) =>{
     city= e.target.value ? e.target.value[0].toUpperCase() : ""
     for(let i= 1; i<e.target.value.length ; i++){
       city+= e.target.value[i].toLowerCase()
-      console.log (city)
     }
   }
 
   const submitInfo = (e) => {
     e.preventDefault()
-    console.log(e.target[0].value = "")
     setCountryCode(countryCodeInfo)
     setCountryName(countryNameInfo)
     setCities(city)
@@ -102,6 +97,7 @@ function App() {
     { !render && 
       <Cover 
           error={error}
+          cities={cities}
           countryInputHandler={countryInputHandler}
           cityInputHandler={cityInputHandler}
           submitInfo={submitInfo}
@@ -118,24 +114,16 @@ function App() {
           submitInfo={submitInfo}
         />}
 
-        {(render && !error) ?
+        {render  &&
           <Main
             latitude={latitude}
             longitude={longitude}
             cities={cities}
             countryCode={countryCode}
             countryName={countryName}
-          />:
-          <div className ="loader-wrapper">
-            <h1>Sorry we couldn't find this city, try again</h1>
-            <Loader
-                type="Plane"
-                color="#00BFFF"
-                height={100}
-                width={100}
-                radius={500}  
-            />
-          </div>
+            error={error}
+          />
+          
             }
 
         {
