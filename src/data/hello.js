@@ -219,7 +219,7 @@ const greeting= [
 {'tz':'Jambo'},
 {'ua':'Pryvit'},
 {'ug':'Gyebale Ko'},
-{'uk': 'Hello'},
+{'gb': 'Hello'},
 {'us':'Hello'},
 {'uy':'Hola'},
 {'uz': 'Salom'},

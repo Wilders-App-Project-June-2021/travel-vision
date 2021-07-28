@@ -16,7 +16,6 @@ function HealthInfo(props) {
       .then((covidData) => {
         if(covidData.data.Countries){
           const filtered = covidData.data.Countries.filter((item) => item.Country === props.countryName)
-          console.log(covidData)
           setHealthInfo(filtered[0]);
         }
         setApiResponse(false)

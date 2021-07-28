@@ -13,12 +13,12 @@ const Cover = (props)=>{
                 <img className="logo swoopInTop" src="../img/landscape.png" alt="Logo" />
                 <h1 className="title driveInLeft">Travel Vision</h1>
                 <div className="input-wrapper">
-                    <form onSubmit={(e)=>props.getCityInfo(e)}>
-                        <select className="input-country" id="country" placeholder= "Country" required onChange={(e)=>props.handleCountryInput(e) } >
+                    <form onSubmit={(e)=>props.submitInfo(e)}>
+                        <select className="input-country" id="country" placeholder= "Country" required onChange={(e)=>props.countryInputHandler(e) } >
                             <option value="">Select a Country</option>
                             {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} </option>)}
                         </select> <br />
-                        <input className="input-city" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.handleCityinput(e)}></input>
+                        <input className="input-city" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.cityInputHandler(e)}></input>
                         {props.error? <h1>Sorry we couldn't find this city, try again</h1>:null} <br />
                         <button className="submit" type="submit" >GO</button>
                     </form>
@@ -28,6 +28,7 @@ const Cover = (props)=>{
 
     )
 }
+
 
 
 export default Cover

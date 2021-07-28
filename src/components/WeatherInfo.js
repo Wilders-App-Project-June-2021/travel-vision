@@ -21,7 +21,7 @@ function WeatherInfo(props) {
 
   return (
     <div>
-      {props.weatherInfo ? props.weatherInfo.map((item, index) => (
+      {props.weatherInfo ? props.weatherInfo.daily.map((item, index) => (
         <Weather
           key={index}
           id={index}

@@ -19,50 +19,97 @@ function App() {
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
   const [countryInfo, setCountryInfo] = useState("");
+  const [render,setRender]=useState(false)
 
   
   const getCityInfo=(e)=>{
-    e.preventDefault()
+   
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cities},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`)
     .then((result) =>{ 
         setCityInfo(result.data)
         setError(false)
         setLatitude(Number(result.data.coord.lat).toFixed(2))
         setLongitude(Number(result.data.coord.lon).toFixed(2))
+        setRender(true)
       })
 
     .catch(error => {
       setError(true)
+      setLatitude(null)
+      setLongitude(null)
     })
+    e && e.preventDefault() 
     // if(e){e.preventDefault()} else {null}
   }
+
   useEffect(()=>{
     // setLongitude("")
     // setLatitude("")
     // getCityInfo()
-  },[])
+    
+    
+     if(cities.length>0){getCityInfo()}
+     
 
-const handleCountryInput =(e)=>{
-  setCountryCode(e.target.value)
-  let index = e.target.selectedIndex
-  setCountryName(e.target.childNodes[index].getAttribute('id')) 
-  } 
+  },[cities || latitude && longitude])
 
-  const handleCityinput =(e)=>{
-    setCities(e.target.value)
+
+// const handleCountryInput =(e)=>{
+//   setCountryCode(e.target.value)
+//   let index = e.target.selectedIndex
+//   setCountryName(e.target.childNodes[index].getAttribute('id')) 
+//   } 
+
+//   const handleCityinput =(e)=>{
+//     let reviewedCity = e.target.value ? e.target.value[0].toUpperCase() : ""
+//     for(let i= 1; i<e.target.value.length ; i++){
+//       reviewedCity+= e.target.value[i].toLowerCase()
+//     }
+//     setCities(reviewedCity)
+//   }
+
+   let countryCodeInfo = ""
+   let countryNameInfo = ""
+   let city = ""
+  const countryInputHandler=(e)=>{
+     countryCodeInfo = e.target.value
+    const index = e.target.selectedIndex
+    countryNameInfo = e.target.childNodes[index].getAttribute('id')
+  }
+
+  
+
+  const cityInputHandler = (e) =>{
+    city= e.target.value ? e.target.value[0].toUpperCase() : ""
+    for(let i= 1; i<e.target.value.length ; i++){
+      city+= e.target.value[i].toLowerCase()
+    }
+  }
+
+  const submitInfo = (e) => {
+    e.preventDefault()
+    // setCities("")
+    // setCountryCode("")
+    // setCountryName("")
+    // setLatitude(null)
+    // setLongitude(null)
+    setCountryCode(countryCodeInfo)
+    setCountryName(countryNameInfo)
+    setCities(city)
+    getCityInfo()
   }
 
   // CURRENCY
-  const getCountryInfo = () => {
-    axios.get(`https://api.countrystatecity.in/v1/countries/${countryCode}`,
-    {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
-      .then((result) => setCountryInfo(result.data))
-      .catch((error) => console.log("error", error))
-  };
+  // const getCountryInfo = () => {
+  //   axios.get(`https://api.countrystatecity.in/v1/countries/${countryCode}`,
+  //   {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
+  //     .then((result) => setCountryInfo(result.data))
+  //     .catch((error) => console.log("error", error))
+  // };
   
-  useEffect(() => {
-    getCountryInfo();
-  }, []);
+  // useEffect(() => {
+  //   getCountryInfo();
+  // }, []);
 
   // Props for Country Info
     // countryLanguage={countryInfo.iso2}
@@ -77,41 +124,47 @@ const handleCountryInput =(e)=>{
   return (
     <div className="App">
 
-    { !cityInfo&&<Cover 
-          getCityInfo={getCityInfo}
-          handleCityinput={handleCityinput}
-          handleCountryInput={handleCountryInput}
+    { !render && 
+      <Cover 
+          // getCityInfo={getCityInfo}
+          // handleCityinput={handleCityinput}
+          // handleCountryInput={handleCountryInput}
           error={error}
+
+          countryInputHandler={countryInputHandler}
+          cityInputHandler={cityInputHandler}
+          submitInfo={submitInfo}
       />}
       
       <div className="container">
 
-        {latitude && <Header
-        //  getCityInfo={getCityInfo}
-          handleCityinput={handleCityinput}
-          handleCountryInput={handleCountryInput}
+        {render && 
+        <Header
+          // getCityInfo={getCityInfo}
+          // handleCityinput={handleCityinput}
+          // handleCountryInput={handleCountryInput}
           countryName={countryName}
           error={error}
+
+
+          countryInputHandler={countryInputHandler}
+          cityInputHandler={cityInputHandler}
+          submitInfo={submitInfo}
         />}
 
-        {(longitude && latitude && countryCode) && countryName &&
+        {render &&
           <Main
             latitude={latitude}
             longitude={longitude}
-            cities={cityInfo.name}
+            cities={cities}
             countryCode={countryCode}
             countryName={countryName}
           />}
 
-        {/* <Main 
-          latitude={latitude}
-          longitude={longitude}
-        /> */}
-        {/* {countryCode && 
-        <NewsList
-          countryName={countryName}
-        />} */}
-        {latitude && <Footer />}
+        {
+        render &&
+         <Footer />
+         }
 
       </div>
 

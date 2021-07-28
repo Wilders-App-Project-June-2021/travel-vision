@@ -31,8 +31,10 @@ const Main = (props)=>{
           })
           .catch((error) => {
             console.log(error);
+            setWeatherInfo(null)
+
           })
-      },[])
+      },[props.latitude && props.longitude])
 
     const getActive = (e)=>{
         let copy =[...tabClasses]
@@ -96,7 +98,7 @@ const Main = (props)=>{
 
             {activeTab[1].weather &&
                 <WeatherInfo 
-                weatherInfo={weatherInfo.daily}
+                weatherInfo={weatherInfo}
                 latitude={props.latitude}
                 longitude={props.longitude}
                 />

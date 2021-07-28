@@ -10,27 +10,39 @@ const Greeting = (props)=>{
 
    
     const [currentTime, setCurrentTime]= React.useState(getTime())
+    const [timeZone,getTimeZone] = useState(props.timeZone)
+
+    useEffect(()=>{
+        console.log('COMPONENT DID MOUNT')
+    }, [])
 
     function getTime(){
         const date = new Date ()
-        const time =date.toLocaleString('en-GB', { timeZone: props.timeZone }).split(",");
+        const time = date.toLocaleString('en-GB', { timeZone: props.timeZone }).split(",");
         const newTime =[...time[1]]
         newTime.splice(6,3)
         return newTime.join('')
     }
 
     const getGreeting = (code) =>{
-        const lowerCaseCode= code.toLowerCase()
-        const result=  hello.find((item)=> item[lowerCaseCode])
-       return result[lowerCaseCode]
+       if(code){ const lowerCaseCode = code.toLowerCase()
+        const result = hello.find((item)=> item[lowerCaseCode])
+       return result[lowerCaseCode]}
      }
 
-    setInterval(()=> setCurrentTime(getTime()),1000)
+
+     console.log(interval)
+     var interval = setInterval(()=> setCurrentTime(getTime()),60000);
+
+    // useEffect(()=>{
+    //    return ()=> clearInterval(interval)
+    // },[props.countryCode])
+
 
     const greetingMobile = 
         <span>
             <h1 className="greeting-hello">{getGreeting(props.countryCode)}! The time in</h1>
-            <p className="city-country pink">{props.cities}, {props.countryName}</p>
+            <p className="city-country pink" key={props.cities}>{props.cities === "" ? null : `${props.cities},`}{props.countryName}</p>
             <h1 className="greeting">is <b className="pink greeting">{currentTime}</b></h1>
         </span>
 

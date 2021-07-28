@@ -19,11 +19,11 @@ const Header = (props)=> {
                 </div>
             </div>
         <Input 
-        //  getCityInfo={props.getCityInfo}
-         countryName={props.countryName}
-         handleCityinput={props.handleCityinput}
-         handleCountryInput={props.handleCountryInput}
-         error={props.error}/>
+        countryInputHandler={props.countryInputHandler}
+        cityInputHandler={props.cityInputHandler}
+        submitInfo={props.submitInfo}
+        countryName={props.countryName}         
+        error={props.error}/>
         </div>
         )
 
