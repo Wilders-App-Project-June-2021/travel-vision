@@ -126,13 +126,16 @@ function App() {
             countryCode={countryCode}
             countryName={countryName}
           />:
-          <Loader
+          <div className ="loader-wrapper">
+            <h1>Sorry we couldn't find this city, try again</h1>
+            <Loader
                 type="Plane"
                 color="#00BFFF"
                 height={100}
                 width={100}
                 radius={500}  
             />
+          </div>
             }
 
         {
