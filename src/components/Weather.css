@@ -43,7 +43,7 @@
     flex-wrap: nowrap;
     margin: 5px;
     height: 40px;
-    width: 45px;
+    width: 150px;
     text-align: center;
     font-size: 5vw;
     font-weight: 700;
@@ -53,7 +53,7 @@
     width: 150px;
 }
 .weather-icon {
-    width: 250%;
+    width: 7vh;
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
 }
