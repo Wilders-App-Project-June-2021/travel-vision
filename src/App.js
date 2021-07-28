@@ -18,7 +18,6 @@ function App() {
   const [error,setError]=useState(false)
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
-  const [countryInfo, setCountryInfo] = useState("");
   const [render,setRender]=useState(false)
 
   
