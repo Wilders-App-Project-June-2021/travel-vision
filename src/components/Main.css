@@ -11,12 +11,11 @@
   width: 200px;
 }
 .blue {
-  color: rgb(56, 209, 255)
+  color: rgb(51, 176, 204);
 }
 .pink {
   color: rgb(255, 74, 83);
 }
-
 
 /* GREETING */
 .greeting {
@@ -62,11 +61,9 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  height: 80px;
   width: 100%;
   background-color: rgb(255, 100, 108);
   margin: 0 1px -5px 1px;
-  padding: 0 15px 0 15px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
@@ -87,7 +84,6 @@
 }
 
 
-
 .main-components {
   background-color: rgb(197, 244, 255);
   padding: 10px;
@@ -100,7 +96,7 @@
 
 
 
-@media screen and (min-width:770px){
+@media screen and (min-width:770px) and (max-width:1070px){
 
 .greeting {
   font-size: 3vw;
@@ -147,12 +143,11 @@
 
 
 
-@media screen and (min-width:1070px){
+@media screen and (min-width:1070px) and (max-width:5000px){
 
 .tab-text {
   font-size: 23px;
 }
-
 .greeting {
   font-size: 40px;
 }

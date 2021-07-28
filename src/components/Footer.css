@@ -31,7 +31,7 @@
   background-position: center;
 }
 .flight-link {
-  margin-top: -285px;
+  margin-top: -170px;
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 30px 10px 30px;
@@ -42,6 +42,7 @@
   border: solid 1px black;
   -webkit-filter: drop-shadow(1px 1px 2px #222);
   filter: drop-shadow(1px 1px 2px #222);
+  position: absolute;
 }
 .flight-a {
   color: black;
