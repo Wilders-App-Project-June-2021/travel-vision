@@ -31,7 +31,7 @@
   background-position: center;
 }
 .flight-link {
-  margin-top: -180px;
+  margin-top: -220px;
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 30px 10px 30px;
@@ -84,11 +84,13 @@
   font-size: 4vw;
   margin-top: 30px;
   font-weight: bold;
-  font-family: 'Advent Pro', sans-serif;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 } 
-  
+.surnames {
+  font-size: 3.5vw;
+  font-family: 'Advent Pro', sans-serif;
+}
 
 @media screen and (min-width:770px){
 .flight-link {
@@ -115,8 +117,11 @@
   filter: drop-shadow(1px 1px 1px #222);
 }
 .names {
-  font-size: 1.8vw;
+  font-size: 1.9vw;
   margin-top: 0px;
+} 
+.surnames {
+  font-size: 1.6vw;
 }
 }
 
@@ -133,5 +138,8 @@
 }
 .names {
   font-size: 20px;
+} 
+.surnames {
+  font-size: 17px;
 }
 }
