@@ -55,7 +55,7 @@
   background-color: rgb(255, 131, 137);
 }
 .small {
-  color: rgb(54, 54, 54);
+  color: rgba(255, 255, 255, 0.568);
   font-size: 2.5vw;
   margin: 0 0 15px 0;
 }
