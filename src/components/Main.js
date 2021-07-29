@@ -78,7 +78,7 @@ const Main = (props)=>{
         
         {props.error ?
         <h1>Sorry we couldn't find {props.cities} in {props.countryName}, try again</h1>
-        :<>
+        :<span>
         <div className="Tabs">
             <div className="tabs-container">
             <button className={activeTab[0].news? "tab-div active":"tab-div"} id="news" onClick={(e) => getActive(e)}>
@@ -122,7 +122,7 @@ const Main = (props)=>{
 
             </div>
 
-       </> }
+       </span> }
     </div>
             
     )

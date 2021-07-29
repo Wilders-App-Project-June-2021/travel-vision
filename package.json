@@ -13,8 +13,7 @@
     "react-live-clock": "^5.2.0",
     "react-loader-spinner": "^4.0.0",
     "react-scripts": "^1.1.5",
-    "web-vitals": "^1.1.2",
-    "homepage": "http://grailsidhe.github.io/travel-vision"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
