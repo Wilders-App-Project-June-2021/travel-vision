@@ -1,6 +1,5 @@
 import "./Header.css";
 import "./vivify.min.css";
-import Input from "./Input.js";
 import React, {useState, useEffect}from "react";
 import Input from "./Input";
 
