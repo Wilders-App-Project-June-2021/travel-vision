@@ -9,6 +9,7 @@ const Footer = ()=> {
 
     const [lorianne, setLorianne]= useState('./img/lorianne.jpg');
     const [salvo, setSalvo]= useState('./img/salvatore.png');
+    const [natalie, setNatalie]= useState('./img/salvatore.png');
 
     return (
 
@@ -16,6 +17,10 @@ const Footer = ()=> {
         <div className="footer">
                 <span className="made-by">Made by <a href="http://wildcodeschool.com" target="new" className="a">Wild Code School</a> Students</span>
                 <div className="students">
+                    <div className="student-box">
+                        <a href="https://github.com/Natalito96" target="new"><img className="footer-img" src={natalie} onMouseOver={()=>setNatalie(`${github}`)} onMouseOut={() => setNatalie('./img/natalie.jpg')} alt="Natalie" /></a>
+                        <a href="https://www.linkedin.com/in/natalie-huaman-730bb4213/" target="new" className="a"><p className="names">Natalie</p></a>
+                    </div>
                     <div className="student-box">
                         <a href="https://github.com/Grailsidhe" target="new"><img className="footer-img" src={lorianne} onMouseOver={()=>setLorianne(`${github}`)} onMouseOut={() => setLorianne('./img/lorianne.jpg')} alt="Lorianne" /></a>
                         <a href="https://www.linkedin.com/in/lorianne-aguilar/" target="new" className="a"><p className="names">Lorianne</p></a>

@@ -42,20 +42,22 @@
   margin: 2px;
   padding: 10px;
   font-size: 3.5vw;
-  background-color: rgb(252, 235, 238);
+  border-radius: 3px;
 }
 .pale-pink {
-  background-color: rgb(255, 183, 183);
+  background-color: rgb(250, 215, 210);
 }
 .pale-pink-2 {
-  background-color: rgb(248, 205, 205);
+  background-color: rgb(230, 230, 230);
+}
+.pale-pink-3 {
+  background-color: rgb(252, 245, 244);
 }
 .health-news-wrapper, .health-cases-wrapper {
   text-align: left; 
 }
 .health-news-image {
   width: 100%;
-  background-color: rgb(252, 235, 238);
 }
 .health-news, .no-news {
   display: flex;
@@ -71,7 +73,6 @@
 }
 .no-news {
   padding: 10px;
-  background-color: rgb(252, 235, 238);
   text-align: left;
   padding-left: 20px;
   font-size: 4vw;
@@ -84,7 +85,6 @@
   font-weight: bold;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: rgb(255, 183, 183);
   font-size: 4vw;
   box-shadow: 0px 1px 0px rgba(5, 5, 5, 0.192);
 }
@@ -126,8 +126,11 @@ display: none;
 
 @media screen and (min-width:770px) {
   
-.shrink, .health-case-detail, .no-news {
+.shrink {
   font-size: 1.5vw;
+}
+.health-case-detail, .no-news {
+  font-size: 1.8vw;
 }
 .health-cases-div, .new-total, .health-cases-div-title, .health-news-title {
   font-size: 2vw;
@@ -137,8 +140,7 @@ display: none;
 }
 .corona-graph {
   display: block;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
 }
 
 }
