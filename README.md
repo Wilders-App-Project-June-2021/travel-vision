@@ -1,8 +1,10 @@
 # Travel Vision 
-App project @ [Wild Code School](http://wildcodeschool.com), June 2021 EN remote, students: [Salvatore](https://github.com/sal9110), [Natalie](https://github.com/Natalito96), [Lorianne](https://github.com/Grailsidhe)
+App project @ [Wild Code School](http://wildcodeschool.com), June 2021 EN remote.
+
+**Students:** ➭ [Salvatore](https://github.com/sal9110) ➭ [Lorianne](https://github.com/Grailsidhe)  ➭ [Natalie](https://github.com/Natalito96)
 
 
-### Concept: 
+## 🛫 Concept: 
 
 An app that helps the user seeking to travel, 'visualize' their destination country. It will display:
 
@@ -11,44 +13,60 @@ An app that helps the user seeking to travel, 'visualize' their destination coun
 - Currency exchange rates 
 - Health watch (Coronavirus stats) 
 - Current time 
-- Bonus: book a flight link (displaying various online flight booking website links)
+- Greeting 'Hello' in chosen country's language
+- A book a flight link (redirecting to skyscanner)
 
 
-### Functionality: 
+## 🛫 Functionality: 
 
-The user inputs their current location and their destination country, the app returns all of the information.
-
-
-### Basic layout: 
-
-- Cover page with logo, input boxes for present location and destination
-- Second page with destination title, a greeting in the destination language with current time, dynamic links (tabs displayed on top, content renders below) for each service, book a flight dynamic link, footer
+The user inputs their destination country and city, the app returns all of the information.
 
 
-### Components: 
+## 🛫 Layout: 
 
-- weather widget: 3 - 7 day forecast 
-- news headlines: 5 headlines with small description 
-- currency exchange: local currency to destination's currency
-- health watch (coronavirus): cases, etc. 5 days
+Coming soon!
+
+## 🛫 Feature Components: 
+
+- **News Headlines:** chosen country's current news
+- **Weather:** chosen city's 8 day forecast
+- **Currency exchange rates:** from chosen currency to country's curency
+- **Health Info:** chosen country's coronavirus cases, cases graph for desktop version, recent news articles
+- **Greeting:** greeting in chosen country's language with current time
+- **Country and city search:** input fields
 
 
-### APIs: 
+## 🛫 APIs used: 
 
-- [Greeting in different languages](https://fourtonfish.com/project/hellosalut-api/)
-- [Corona info](https://quarantine.country/coronavirus/api/)
-- [Weather](https://www.metaweather.com/api/)
-- [Currency exchange](https://www.vatcomply.com/documentation)
-- [Flags, etc](https://github.com/lennertVanSever/graphcountries)
-- [Current news](https://newsapi.org/)
+- [Covid 19 API](https://covid19api.com/)
+- [Corona Graph](https://t.me/CoronaNotify)
+- [OpenWeaather](https://openweathermap.org/api)
+- [Country State City API](https://countrystatecity.in/)
+- [Graph Countries](https://github.com/lennertVanSever/graphcountries)
+- [NewsAPI](https://newsapi.org/)
 
-### Tools used:
+
+## 🛫 Tools used:
 
 - Visual Studio Code
-- Trello
 - Jira
 - React
 - Axios
 - Figma
 - Photoshop
 - Google Docs
+- [Vivify](http://vivify.mkcreative.cz/)
+
+## 🛫 Comments:
+
+### Lorianne
+
+Coming soon
+
+### Salvatore
+
+Coming soon
+
+### Natalie
+
+Coming soon
