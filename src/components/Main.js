@@ -48,23 +48,28 @@ const Main = (props)=>{
     return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
     }
 
+    const getOlderDate = () => {
+        let today= new Date
+    return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()-2}`
+    }
+
     return (
     <div>
 
         {weatherInfo ?
             <Greeting
-            cities={props.cities}
-            countryName={props.countryName}
-            timeZone={weatherInfo.timezone}
-            countryCode={props.countryCode}
+                cities={props.cities}
+                countryName={props.countryName}
+                timeZone={weatherInfo.timezone}
+                countryCode={props.countryCode}
             />
             :
             <Loader
-            type="Plane"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            radius={500}  
+                type="Plane"
+                color="#00BFFF"
+                height={100}
+                width={100}
+                radius={500}  
             />
         }
 
@@ -89,7 +94,7 @@ const Main = (props)=>{
 
         <div className="main-components">
 
-        {activeTab[1].weather &&
+            {activeTab[1].weather &&
                 <WeatherInfo 
                 weatherInfo={weatherInfo.daily}
                 latitude={props.latitude}
@@ -100,6 +105,7 @@ const Main = (props)=>{
                 <NewsList
                 countryName={props.countryName}
                 getDate={getDate}
+                getOlderDate={getOlderDate}
                 />}
             {activeTab[3].health && 
                 <HealthInfo

@@ -1,13 +1,6 @@
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-a {
-  text-decoration: none;
-  color: rgb(255, 100, 108);
-}
-a:hover {
-  color: rgb(255, 224, 225);
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
@@ -22,12 +15,6 @@ a:hover {
 }
 .pink {
   color: rgb(253, 74, 106);
-}
-
-.container {
-  margin-bottom: 60px;
-  margin-top: 60px;
-  height: auto;
 }
 
 
@@ -108,28 +95,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: center;
 }
 
 
 
 
-/* BIG SCREEN */
-@media screen and (min-width:800px){
+@media screen and (min-width:770px){
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  -webkit-filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
-  filter: drop-shadow(2px 2px 1px rgba(34, 34, 34, 0.452));
-  font-family: 'Segoe UI';
-  margin: 0 10% 0 10%;
-  text-align: center;
-  height: auto;
-}
-
-/* GREETING */
 .greeting {
   font-size: 3vw;
 }
@@ -148,7 +120,6 @@ a:hover {
 }
 
     
-  /* TABS STYLES */
 .tabs-container {
   border-bottom: solid 1px rgb(0, 0, 0);
 }
@@ -171,5 +142,24 @@ a:hover {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-bottom: 10px;
+}
+}
+
+
+
+@media screen and (min-width:1070px){
+
+.tab-text {
+  font-size: 23px;
+}
+
+.greeting {
+  font-size: 40px;
+}
+.greeting-hello {
+  font-size: 45px;
+}
+.city-country {
+  font-size: 42px;
 }
 }
