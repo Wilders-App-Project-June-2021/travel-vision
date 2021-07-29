@@ -1,12 +1,20 @@
 # Travel Vision 
 App project @ [Wild Code School](http://wildcodeschool.com), June 2021 EN remote.
 
-**Students:** ➭ [Salvatore](https://github.com/sal9110) ➭ [Lorianne](https://github.com/Grailsidhe)  ➭ [Natalie](https://github.com/Natalito96)
+## 🛫 Students:
+
+- **[Salvatore](https://github.com/sal9110)** [📋 linkedin](http://linkedin.com/in/salvatore-patti-9b5198141) [✍ notes](https://github.com/Wilders-App-Project-June-2021/travel-vision#salvatore)
+
+- **[Lorianne](https://github.com/Grailsidhe)** [📋 linkedin](https://www.linkedin.com/in/lorianne-aguilar/) [✍ notes](https://github.com/Wilders-App-Project-June-2021/travel-vision#lorianne)
+
+- **[Natalie](https://github.com/Natalito96)** [📋 linkedin](https://www.linkedin.com/in/natalie-huaman-730bb4213/) [✍ notes](https://github.com/Wilders-App-Project-June-2021/travel-vision#natalie)
 
 
-## 🛫 Concept: 
+## 🛫 Concept, functionality and features: 
 
-An app that helps the user seeking to travel, 'visualize' their destination country. It will display:
+**An app that helps the user seeking to travel, 'visualize' their destination country.**
+
+Upon entering a chosen country and city, it displays the following data for that location:
 
 - Weather forecast 
 - News headlines 
@@ -17,23 +25,9 @@ An app that helps the user seeking to travel, 'visualize' their destination coun
 - A book a flight link (redirecting to skyscanner)
 
 
-## 🛫 Functionality: 
-
-The user inputs their destination country and city, the app returns all of the information.
-
-
 ## 🛫 Layout: 
 
 Coming soon!
-
-## 🛫 Feature Components: 
-
-- **News Headlines:** chosen country's current news
-- **Weather:** chosen city's 8 day forecast
-- **Currency exchange rates:** from chosen currency to country's curency
-- **Health Info:** chosen country's coronavirus cases, cases graph for desktop version, recent news articles
-- **Greeting:** greeting in chosen country's language with current time
-- **Country and city search:** input fields
 
 
 ## 🛫 APIs used: 
@@ -61,12 +55,12 @@ Coming soon!
 
 ### Lorianne
 
-Coming soon
+> Coming soon
 
 ### Salvatore
 
-Coming soon
+> Coming soon
 
 ### Natalie
 
-Coming soon
+> Coming soon
