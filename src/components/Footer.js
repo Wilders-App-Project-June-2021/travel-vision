@@ -30,7 +30,7 @@ const Footer = ()=> {
                         <p className="names"><a href="http://linkedin.com/in/salvatore-patti-9b5198141" target="new" className="a">Salvatore</a><br /><span className="surnames">Patti</span></p>
                     </div>
                 </div>
-                <span className="small">@ 2021 Travel Vision</span>
+                <span className="small">© 2021 Travel Vision</span>
         </div>
         <div className="flight-link"><a href="https://www.skyscanner.fr/" target="new" className="flight-a">Book a flight</a></div>
     </div>
