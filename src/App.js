@@ -54,11 +54,15 @@ function App() {
   }
 
   const cityInputHandler = (e) =>{
-    city= e.target.value ? e.target.value[0].toUpperCase() : ""
-    for(let i= 1; i<e.target.value.length ; i++){
-      city+= e.target.value[i].toLowerCase()
-    }
+    city = e.target.value ? e.target.value.replace(e.target.value[0],e.target.value[0].toUpperCase()) : ""
+    let secondWordIndex = city.indexOf(" ")
+   if(secondWordIndex !== -1 && city.length > secondWordIndex+1) {
+      let secondLetter = city[secondWordIndex+1] 
+    city = city.replace(secondLetter, secondLetter.toUpperCase())
   }
+    
+    }
+  
 
   const submitInfo = (e) => {
     e.preventDefault()

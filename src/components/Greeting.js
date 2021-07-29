@@ -11,8 +11,9 @@ const Greeting = (props)=>{
     const [timeZone,getTimeZone] = useState(props.timeZone)
 
     const getGreeting = (code) =>{
-       if(code){ const lowerCaseCode = code.toLowerCase()
-        const result = hello.find((item)=> item[lowerCaseCode])
+       if(code){ 
+            const lowerCaseCode = code.toLowerCase()
+            const result = hello.find((item)=> item[lowerCaseCode])
        return result[lowerCaseCode]}
      }
 
