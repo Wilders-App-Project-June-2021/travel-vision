@@ -17,30 +17,28 @@ const Greeting = (props)=>{
      }
 
 
-    const greetingMobile = 
-        <span>
+
+    return (
+
+        <div className="greeting-container swoopInTop">
+        
+        <span className="greetingMobile">
             <h1 className="greeting-hello">{getGreeting(props.countryCode)}! The time in</h1>
-            <p className="city-country pink" key={props.cities}>{props.cities === "" ? null : `${props.cities},`}{props.countryName}</p>
+            <p className="city-country pink" key={props.cities}>{props.cities}, {props.countryName}</p>
             <h1 className="greeting">is <b className="pink greeting">
             <Clock format={'HH:mm'} ticking={true} timezone={props.timeZone } />
                 </b></h1>
         </span>
 
-    const greetingDesktop =
-        <span>
+        <span className="greetingDesktop">
             <p className="greeting-hello">{getGreeting(props.countryCode)}!</p>
             <span className="greeting"> The time in</span>
             <span className="city-country pink">{props.cities}, {props.countryName}</span>
             <span className="greeting">is <b className="pink greeting">
-                <Clock format={'HH:MM'} ticking={true} timezone={props.timeZone } />
+                <Clock format={'HH:mm'} ticking={true} timezone={props.timeZone } />
                 </b></span>
         </span>
 
-
-    return (
-
-        <div className="greeting-container swoopInTop">
-        {greetingMobile}
         </div>
     )
     }

@@ -117,6 +117,7 @@ const Main = (props)=>{
                 countryName={props.countryName}
                 countryCode={props.countryCode}
                 getDate={getDate}
+                getOlderDate={getOlderDate}
                 />}
 
             </div>
