@@ -83,8 +83,9 @@
 }
 .active{
   background-color: rgb(197, 244, 255);
-  border-bottom: solid 2px rgb(197, 244, 255) !important;
+  border-bottom: solid 3px rgb(197, 244, 255);
   box-shadow: 2px -2px 2px rgba(53, 53, 53, 0.171);
+  margin-bottom: -7px;
 }
 .tab-text {
   font-family: 'Fredoka One', cursive;
