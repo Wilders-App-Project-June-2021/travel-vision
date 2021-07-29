@@ -9,7 +9,7 @@ const Footer = ()=> {
 
     const [lorianne, setLorianne]= useState('./img/lorianne.jpg');
     const [salvo, setSalvo]= useState('./img/salvatore.png');
-    const [natalie, setNatalie]= useState('./img/salvatore.png');
+    const [natalie, setNatalie]= useState('./img/natalie.jpg');
 
     return (
 
