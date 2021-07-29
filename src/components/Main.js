@@ -77,7 +77,7 @@ const Main = (props)=>{
 
         
         {props.error ?
-        <h1>Sorry we couldn't find {props.cities}, try again</h1>
+        <h1>Sorry we couldn't find {props.cities} in {props.countryName}, try again</h1>
         :<>
         <div className="Tabs">
             <div className="tabs-container">
