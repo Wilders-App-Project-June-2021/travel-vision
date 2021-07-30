@@ -34,7 +34,7 @@ Coming soon!
 
 - [Covid 19 API](https://covid19api.com/)
 - [Corona Graph](https://t.me/CoronaNotify)
-- [OpenWeaather](https://openweathermap.org/api)
+- [OpenWeather](https://openweathermap.org/api)
 - [Country State City API](https://countrystatecity.in/)
 - [Graph Countries](https://github.com/lennertVanSever/graphcountries)
 - [NewsAPI](https://newsapi.org/)
