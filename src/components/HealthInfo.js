@@ -36,7 +36,7 @@ function HealthInfo(props) {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [props.countryName]);
 
   const notAvailable = (path => path === undefined ?  "caching in progress" : path)
   
