@@ -8,7 +8,7 @@ import Clock from 'react-live-clock';
 
 
 const Greeting = (props)=>{
-    const [timeZone,getTimeZone] = useState(props.timeZone)
+    // const [timeZone,getTimeZone] = useState(props.timeZone)
 
     const getGreeting = (code) =>{
        if(code){ 
