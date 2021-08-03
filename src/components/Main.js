@@ -121,7 +121,7 @@ const Main = (props)=>{
             }
             {activeTab[2].currency  && 
                 <Currency
-
+                countryCode={props.countryCode}
                 />
             }
             {activeTab[3].health && 
