@@ -13,7 +13,7 @@ const [countryNews,setCountyNews]= useState([])
 
 useEffect(()=>{
     
-    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.cities}+${props.countryName}&language=en&sortBy=popularity&to=${props.getDate()}&from=${props.getOlderDate()}&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
+    axios.get(`https://newsapi.org/v2/everything?qInTitle="${props.cities}"+${props.countryName}&language=en&sortBy=popularity&to=${props.getDate()}&from=${props.getOlderDate()}&pageSize=3&apiKey=${process.env.REACT_APP_API_NEWS}`)
     .then(res1=>{
        setCountyNews(res1.data.articles)
        
