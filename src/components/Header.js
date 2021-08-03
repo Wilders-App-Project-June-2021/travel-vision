@@ -23,7 +23,17 @@ const Header = (props)=> {
         cityInputHandler={props.cityInputHandler}
         submitInfo={props.submitInfo}
         countryName={props.countryName}         
-        error={props.error}/>
+        error={props.error}
+        
+        citiesList={props.citiesList}
+        fullCitiesList={props.fullCitiesList}
+        cityInput={props.cityInput}
+        countryCodeInput={props.countryCodeInput}
+        />
+        
+        
+
+        
         </div>
         )
 

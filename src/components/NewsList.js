@@ -13,11 +13,21 @@ const [countryNews,setCountyNews]= useState([])
 
 useEffect(()=>{
     
-    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.countryName}&from=${props.getDate()}&to=${props.getOlderDate()}&language=en&sortBy=popularity&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
-    .then(res=>{
-       setCountyNews(res.data.articles)
+    axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.cities}+${props.countryName}&language=en&sortBy=popularity&to=${props.getDate()}&from=${props.getOlderDate()}&pageSize=5&apiKey=${process.env.REACT_APP_API_NEWS}`)
+    .then(res1=>{
+       setCountyNews(res1.data.articles)
+       
+       if(res1.data.articles.length < 5){
+        axios.get(`https://newsapi.org/v2/everything?qInTitle=${props.countryName}&language=en&sortBy=popularity&to=${props.getDate()}&from=${props.getOlderDate()}&pageSize=${5-res1.data.articles.length}&apiKey=${process.env.REACT_APP_API_NEWS}`)
+        .then(res2=>{
+            setCountyNews([...res1.data.articles,...res2.data.articles])
+        })
+       }
     })
-},[props.countryName])
+    .catch(err=>{
+        console.log(err)
+    })
+},[props.cities])
 
 // FOR HEALTHWATCH https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&pageSize=1&language=en&sortBy=relevancy&apiKey=862d686e64564ff38a69a93c176de68e
 

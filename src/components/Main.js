@@ -22,12 +22,17 @@ const Main = (props)=>{
 
     const [activeTab,setActiveTab]= useState([...tabClasses])
     const [weatherInfo, setWeatherInfo] = useState(null)
+    const [timeZone,setTimeZone] = useState("")
+    const [countryName,setCountryName]= useState(props.countryName)
 
 
     useEffect(()=>{
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
+        axios
+        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&exclude=hourly,minutely,current,alerts&appid=${process.env.REACT_APP_API_KEY}`)
           .then((weather) => {
+
             setWeatherInfo(weather.data)
+            setTimeZone(weather.data.timezone)
           })
           .catch((error) => {
             console.log(error);
@@ -52,17 +57,17 @@ const Main = (props)=>{
 
     const getOlderDate = () => {
         let today= new Date
-    return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()-2}`
+    return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()-3}`
     }
 
     return (
     <div>
 
-        {weatherInfo && !props.error ?
+        {weatherInfo ?
             <Greeting
                 cities={props.cities}
                 countryName={props.countryName}
-                timeZone={weatherInfo.timezone}
+                timeZone={timeZone}
                 countryCode={props.countryCode}
             />
             :
@@ -76,8 +81,8 @@ const Main = (props)=>{
         }
 
         
-        {props.error ?
-        <h1>Sorry we couldn't find {props.cities} in {props.countryName}, try again</h1>
+        {props.error && !weatherInfo ?
+        <h1>Sorry we couldn't find any information about {props.cities} in {props.countryName}, try again</h1>
         :<span>
         <div className="Tabs">
             <div className="tabs-container">
@@ -109,6 +114,7 @@ const Main = (props)=>{
             {activeTab[0].news  && 
                 <NewsList
                 countryName={props.countryName}
+                cities={props.cities}
                 getDate={getDate}
                 getOlderDate={getOlderDate}
                 />}
