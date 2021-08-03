@@ -17,7 +17,7 @@ const Input = (props)=> {
                         <option value="">Select a Country</option>
                         {nations.map((country,i)=> <option id={country.name} key={i} value={country.code}> {country.name} </option>)}
                     </select>
-                    <input className={props.fullCitiesList.length > 0? "input-city-desktop" : "none"} type="text" id="city" list="cityList" key={props.cities} placeholder="Enter a new City" required onChange={(e)=> props.cityInputHandler(e)}></input>
+                    <input className={props.fullCitiesList.length > 0? "input-city-desktop" : " input-city-desktop disabled"} type="text" id="city" list="cityList" key={props.cities} placeholder="Enter a new City" required onChange={(e)=> props.cityInputHandler(e)}></input>
                     <datalist id ="cityList" >
                         {
                         props.fullCitiesList.length > 0 &&

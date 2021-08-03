@@ -45,6 +45,10 @@
   background-color: rgb(214, 240, 250);
   border-radius: 10px;
 }
+
+.disabled{
+  opacity: 0.5;
+}
 input:focus, textarea:focus, select:focus{
   outline: none;
 }

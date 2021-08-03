@@ -19,17 +19,8 @@ const Cover = (props)=>{
                             <option value="">Select a Country</option>
                             {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} </option>)}
                         </select> 
-                        {props.countryCodeInput !== "" && !props.fullCitiesList &&
-                        <Loader
-                            type="Plane"
-                            color="#00BFFF"
-                            height={100}
-                            width={100}
-                            radius={500}
-                            style={{}}
-                        />} 
                         <br />
-                        <input className={props.fullCitiesList? "input-city" : "none"} list="cityy" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.cityInputHandler(e)}/>
+                        <input className={props.fullCitiesList? "input-city" : " input-city disabled"} list="cityy" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.cityInputHandler(e)}/>
                         <datalist id ="cityy" >
                         {
                         props.fullCitiesList.length > 0 &&

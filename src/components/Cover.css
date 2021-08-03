@@ -64,8 +64,8 @@ body {
     font-family: 'Fredoka One', cursive;
     font-size: 4vw;
 }
-.none{
-    display: none;
+.disabled{
+    opacity: 0.5;
 }
 input:focus, textarea:focus, select:focus {
     outline: none;
