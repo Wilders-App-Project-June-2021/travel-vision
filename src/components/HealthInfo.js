@@ -44,7 +44,7 @@ function HealthInfo(props) {
     <div>
       {!apiResponse ?
           <Health
-            key={healthInfo && healthInfo.ID}
+            id={healthInfo && healthInfo.ID}
             countryName={props.countryName}
             countryCode={props.countryCode}
             confirmed={healthInfo && notAvailable(healthInfo.TotalConfirmed)}

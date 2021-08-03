@@ -73,28 +73,28 @@ function Health(props) {
 
   if(props.description && props.confirmed){
   return (
-    <div className="health-container" id={props.key}>
+    <div className="health-container" id={props.id}>
         {coronaCases}
         {withNews}
     </div>
   )
   } else if (!props.description && props.confirmed){
     return (
-      <div id={props.key}>
+      <div id={props.id}>
         {coronaCases}
         {noNews}
       </div>
     )
   } else if(props.description && !props.confirmed){
     return (
-      <div className="health-container" id={props.key}>
+      <div className="health-container" id={props.id}>
           {noCoronaCases}
           {withNews}
       </div>
     )
   }else{
     return (
-      <div className="health-container" id={props.key}>
+      <div className="health-container" id={props.id}>
         {noCoronaCases}
         {noNews}
       </div>
