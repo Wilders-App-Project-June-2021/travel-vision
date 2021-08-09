@@ -46,7 +46,7 @@
   border-radius: 10px;
 }
 
-.disabled{
+.input-city-desktop:disabled{
   opacity: 0.5;
 }
 input:focus, textarea:focus, select:focus{

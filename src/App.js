@@ -7,7 +7,6 @@ import Main from "./components/Main"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Header from "./components/Header";
 import Footer from "./components/Footer"
-import qs from 'qs'
 
 function App() {
 
@@ -42,8 +41,6 @@ function App() {
 
     .catch(error => {
       setError(true)
-      // setLatitude(null)
-      // setLongitude(null)
     })
   }
 
@@ -51,10 +48,6 @@ function App() {
      if(cities.length>0){getCityInfo()}
   },[cities])
 
-
-  //  let countryCodeInfo = ""
-  //  let countryNameInfo = ""
-  //  let cityName = ""
 
   const countryInputHandler=(e)=>{
     let countryCodeInfo = e.target.value
@@ -85,7 +78,6 @@ function App() {
     setCountryCode(countryCodeInput)
     setCountryName(countryNameInput)
     setCities(cityInput)
-    // setCitiesList("")
     setTimeout(()=> {
       e.target[0].value = ""
       e.target[1].value = ""
