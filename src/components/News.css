@@ -38,9 +38,7 @@
     font-weight: bold;
 }
 .news-icon {
-    width: 50vh;
-    max-width: 2em;
-    max-width: 2.5em;
+    font-size: -webkit-xxx-large;
     padding: 20px;
 }
 .text-icon-wrapper {
@@ -49,6 +47,7 @@
 }
 .news-link {
     margin: auto;
+    text-decoration: none;
 }
 .news-img {
     display: none;
