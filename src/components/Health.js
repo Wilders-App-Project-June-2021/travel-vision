@@ -1,8 +1,10 @@
 import "./Health.css";
-import React from "react";
+import React, { useState } from "react";
 import logo from './newspaper.svg'
 
 function Health(props) {
+
+const [showInfo,setShowInfo]= useState(false)
 
   const coronaCases =
     <div className="health-cases-wrapper fadeIn">
@@ -60,8 +62,8 @@ function Health(props) {
   const withNews =
     <div className="health-news-wrapper fadeIn">
       <div className="health-news">
-        <h3 className="health-news-title pale-pink-3">{`${props.title}`}</h3>
-        <img className="health-news-image pale-pink-2" src={`${props.image}`} alt={`${props.title}`} />
+        <h3 className="health-news-title pale-pink">{`${props.title}`}</h3>
+        {/* <img className="health-news-image pale-pink-2" src={`${props.image}`} alt={`${props.title}`} /> */}
         <div className="health-text-icon-wrapper">
           <p className="health-news-description">
             {`${props.description}`}
@@ -71,30 +73,80 @@ function Health(props) {
       </div>
     </div>;
 
+    const travelRestrictions= 
+    <div className="health-travel-wrapper fadeIn">
+      <div className="health-travel">
+        <h3 className="health-travel-title pale-pink">
+          Travel information {props.countryName} 
+        </h3>
+        <div className="travel-info-details">
+          <h4 className="health-travel-subtitle pale-pink-2">Travel regulation</h4>
+           {props.travelDoc} 
+          <a href={props.travelDocLink}> Click here for more info</a>
+          {" "}
+          {props.travelDocuments}
+        </div>
+       <div className="health-travel-central-wrapper" >
+        <div className="travel-info-details">
+            <h4 className="health-travel-subtitle pale-pink-2">Tests</h4>
+            <p> Test requirement : {props.testRequirement} </p>
+            <p> Accepeted Tests : {props.testsType}</p>
+            <a href={props.testRequirementLink}>Click here for more info</a>
+            {/* {props.testRequirementDetails} */}
+        </div>
+        <div className="travel-info-details">
+            <h4 className="health-travel-subtitle pale-pink-2">People vaccinated</h4>
+            <p> One dose : {props.oneDoseVaccinated.toFixed(0)}%</p>
+            <p> Fully : {props.fullyVaccinated.toFixed(0)}%</p>
+        </div>
+       <div className="travel-info-details">
+            <h4 className="health-travel-subtitle pale-pink-2">Valid certification</h4>
+            {props.accepetedCertificates.map((item)=><p key={item}> {item}</p>)}
+        </div>
+        </div>
+      <div className="health-travel-central-wrapper">
+        <div className="travel-info-details">
+            <h4 className="health-travel-subtitle pale-pink-2"> Qualified vaccines / immunity</h4>
+            {props.vaccinesList.map((item)=><p key={item}> {item}</p>)}
+        </div>
+        <div className="travel-info-details">
+          <h4 className="health-travel-subtitle pale-pink-2" >Mask</h4>
+          {props.maskInfo}
+        </div>
+      </div>
+        <div className="travel-info-details">
+          <h4 className="health-travel-subtitle pale-pink-2"> Entering in the country</h4>
+          { showInfo && props.entryInfo} 
+          <button onClick={()=>setShowInfo(prev => !prev)} className="expand-btn"> {showInfo? 'Show less':'Click here to expand'}</button>
+        </div>
+      </div>
+    </div>
+
   if(props.description && props.confirmed){
   return (
-    <div className="health-container" id={props.key}>
+    <div className="health-container" id={props.id}>
         {coronaCases}
         {withNews}
+        {travelRestrictions}
     </div>
   )
   } else if (!props.description && props.confirmed){
     return (
-      <div id={props.key}>
+      <div id={props.id}>
         {coronaCases}
         {noNews}
       </div>
     )
   } else if(props.description && !props.confirmed){
     return (
-      <div className="health-container" id={props.key}>
+      <div className="health-container" id={props.id}>
           {noCoronaCases}
           {withNews}
       </div>
     )
   }else{
     return (
-      <div className="health-container" id={props.key}>
+      <div className="health-container" id={props.id}>
         {noCoronaCases}
         {noNews}
       </div>
