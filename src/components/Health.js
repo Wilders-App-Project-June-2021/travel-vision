@@ -68,7 +68,7 @@ const [showInfo,setShowInfo]= useState(false)
           <p className="health-news-description">
             {`${props.description}`}
           </p>
-          <a href={`${props.url}`} className = "health-news-link" target="new"><img className="health-news-icon" src={`${logo}`} alt={`${props.title}`}/></a>
+          <a href={`${props.url}`} className = "health-news-link" target="new"><span className="health-news-icon" > 🗞 </span></a>
         </div>
       </div>
     </div>;
