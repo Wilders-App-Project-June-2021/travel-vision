@@ -37,7 +37,7 @@
   padding: 10px 30px 10px 30px;
   background-color: rgb(255, 100, 108);
   font-weight: bold;
-  font-size: 3.5vw;
+  font-size: 22px;
   text-align: center;
   border: solid 1px black;
   -webkit-filter: drop-shadow(1px 1px 2px #222);
@@ -56,11 +56,11 @@
 }
 .small {
   color: rgba(255, 255, 255, 0.568);
-  font-size: 2.5vw;
+  font-size: 12px;
   margin: 0 0 15px 0;
 }
 .made-by {
-  font-size: 3vw;
+  font-size: 15px;
   margin: 55px 0 0 0;
   font-family: 'Advent Pro', sans-serif;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
@@ -77,19 +77,26 @@
   align-items: center;
   text-align: center;
 }
-.footer-img {
-  display: none;
-}
 .names {
-  font-size: 4vw;
+  font-size: 20px;
   margin-top: 30px;
   font-weight: bold;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 } 
 .surnames {
-  font-size: 3.5vw;
+  font-size: 17px;
   font-family: 'Advent Pro', sans-serif;
+}
+.footer-img {
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 15px;
+  border-radius: 100%;
+  background-color: rgb(255, 74, 83);
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
 }
 
 @media screen and (min-width:770px){
@@ -106,16 +113,6 @@
   font-size: 1.8vw;
   margin: 50px 0 20px 0px;
 }
-.footer-img {
-  display: block;
-  height: 60px;
-  width: 60px;
-  margin-bottom: 15px;
-  border-radius: 100%;
-  background-color: rgb(255, 74, 83);
-  -webkit-filter: drop-shadow(1px 1px 1px #222);
-  filter: drop-shadow(1px 1px 1px #222);
-}
 .names {
   font-size: 1.9vw;
   margin-top: 0px;
@@ -125,21 +122,24 @@
 }
 }
 
-@media screen and (min-width:1070px){
+@media screen and (max-width:685px){
 
 .flight-link {
-  font-size: 22px;
+  font-size: 3.5vw;
 }
 .small {
-  font-size: 12px;
+  font-size: 2.5vw;
 }
 .made-by {
-  font-size: 15px;
+  font-size: 3vw;
 }
 .names {
-  font-size: 20px;
+  font-size: 4vw;
 } 
 .surnames {
-  font-size: 17px;
+  font-size: 3.5vw;
+}
+.footer-img {
+  display: none;
 }
 }
