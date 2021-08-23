@@ -4,11 +4,13 @@ import Health from "./Health";
 import axios from "axios";
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import { useQuery } from "react-query";
+import parse from 'html-react-parser';
 
 function HealthInfo(props) {
   const [healthInfo, setHealthInfo] = useState([]);
-  const [healthNews, sethealthNews] = useState([]);
-  const [apiResponse, setApiResponse] = useState(true)
+  const [healthNews, setHealthNews] = useState([]);
+  const [apiResponse, setApiResponse] = useState(false)
 
   const getData = () => {
     axios
@@ -16,15 +18,14 @@ function HealthInfo(props) {
       .then((covidData) => {
         if(covidData.data.Countries){
           const filtered = covidData.data.Countries.filter((item) => item.CountryCode === props.countryCode)
-          console.log(covidData.data)
           setHealthInfo(filtered[0]);
         }
-        setApiResponse(false)
+        // setApiResponse(true)
         axios
         .get(`https://newsapi.org/v2/everything?qInTitle=(${props.countryName}%20AND%20coronaVirus)&from=${props.getDate()}pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`)
         .then((covidNews)=>{
-          sethealthNews(covidNews.data.articles[0])
-          setApiResponse(false)
+          setHealthNews(covidNews.data.articles[0])
+          setApiResponse(true)
          })
       })
       .catch((error) => {
@@ -32,6 +33,43 @@ function HealthInfo(props) {
       });
   };
  
+  const [travelInfo,setTravelInfo] = useState("")
+
+  const getTravelInfo = async ({queryKey})=>{
+    const countryCode = queryKey[1].country
+        return await axios.get(`http://localhost:8080/${countryCode}`).then(res=> res.data)
+             
+        }
+    
+    
+    const {data, isLoading, error:whoop} = useQuery(props.countryCode && ['travelInfo',{country : props.countryCode}],getTravelInfo,{
+      enabled: props.countryCode.length > 0 ,
+      onSuccess:(data)=>{
+        setTravelInfo(data.data)
+      },
+      refetchOnWindowFocus:false,
+      cacheTime:Infinity,
+      staleTime:Infinity
+    })
+    
+    console.log(whoop, data)
+    
+    // travelInfo.areaAccessRestriction.declarationDocuments.text
+    // travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink
+    // travelInfo.diseaseTesting.requirement
+    // travelInfo.diseaseTesting.minimumAge
+    // travelInfo.diseaseTesting.testType
+    // travelInfo.diseaseTesting.rules
+    // travelInfo.diseaseTesting.text
+    // travelInfo.diseaseVaccination.qualifiedVaccines
+    // travelInfo.diseaseVaccination.acceptedCertificates
+    // travelInfo.diseaseVaccination.text
+    // travelInfo.entry.text
+    // travelInfo.exit.text
+    // travelInfo.mask
+    // travelInfo.areaRestrictions[0].text
+
+
 
 
   useEffect(() => {
@@ -42,8 +80,9 @@ function HealthInfo(props) {
   
   return (
     <div>
-      {!apiResponse ?
+      {apiResponse && travelInfo ?
           <Health
+            key={healthInfo && healthInfo.ID}
             id={healthInfo && healthInfo.ID}
             countryName={props.countryName}
             countryCode={props.countryCode}
@@ -56,7 +95,21 @@ function HealthInfo(props) {
             title={healthNews && healthNews.title }
             description={healthNews && healthNews.description}
             url={healthNews && healthNews.url}
-            image={healthNews && healthNews.urlToImage}
+            // image={healthNews && healthNews.urlToImage}
+            travelDoc={parse(travelInfo.areaAccessRestriction.declarationDocuments.text)}
+            travelDocLink={travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink}
+            travelDocuments={parse(travelInfo.areaAccessRestriction.diseaseVaccination.text)}
+            testRequirement={travelInfo.areaAccessRestriction.diseaseTesting.requirement}
+            testsType={travelInfo.areaAccessRestriction.diseaseTesting.testType}
+            testRequirementLink={travelInfo.areaAccessRestriction.diseaseTesting.rules} 
+            testRequirementDetails={parse(travelInfo.areaAccessRestriction.diseaseTesting.text)}
+            vaccinesList={travelInfo.areaAccessRestriction.diseaseVaccination.qualifiedVaccines}
+            accepetedCertificates={travelInfo.areaAccessRestriction.diseaseVaccination.acceptedCertificates}
+            entryInfo={parse(travelInfo.areaAccessRestriction.entry.text)}
+            maskInfo={parse(travelInfo.areaAccessRestriction.mask.text)}
+            oneDoseVaccinated={travelInfo.areaVaccinated[0].percentage}
+            fullyVaccinated={travelInfo.areaVaccinated[1].percentage}
+            
           /> 
         :
         <Loader
@@ -68,6 +121,24 @@ function HealthInfo(props) {
         />
 
           }
+         {
+        //  travelInfo && 
+          // <div>
+          // {/* {parse(travelInfo.areaAccessRestriction.declarationDocuments.text)} */}
+          // {/* {travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink} */}
+          // {/* {travelInfo.areaAccessRestriction.diseaseTesting.requirement} */}
+          // {/* {travelInfo.areaAccessRestriction.diseaseTesting.testType} */}
+          // {/* {travelInfo.areaAccessRestriction.diseaseTesting.rules}  */}
+          // {/* {parse(travelInfo.areaAccessRestriction.diseaseTesting.text)} */}
+          // {/* {travelInfo.areaAccessRestriction.diseaseVaccination.qualifiedVaccines.map((item)=> <p key={item} > {item}</p>)} */}
+          // {/* {travelInfo.areaAccessRestriction.diseaseVaccination.acceptedCertificates.map((item)=> <p key={item} > {item}</p>)} */}
+          // {parse(travelInfo.areaAccessRestriction.diseaseVaccination.text)} 
+          // {/* {parse(travelInfo.areaAccessRestriction.entry.text)} */}
+          // {parse(travelInfo.areaAccessRestriction.exit.text)}
+          // {/* {parse(travelInfo.areaAccessRestriction.mask.text)} */}
+          // {parse(travelInfo.areaRestrictions[0].text)}
+          // </div>
+         }
     </div>
   );
 }

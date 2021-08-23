@@ -5,7 +5,7 @@ import "./vivify.min.css"
 import Greeting from "./Greeting";
 import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
-import Currency from "./Currency";
+import Currency from "./Currency.js";
 import HealthInfo from "./HealthInfo";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
@@ -121,9 +121,11 @@ const Main = (props)=>{
             }
             {activeTab[2].currency  && 
                 <Currency
+                countryName={props.countryName}
                 countryCode={props.countryCode}
-                />
-            }
+                
+                />}
+
             {activeTab[3].health && 
                 <HealthInfo
                 countryName={props.countryName}
