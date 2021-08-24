@@ -98,7 +98,7 @@ function HealthInfo(props) {
             // image={healthNews && healthNews.urlToImage}
             travelDoc={parse(travelInfo.areaAccessRestriction.declarationDocuments.text)}
             travelDocLink={travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink}
-            travelDocuments={parse(travelInfo.areaAccessRestriction.diseaseVaccination.text)}
+            travelDocuments={travelInfo.areaAccessRestriction.diseaseVaccination.text && parse(travelInfo.areaAccessRestriction.diseaseVaccination.text)}
             testRequirement={travelInfo.areaAccessRestriction.diseaseTesting.requirement}
             testsType={travelInfo.areaAccessRestriction.diseaseTesting.testType}
             testRequirementLink={travelInfo.areaAccessRestriction.diseaseTesting.rules} 

@@ -61,7 +61,7 @@ const Main = (props)=>{
     }
 
     return (
-    <div>
+    <div className="main-wrapper">
 
         {weatherInfo ?
             <Greeting

@@ -98,34 +98,13 @@
   filter: drop-shadow(1px 1px 1px #222);
 }
 
-/* @media screen and (min-width:770px){
-.flight-link {
-  font-size: 2vw;
-  margin-top: -280px;
-  position: fixed;
-}
-.small {
-  font-size: 1.3vw;
-  margin: 10px 0 20px 0;
-}
-.made-by {
-  font-size: 1.8vw;
-  margin: 50px 0 20px 0px;
-}
-.names {
-  font-size: 1.9vw;
-  margin-top: 0px;
-} 
-.surnames {
-  font-size: 1.6vw;
-}
-} */
 
 @media screen and (max-width:685px){
 
 .flight-link {
   font-size: 3.5vw;
   margin-top: -155px;
+  position: absolute;
 }
 .small {
   font-size: 2.5vw;

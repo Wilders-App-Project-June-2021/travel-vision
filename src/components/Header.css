@@ -110,6 +110,11 @@ input:focus, textarea:focus, select:focus{
 .input-city-desktop, .input-country-desktop, .go, .input-box-desktop, .input-country-desktop select, .input-country-desktop option {
   font-size: 4.5vw;
 }
+.input-city-desktop, .input-country-desktop {
+  width: 45%;
+  margin: 15px 5px 10px 5px;
+}
+
 .logo-img-desktop {
   display: none;
 }

@@ -12,7 +12,7 @@
 
 }
  .news-description {
-    padding: 10px;
+    padding: 5px;
     margin: 2px;
     text-align: left;
     font-size: 3.5vw;
@@ -67,7 +67,7 @@
 @media screen and (max-width:685px){
 
 .news-title, .no-news {
-    font-size:4vw;
+    font-size: 4vw;
 }
 .news-img {
     display: none;
