@@ -96,8 +96,8 @@ const [showInfo,setShowInfo]= useState(false)
         </div>
         <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">People vaccinated</h4>
-            <p> One dose : {props.oneDoseVaccinated.toFixed(0)}%</p>
-            <p> Fully : {props.fullyVaccinated.toFixed(0)}%</p>
+            <p> One dose : {props.oneDoseVaccinated && props.oneDoseVaccinated.toFixed(0)}%</p>
+            <p> Fully : {props.fullyVaccinated && props.fullyVaccinated.toFixed(0)}%</p>
         </div>
        <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Valid certification</h4>
@@ -122,32 +122,43 @@ const [showInfo,setShowInfo]= useState(false)
       </div>
     </div>
 
-  if(props.description && props.confirmed){
+  if(props.description &&
+    //  props.confirmed
+    props.travelDoc
+     ){
   return (
     <div className="health-container" id={props.id}>
-        {coronaCases}
+        {/* {coronaCases} */}
+        
         {withNews}
         {travelRestrictions}
     </div>
   )
-  } else if (!props.description && props.confirmed){
+  } else if (!props.description &&
+    //  props.confirmed
+    props.travelDoc
+     ){
     return (
       <div id={props.id}>
-        {coronaCases}
+        {/* {coronaCases} */}
+        {travelRestrictions}
         {noNews}
       </div>
     )
-  } else if(props.description && !props.confirmed){
+  } else if(props.description && 
+    // !props.confirmed
+    !props.travelDoc
+    ){
     return (
       <div className="health-container" id={props.id}>
-          {noCoronaCases}
+          {/* {noCoronaCases} */}
           {withNews}
       </div>
     )
   }else{
     return (
       <div className="health-container" id={props.id}>
-        {noCoronaCases}
+        {/* {noCoronaCases} */}
         {noNews}
       </div>
     )

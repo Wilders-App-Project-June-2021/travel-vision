@@ -29,14 +29,14 @@ body {
   display: none;
 }
 .greeting, .greeting-hello {
-  font-size: 8vw;
+  font-size: 7vw;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-hello {
   margin-bottom: 5px;
 }
 .city-country {
-  font-size: 11vw;
+  font-size: 10vw;
   margin: 0px 15px -15px 15px;
   font-family: 'Fredoka One', cursive;
 }
@@ -109,7 +109,7 @@ body {
 
 
 
-@media screen and (min-width:770px) and (max-width:1070px){
+@media screen and (min-width:760px) and (max-width:1070px){
 
 .greetingMobile {
   display: none;
@@ -118,7 +118,7 @@ body {
   display: block;
 }
 .greeting {
-  font-size: 3vw;
+  font-size: 3.5vw;
 }
 .greeting-hello {
   font-size: 4.5vw;
@@ -129,7 +129,6 @@ body {
   margin: 0 15px 0 15px;
 }
 .greeting-container {
-  margin: 30px 30px -15px 30px;
   -webkit-filter: drop-shadow(0 0 0 #222);
   filter: drop-shadow(0 0 0 #222);
 }
@@ -139,7 +138,7 @@ body {
   border-bottom: solid 1px rgb(0, 0, 0);
 }
 .tab-text {
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 .tab-div {
   height: 45px;
@@ -167,7 +166,7 @@ body {
 
 
 
-@media screen and (min-width:1070px) and (max-width:5000px){
+@media screen and (min-width:1070px){
 
 .tab-text {
   font-size: 23px;
