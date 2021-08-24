@@ -53,13 +53,13 @@
 .pale-pink-3 {
   background-color: rgb(252, 245, 244);
 }
-.health-news-wrapper, .health-cases-wrapper {
+.health-news-wrapper, .health-cases-wrapper , .health-travel-wrapper {
   text-align: left; 
 }
 .health-news-image {
   width: 100%;
 }
-.health-news, .no-news {
+.health-news, .no-news, .health-travel {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -78,7 +78,7 @@
   font-size: 4vw;
   font-weight: bold;
 }
-.health-news-title {
+.health-news-title , .health-travel-title {
   margin: 0;
   text-align: left;
   padding: 10px;
@@ -99,9 +99,8 @@
   font-size: 3.5vw;
 }
 .health-news-icon {
-  width: 50vh;
-  max-width: 2em;
-  max-width: 2.5em;
+  font-size: -webkit-xxx-large;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.719);
   padding: 20px;
 }
 .health-news-img {
@@ -112,6 +111,7 @@
 }
 .health-news-link {
   margin: auto;
+  text-decoration: none;
 }
 .fadeIn {
   animation-duration: .5s !important;
@@ -120,6 +120,28 @@
   display: none;
 }
 
+.health-travel-subtitle {
+  padding: 10px;
+  margin-top: 4px;
+}
+
+.health-travel-central-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.travel-info-details{
+  width: -webkit-fill-available;
+  margin: 2px;
+  text-align: left; 
+}
+.expand-btn{
+    width: 20%;
+    border-radius: 50px;
+    background-color: #f9d7d2;
+    font-weight: 900;
+    padding: 5px;
+}
 
 @media screen and (min-width:770px) {
   
@@ -129,7 +151,7 @@
 .health-case-detail, .no-news {
   font-size: 1.8vw;
 }
-.health-cases-div, .new-total, .health-cases-div-title, .health-news-title {
+.health-cases-div, .new-total, .health-cases-div-title, .health-news-title , .health-travel-title{
   font-size: 2vw;
 }
 .health-news-description {
@@ -147,7 +169,7 @@
 .shrink, .health-case-detail, .no-news {
   font-size: 17px;
 }
-.health-cases-div, .new-total, .health-cases-div-title, .health-news-title {
+.health-cases-div, .new-total, .health-cases-div-title, .health-news-title , .health-travel-title{
   font-size: 20px;
 }
 .health-news-description {

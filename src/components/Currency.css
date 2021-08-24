@@ -1,0 +1,137 @@
+
+.pink {
+    color: rgb(255, 74, 83);
+}
+.currencyContainerDesktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Segoe UI";
+}
+.currencyContainerMobile {
+    display: none;
+}
+.currencyCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 4px;
+    width: 49%;
+    border-radius: 9px;
+    border: solid 1px rgba(0, 0, 0, 0.466);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px rgba(5, 5, 5, 0.192);
+}
+.currencyWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.currencyFlag {
+    width: -webkit-fill-available;
+    text-align-last: center;
+    margin: -10px 0 0 20px;
+    font-size: 45px;
+    border: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.719);
+}
+.currencySelect {
+    background-color: rgba(0, 0, 255, 0);
+}
+.currencySymbol,
+.currencyName {
+    font-size: 20px;
+    padding: 5px;
+}
+.currencyInputNumber {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    width: 30%;
+    text-align-last: center;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.322);
+    background-color: rgb(230, 230, 230);
+}
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+.currencyHeader,
+.currencyMiddle {
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgb(250, 215, 210);
+    font-size: 20px;
+    margin: 3px;
+    text-align: center;
+}
+.currencyMiddle {
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.438);
+    justify-content: center;
+    padding: 15px;
+}
+.currencyMainSection,
+.currencyBottomSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    width: -webkit-fill-available;
+}
+.currencyBottomSection {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(230, 230, 230);
+    justify-content: center;
+    padding: 5px;
+    height: 50px;
+    font-size: 20px;
+}
+.fadeIn {
+  animation-duration: .5s !important;
+}
+.currencyMainSection {
+    margin: 2px 3px 10px 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.719);
+    justify-content: center;
+    padding: 5px;
+    height: 50px;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width:685px){
+
+.currencyContainerMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Segoe UI";
+}
+.currencyContainerDesktop {
+    display: none;
+}
+.currencyCard {
+    width: 100%;
+}
+.currencyFlag, .currencyMainSection, .currencyBottomSection {
+    font-size: 7vw;
+    margin-top: 2px;
+}
+.currencyInputNumber, .currencyMiddle, .currencyHeader, .currencySymbol, .currencyName {
+    font-size: 5.5vw;
+}
+}

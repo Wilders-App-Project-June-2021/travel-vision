@@ -7,7 +7,8 @@ import Main from "./components/Main"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Header from "./components/Header";
 import Footer from "./components/Footer"
-import qs from 'qs'
+import  qs from "querystring"; 
+import { useQuery } from "react-query";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
   const [countryCodeInput,setCountryCodeInput] = useState("")
   const [cityInput,setCityInput] = useState("")
   const [countryNameInput,setCountryNameInput] = useState("")
+ 
 
   
   const getCityInfo=()=>{
@@ -38,12 +40,11 @@ function App() {
         setCountryNameInput("")
         setError(false)
         setRender(true)
+        
       })
 
     .catch(error => {
       setError(true)
-      // setLatitude(null)
-      // setLongitude(null)
     })
   }
 
@@ -51,10 +52,6 @@ function App() {
      if(cities.length>0){getCityInfo()}
   },[cities])
 
-
-  //  let countryCodeInfo = ""
-  //  let countryNameInfo = ""
-  //  let cityName = ""
 
   const countryInputHandler=(e)=>{
     let countryCodeInfo = e.target.value
@@ -79,13 +76,19 @@ function App() {
     setCityInput(cityName)
     
   }
+
+
+
+
+
+   
+
   
   const submitInfo = (e) => {
     e.preventDefault()
     setCountryCode(countryCodeInput)
     setCountryName(countryNameInput)
     setCities(cityInput)
-    // setCitiesList("")
     setTimeout(()=> {
       e.target[0].value = ""
       e.target[1].value = ""
@@ -136,34 +139,7 @@ function App() {
 // },[])
 
 
-// useEffect(()=>{
 
-// const data = qs.stringify( {
-//   'client_id': `${process.env.REACT_APP_API_KEY_AMADEUS}`,
-//   'client_secret': `${process.env.REACT_APP_API_SECRET_AMADEUS}`,
-//   'grant_type': 'client_credentials'
-// })
-
-// const config = {
-//   method: 'post',
-//   url: 'https://test.api.amadeus.com/v1/security/oauth2/token',
-//   headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-//   data : data
-// };
-
-//   axios(config)
-//       .then((authorization) =>{
-//         axios
-//         .get('https://test.api.amadeus.com/v2/duty-of-care/diseases/covid19-area-report',
-//         {
-         
-//           auth:{'Bearer': `${authorization.data['access_token']}`}
-//         })
-//         console.log(authorization.data['access_token'])
-//       })
-//       .catch((error) => console.log("error", error))
-
-// },[])
 
 
 // result.data['access_token']
@@ -216,4 +192,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
