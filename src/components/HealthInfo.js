@@ -37,7 +37,7 @@ function HealthInfo(props) {
 
   const getTravelInfo = async ({queryKey})=>{
     const countryCode = queryKey[1].country
-        return await axios.get(`http://localhost:8080/${countryCode}`).then(res=> res.data)
+        return await axios.get(`https://example-lor-salv.herokuapp.com/${countryCode}`).then(res=> res.data)
              
         }
     

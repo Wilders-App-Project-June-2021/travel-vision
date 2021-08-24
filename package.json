@@ -15,16 +15,19 @@
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.2",
     "html-react-parser": "^1.2.8",
+    "moment-timezone": "^0.5.33",
+    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-live-clock": "^5.2.0",
     "react-loader-spinner": "^4.0.0",
+    "react-moment": "^1.1.1",
     "react-query": "^3.19.2",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "^4.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node express.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -40,7 +43,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
