@@ -67,13 +67,13 @@
 @media screen and (max-width:685px){
 
 .news-title, .no-news {
-    font-size:4.5vw;
+    font-size:4vw;
 }
 .news-img {
     display: none;
 }
 .news-description {
-    font-size: 4.5vw;
+    font-size: 3.7vw;
     margin-bottom: -25px;
 }
 .news-icon {

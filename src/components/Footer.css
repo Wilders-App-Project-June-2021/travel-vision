@@ -31,7 +31,7 @@
   background-position: center;
 }
 .flight-link {
-  margin-top: -220px;
+  margin-top: -240px;
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 30px 10px 30px;
@@ -61,7 +61,7 @@
 }
 .made-by {
   font-size: 15px;
-  margin: 55px 0 0 0;
+  margin: 40px 0 15px 0;
   font-family: 'Advent Pro', sans-serif;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
@@ -79,7 +79,7 @@
 }
 .names {
   font-size: 20px;
-  margin-top: 30px;
+  margin-top: 5px;
   font-weight: bold;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
@@ -92,14 +92,13 @@
   display: block;
   height: 60px;
   width: 60px;
-  margin-bottom: 15px;
   border-radius: 100%;
   background-color: rgb(255, 74, 83);
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
 
-@media screen and (min-width:770px){
+/* @media screen and (min-width:770px){
 .flight-link {
   font-size: 2vw;
   margin-top: -280px;
@@ -120,12 +119,13 @@
 .surnames {
   font-size: 1.6vw;
 }
-}
+} */
 
 @media screen and (max-width:685px){
 
 .flight-link {
   font-size: 3.5vw;
+  margin-top: -155px;
 }
 .small {
   font-size: 2.5vw;

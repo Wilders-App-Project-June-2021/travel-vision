@@ -2,6 +2,9 @@
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body {
+  background-color: white;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
@@ -40,7 +43,7 @@
 .greeting-container {
   text-align: center;
   font-weight: bold;
-  margin: 30px 30px -15px 30px;
+  margin: 30px 30px -30px 30px;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
