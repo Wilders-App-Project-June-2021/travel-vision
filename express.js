@@ -83,6 +83,19 @@ app.get("/:country", cors(), (req, res, next) => {
     .catch((error) => console.log("error", error));
 });
 
+app.get("api/news/:city/:country/:date/:oldDate", cors(), (req, res) => {
+  const { city, country, date, oldDate } = req.params;
+
+  axios
+    .get(
+      `https://newsapi.org/v2/everything?qInTitle="${city}"+${country}&language=en&sortBy=popularity&to=${date}&from=${oldDate}&pageSize=3&apiKey=${process.env.REACT_APP_API_NEWS}`
+    )
+    .then((result) => {
+      console.log(result.data);
+      res.send(result.data);
+    });
+});
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
