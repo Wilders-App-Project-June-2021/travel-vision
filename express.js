@@ -1,10 +1,11 @@
+require('dotenv')
 const express = require('express');
 const app = express();
 const axios = require('axios')
 const qs = require('querystring')
 const corsAnywhere = require('cors-anywhere');
 const CORS_PROXY_PORT = 5000;
-const expressHttpProxy = require('express-http-proxy')
+// const expressHttpProxy = require('express-http-proxy')
 const cors = require('cors')
 
 
@@ -34,11 +35,6 @@ const data = qs.stringify( {
     headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
     data : data
   };
-
-app.get(`/hi`,(req,res) =>{
-    res.send('hiiii')
-})
-
 
 app.get('/:country', cors(), (req,res,next)=>{
 

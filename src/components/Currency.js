@@ -158,6 +158,7 @@ const fetchCurrencyRate = async ({ queryKey }) => {
                   value={nation.code}
                 >
                   {nation.emoji}
+                  &nbsp;
                   {nation.name}
                 </option>
               );
@@ -203,6 +204,7 @@ const fetchCurrencyRate = async ({ queryKey }) => {
                   value={nation.code}
                 >
                   {nation.emoji}
+                  &nbsp;
                   {nation.name}
                 </option>
               );
@@ -257,6 +259,7 @@ const fetchCurrencyRate = async ({ queryKey }) => {
                   value={nation.code}
                 >
                   {nation.emoji}
+                  &nbsp;
                   {nation.name}
                 </option>
               );
@@ -311,6 +314,7 @@ const fetchCurrencyRate = async ({ queryKey }) => {
                   value={nation.code}
                 >
                   {nation.emoji}
+                  &nbsp;
                   {nation.name}
                 </option>
               );
