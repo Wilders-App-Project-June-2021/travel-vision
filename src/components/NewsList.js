@@ -17,19 +17,19 @@ const NewsList = (props) => {
       .then((res1) => {
         setCountyNews(res1.data.articles);
 
-        if (res1.data.articles.length < 5) {
-          axios
-            .get(
-              `https://newsapi.org/v2/everything?qInTitle=${
-                props.countryName
-              }&language=en&sortBy=popularity&to=${props.getDate()}&from=${props.getOlderDate()}&pageSize=${
-                5 - res1.data.articles.length
-              }&apiKey=${process.env.REACT_APP_API_NEWS}`
-            )
-            .then((res2) => {
-              setCountyNews([...res1.data.articles, ...res2.data.articles]);
-            });
-        }
+        // if (res1.data.articles.length < 5) {
+        //   axios
+        //     .get(
+        //       `https://newsapi.org/v2/everything?qInTitle=${
+        //         props.countryName
+        //       }&language=en&sortBy=popularity&to=${props.getDate()}&from=${props.getOlderDate()}&pageSize=${
+        //         5 - res1.data.articles.length
+        //       }&apiKey=${process.env.REACT_APP_API_NEWS}`
+        //     )
+        //     .then((res2) => {
+        //       setCountyNews([...res1.data.articles, ...res2.data.articles]);
+        //     });
+        // }
       })
       .catch((err) => {
         console.log(err);
