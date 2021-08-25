@@ -7,6 +7,7 @@ import WeatherInfo from "./WeatherInfo";
 import NewsList from "./NewsList";
 import Currency from "./Currency.js";
 import HealthInfo from "./HealthInfo";
+import Contact from "./Contact";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
@@ -17,7 +18,8 @@ const Main = (props)=>{
         {news : true} ,
         {weather : false} ,
         {currency : false} ,
-        {health : false} 
+        {health : false}  ,
+        {contact : false} 
        ]
 
     const [activeTab,setActiveTab]= useState([...tabClasses])
@@ -134,12 +136,14 @@ const Main = (props)=>{
                 getOlderDate={getOlderDate}
                 />}
 
+            {activeTab[4].contact && <Contact />}
+
             </div>
 
        </span> }
        <div className="contact-div">
-        <button className="contact-button">
-            Contact Us
+        <button className={activeTab[4].contact? "contact-button-active contact-button":"contact-button"} id="contact" onClick={(e) => getActive(e)}>
+            Contact
         </button>
        </div>
     </div>
