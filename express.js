@@ -83,7 +83,7 @@ app.get("/:country", cors(), (req, res, next) => {
     .catch((error) => console.log("error", error));
 });
 
-app.get("api/news/:city/:country/:date/:oldDate", cors(), (req, res, next) => {
+app.get("/api/news/:city/:country/:date/:oldDate", cors(), (req, res, next) => {
   const { city, country, date, oldDate } = req.params;
 
   axios
