@@ -25,14 +25,13 @@ function HealthInfo(props) {
         // setApiResponse(true)
         axios
           .get(
-            `https://newsapi.org/v2/everything?qInTitle=(${
+            `https://travel-vision.herokuapp.com/api/health-news/${
               props.countryName
-            }%20AND%20coronaVirus)&from=${props.getDate()}pageSize=1&language=en&sortBy=publishedAt&apiKey=${
-              process.env.REACT_APP_API_NEWS
-            }`
+            }/${props.getDate()}`
           )
           .then((covidNews) => {
-            setHealthNews(covidNews.data.articles[0]);
+            console.log(covidNews);
+            setHealthNews(covidNews);
             setApiResponse(true);
           });
       })
@@ -46,7 +45,7 @@ function HealthInfo(props) {
   const getTravelInfo = async ({ queryKey }) => {
     const countryCode = queryKey[1].country;
     return await axios
-      .get(`https://travel-vision.herokuapp.com/${countryCode}`)
+      .get(`https://travel-vision.herokuapp.com/api/travel-info${countryCode}`)
       .then((res) => res.data);
   };
 
