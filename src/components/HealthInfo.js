@@ -97,7 +97,7 @@ function HealthInfo(props) {
 
   return (
     <div>
-      {apiResponse && !isLoading ? (
+      {apiResponse ? (
         <Health
           key={healthInfo && healthInfo.ID}
           id={healthInfo && healthInfo.ID}
@@ -113,38 +113,56 @@ function HealthInfo(props) {
           description={healthNews && healthNews.description}
           url={healthNews && healthNews.url}
           // image={healthNews && healthNews.urlToImage}
-          travelDoc={parser(
-            travelInfo.areaAccessRestriction.declarationDocuments.text
-          )}
+          travelDoc={
+            travelInfo &&
+            parser(travelInfo.areaAccessRestriction.declarationDocuments.text)
+          }
           travelDocLink={
+            travelInfo &&
             travelInfo.areaAccessRestriction.declarationDocuments
               .travelDocumentationLink
           }
-          travelDocuments={parser(
-            travelInfo.areaAccessRestriction.diseaseVaccination.text
-          )}
+          travelDocuments={
+            travelInfo &&
+            parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)
+          }
           testRequirement={
+            travelInfo &&
             travelInfo.areaAccessRestriction.diseaseTesting.requirement
           }
-          testsType={travelInfo.areaAccessRestriction.diseaseTesting.testType}
-          testRequirementLink={
-            travelInfo.areaAccessRestriction.diseaseTesting.rules
+          testsType={
+            travelInfo &&
+            travelInfo.areaAccessRestriction.diseaseTesting.testType
           }
-          testRequirementDetails={parser(
-            travelInfo.areaAccessRestriction.diseaseTesting.text
-          )}
+          testRequirementLink={
+            travelInfo && travelInfo.areaAccessRestriction.diseaseTesting.rules
+          }
+          testRequirementDetails={
+            travelInfo &&
+            parser(travelInfo.areaAccessRestriction.diseaseTesting.text)
+          }
           vaccinesList={
+            travelInfo &&
             travelInfo.areaAccessRestriction.diseaseVaccination
               .qualifiedVaccines
           }
           accepetedCertificates={
+            travelInfo &&
             travelInfo.areaAccessRestriction.diseaseVaccination
               .acceptedCertificates
           }
-          entryInfo={parser(travelInfo.areaAccessRestriction.entry.text)}
-          maskInfo={parser(travelInfo.areaAccessRestriction.mask.text)}
-          oneDoseVaccinated={travelInfo.areaVaccinated[0].percentage}
-          fullyVaccinated={travelInfo.areaVaccinated[1].percentage}
+          entryInfo={
+            travelInfo && parser(travelInfo.areaAccessRestriction.entry.text)
+          }
+          maskInfo={
+            travelInfo && parser(travelInfo.areaAccessRestriction.mask.text)
+          }
+          oneDoseVaccinated={
+            travelInfo && travelInfo.areaVaccinated[0].percentage
+          }
+          fullyVaccinated={
+            travelInfo && travelInfo.areaVaccinated[1].percentage
+          }
         />
       ) : (
         <Loader

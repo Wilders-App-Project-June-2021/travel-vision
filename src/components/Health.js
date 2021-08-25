@@ -61,6 +61,13 @@ function Health(props) {
     </div>
   );
 
+  const noTravelInfo = (
+    <div className="no-news pale-pink-3 fadeIn">
+      We could not find any current Travel information for{" "}
+      {`${props.countryName}`}.
+    </div>
+  );
+
   const noCoronaCases = (
     <div className="no-news pale-pink-3 fadeIn">
       We could not find any current Coronavirus information for{" "}
@@ -128,9 +135,10 @@ function Health(props) {
             <h4 className="health-travel-subtitle pale-pink-2">
               Valid certification
             </h4>
-            {props.accepetedCertificates.map((item) => (
-              <p key={item}> {item}</p>
-            ))}
+            {props.accepetedCertificates &&
+              props.accepetedCertificates.map((item) => (
+                <p key={item}> {item}</p>
+              ))}
           </div>
         </div>
         <div className="health-travel-central-wrapper">
@@ -139,9 +147,8 @@ function Health(props) {
               {" "}
               Qualified vaccines / immunity
             </h4>
-            {props.vaccinesList.map((item) => (
-              <p key={item}> {item}</p>
-            ))}
+            {props.vaccinesList &&
+              props.vaccinesList.map((item) => <p key={item}> {item}</p>)}
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Mask</h4>
@@ -209,6 +216,7 @@ function Health(props) {
     return (
       <div className="health-container" id={props.id}>
         {/* {noCoronaCases} */}
+        {noTravelInfo}
         {withNews}
         {coronaGraph}
       </div>
@@ -218,6 +226,7 @@ function Health(props) {
       <div className="health-container" id={props.id}>
         {/* {noCoronaCases} */}
         {coronaGraph}
+        {noTravelInfo}
         {noNews}
       </div>
     );
