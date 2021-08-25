@@ -61,9 +61,9 @@ function HealthInfo(props) {
       onSuccess: (data) => {
         setTravelInfo(data.data);
       },
-      refetchOnWindowFocus: false,
-      cacheTime: Infinity,
-      staleTime: Infinity,
+      refetchOnWindowFocus: true,
+      cacheTime: 600000,
+      staleTime: 600000,
     }
   );
 
