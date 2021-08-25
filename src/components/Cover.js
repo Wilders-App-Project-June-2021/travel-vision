@@ -17,11 +17,11 @@ const Cover = (props)=>{
                     <form onSubmit={(e)=>props.submitInfo(e)}>
                         <select className="input-country" id="country" placeholder= "Country" required onChange={(e)=>props.countryInputHandler(e) } >
                             <option value="">Select a Country</option>
-                            {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} </option>)}
+                            {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} {country.emoji} </option>)}
                         </select> 
                         <br />
-                        <input className={props.fullCitiesList? "input-city" : " input-city disabled"} list="cityy" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.cityInputHandler(e)}/>
-                        <datalist id ="cityy" >
+                        <input className="input-city" disabled={!props.fullCitiesList? true : false} list="citiesList" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.cityInputHandler(e)}/>
+                        <datalist id ="citiesList" >
                         {
                         props.fullCitiesList.length > 0 &&
                         props.fullCitiesList.filter((city)=>  city.name.startsWith(props.cityInput) || city.name.includes(props.cityInput)).splice(0,10)

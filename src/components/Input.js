@@ -15,9 +15,9 @@ const Input = (props)=> {
                 <form onSubmit={(e)=>{props.submitInfo(e)}}>
                     <select className="input-country-desktop" id="country" placeholder="Country" required onChange={(e)=>props.countryInputHandler(e)}>
                         <option value="">Select a Country</option>
-                        {nations.map((country,i)=> <option id={country.name} key={i} value={country.code}> {country.name} </option>)}
+                        {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} {country.emoji} </option>)}
                     </select>
-                    <input className={props.fullCitiesList.length > 0? "input-city-desktop" : " input-city-desktop disabled"} type="text" id="city" list="cityList" key={props.cities} placeholder="Enter a new City" required onChange={(e)=> props.cityInputHandler(e)}></input>
+                    <input className="input-city-desktop" disabled={!props.fullCitiesList? true : false} list="cityList" type="text" id="city"  placeholder="Enter a City" required onChange={(e)=> props.cityInputHandler(e)}/>
                     <datalist id ="cityList" >
                         {
                         props.fullCitiesList.length > 0 &&
