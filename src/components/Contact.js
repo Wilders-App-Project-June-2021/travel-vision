@@ -7,7 +7,7 @@ const Contact = ()=> {
 
     return (
         <div className="fadeIn">
-            
+            This is the contact form!
         </div>
     )
 }

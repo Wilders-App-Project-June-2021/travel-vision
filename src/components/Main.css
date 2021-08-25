@@ -81,7 +81,7 @@ body {
   border: solid 2px rgb(0, 0, 0);
   cursor: pointer;
 }
-.tab-div:hover {
+.tab-div:hover, .contact-button:hover {
   background-color: rgb(197, 244, 255);
 }
 .active {
