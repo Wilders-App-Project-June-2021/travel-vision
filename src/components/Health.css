@@ -29,6 +29,7 @@
   padding: 15px;
   font-size: 4vw;
   margin-bottom: 2px;
+  box-shadow: 1px 1px 1px rgba(5, 5, 5, 0.192);
 }
 .health-cases-div {
   display: flex;
@@ -206,6 +207,7 @@ button:focus, select:focus{
 }
 .corona-graph {
   display: block;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 }
