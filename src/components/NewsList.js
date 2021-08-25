@@ -15,7 +15,7 @@ const NewsList = (props) => {
         }/${props.getDate()}/${props.getOlderDate()}`
       )
       .then((res) => {
-        setCountyNews(res);
+        setCountyNews(res.data);
         console.log(res);
       })
       .catch((err) => {
