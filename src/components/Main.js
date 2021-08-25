@@ -134,7 +134,8 @@ const Main = (props)=>{
                 countryCode={props.countryCode}
                 getDate={getDate}
                 getOlderDate={getOlderDate}
-                />}
+                />
+            }
 
             {activeTab[4].contact && <Contact />}
 
