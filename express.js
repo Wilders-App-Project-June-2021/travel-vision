@@ -93,7 +93,8 @@ app.get("api/news/:city/:country/:date/:oldDate", cors(), (req, res, next) => {
     .then((result) => {
       console.log(result.data);
       res.send(result.data);
-    });
+    })
+    .catch((err) => console.log(err));
 });
 
 app.get("*", (req, res) => {
