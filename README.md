@@ -23,6 +23,7 @@ Upon entering a chosen country and city, it displays the following data for that
 - Current time 
 - Greeting 'Hello' in chosen country's language
 - A book a flight link (redirecting to skyscanner)
+- A contact form powered by back-end
 
 
 ## 🛫 Layout: 
