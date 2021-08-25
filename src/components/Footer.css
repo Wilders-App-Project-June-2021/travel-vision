@@ -99,11 +99,11 @@
 }
 
 
-@media screen and (max-width:685px){
+@media screen and (max-width:680px){
 
 .flight-link {
   font-size: 3.5vw;
-  margin-top: -155px;
+  margin-top: -220px;
   position: absolute;
 }
 .small {
@@ -122,3 +122,10 @@
   display: none;
 }
 }
+
+@media screen and (max-width:550px){
+
+  .flight-link {
+    margin-top: -160px;
+  }
+  }

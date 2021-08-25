@@ -137,6 +137,11 @@ const Main = (props)=>{
             </div>
 
        </span> }
+       <div className="contact-div">
+        <button className="contact-button">
+            Contact Us
+        </button>
+       </div>
     </div>
             
     )
