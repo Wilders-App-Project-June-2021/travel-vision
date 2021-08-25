@@ -20,8 +20,8 @@
   box-shadow:2px 2px 2px rgba(5, 5, 5, 0.192);
   border-radius: 5px;
   padding: 5px;
-  display: flex;
   flex-direction: column;
+  display: none;
 }
 .health-cases-div-title {
   border-top-left-radius: 5px;
@@ -183,8 +183,7 @@ button:focus, select:focus{
   display: block;
   border-radius: 5px;
 }
-.health-travel-subtitle {
-  font-size: 14px;
+
 }
 } */
 
@@ -201,5 +200,8 @@ button:focus, select:focus{
 }
 .health-travel-subtitle {
   font-size: 17px;
+}
+.health-cases-div-container {
+  display: flex;
 }
 }

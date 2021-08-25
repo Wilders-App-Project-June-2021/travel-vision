@@ -26,7 +26,7 @@
   width: 100%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background-image: url("/img/globe.jpg");
+  /* background-image: url("/img/globe.jpg"); */
   background-size: cover;
   background-position: center;
 }
