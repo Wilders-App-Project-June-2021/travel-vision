@@ -82,7 +82,7 @@ function Health(props) {
         {/* <img className="health-news-image pale-pink-2" src={`${props.image}`} alt={`${props.title}`} /> */}
         <div className="health-text-icon-wrapper">
           <p className="health-news-description">
-            {props.description.includes("<")
+            {props.description && props.description.includes("<")
               ? parser(props.description)
               : props.description}
           </p>
