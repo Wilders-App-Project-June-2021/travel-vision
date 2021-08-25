@@ -1,6 +1,9 @@
 .bold {
   font-weight: bold;
 }
+.fadeIn {
+  animation-duration: .5s !important;
+} 
 .health-cases-div {
   font-size: 4vw;
   padding: 10px;

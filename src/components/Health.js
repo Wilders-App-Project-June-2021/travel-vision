@@ -217,7 +217,7 @@ function Health(props) {
     props.travelDoc
   ) {
     return (
-      <div className="health-container" id={props.id}>
+      <div className="health-container fadeIn" id={props.id}>
         {/* {coronaCases} */}
         {coronaGraph}
         {withNews}
@@ -230,7 +230,7 @@ function Health(props) {
     props.travelDoc
   ) {
     return (
-      <div id={props.id}>
+      <div id={props.id} className="fadeIn">
         {/* {coronaCases} */}
         {coronaGraph}
         {travelRestrictions}
@@ -243,7 +243,7 @@ function Health(props) {
     !props.travelDoc
   ) {
     return (
-      <div className="health-container" id={props.id}>
+      <div className="health-container fadeIn" id={props.id}>
         {/* {noCoronaCases} */}
         {noTravelInfo}
         {withNews}
@@ -252,7 +252,7 @@ function Health(props) {
     );
   } else {
     return (
-      <div className="health-container" id={props.id}>
+      <div className="health-container fadeIn" id={props.id}>
         {/* {noCoronaCases} */}
         {coronaGraph}
         {noTravelInfo}
