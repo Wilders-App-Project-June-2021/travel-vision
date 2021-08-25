@@ -12,13 +12,14 @@
 
 }
  .news-description {
-    padding: 10px;
+    padding: 5px;
     margin: 2px;
     text-align: left;
     font-size: 3.5vw;
     overflow: hidden;
 }
 .news-title {
+    font-size: 20px;
     margin: 0;
     text-align: left;
     padding: 10px;
@@ -26,7 +27,6 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: rgb(250, 215, 210);
-    font-size:4vw;
     box-shadow: 0px 1px 0px rgba(5, 5, 5, 0.192);
 }
 .no-news {
@@ -34,8 +34,16 @@
     background-color: rgb(252, 245, 244);
     text-align: left;
     padding-left: 20px;
-    font-size: 4vw;
+    font-size: 20px;
     font-weight: bold;
+}
+.news-description {
+    font-size: 18px;
+}
+.news-img {
+    display: block;
+    height: 130px;
+    width: 200px;
 }
 .news-icon {
     font-size: -webkit-xxx-large;
@@ -50,53 +58,28 @@
     margin: auto;
     text-decoration: none;
 }
-.news-img {
-    display: none;
-  }
 .fadeIn {
     animation-duration: .5s !important;
 }
 
 
-@media screen and (min-width:770px){
 
-.news-title {
-    font-size: 1.6vw;
-}
-.news-description {
-    font-size: 1.4vw;
-}
-.news-img {
-    display: block;
-    height: 100px;
-    width: 150px;
-    margin: 5px 5px 0px 0;
-    background-color: rgb(236, 208, 208);
-    border-bottom-left-radius: 5px;
-  }
-.news-icon {
-    width: 50px;
-    padding: 20px;
-}
-.no-news {
-    font-size: 1vw;
-}
-
-}
-
-
-@media screen and (min-width:1070px){
+@media screen and (max-width:685px){
 
 .news-title, .no-news {
-    font-size: 20px;
-}
-.news-description {
-    font-size: 18px;
+    font-size: 4vw;
 }
 .news-img {
-    display: block;
-    height: 130px;
-    width: 200px;
+    display: none;
 }
-
+.news-description {
+    font-size: 3.7vw;
+    margin-bottom: -25px;
+}
+.news-icon {
+    padding: 0;
+}
+.text-icon-wrapper {
+    flex-direction: column;
+}
 }

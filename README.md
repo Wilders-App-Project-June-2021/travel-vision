@@ -19,7 +19,7 @@ Upon entering a chosen country and city, it displays the following data for that
 - Weather forecast 
 - News headlines 
 - Currency exchange rates 
-- Health watch (Coronavirus stats) 
+- Health watch (Coronavirus stats and travel information) 
 - Current time 
 - Greeting 'Hello' in chosen country's language
 - A book a flight link (redirecting to skyscanner)
@@ -56,6 +56,7 @@ Coming soon!
 ### Salvatore
 
 > Coming soon
+
 
 ### Lorianne
 

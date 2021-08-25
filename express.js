@@ -1,140 +1,125 @@
-const express = require('express');
+require("dotenv").config();
+
+const express = require("express");
+
 const app = express();
-const axios = require('axios')
-const qs = require('querystring')
-const corsAnywhere = require('cors-anywhere');
+
+const axios = require("axios");
+
+const qs = require("querystring");
+
+const corsAnywhere = require("cors-anywhere");
+
 const CORS_PROXY_PORT = 5000;
-const expressHttpProxy = require('express-http-proxy')
-const cors = require('cors')
 
+// const expressHttpProxy = require('express-http-proxy')
 
-corsAnywhere.createServer({})
-  .listen(CORS_PROXY_PORT, 
-    () => console.log(`Internal CORS Anywhere server started at port ${CORS_PROXY_PORT}`));
+const cors = require("cors");
 
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "build")));
+
+corsAnywhere
+  .createServer({})
+
+  .listen(
+    CORS_PROXY_PORT,
+
+    () =>
+      console.log(
+        `Internal CORS Anywhere server started at port ${CORS_PROXY_PORT}`
+      )
+  );
 
 // app.use(expressHttpProxy(`localhost:${CORS_PROXY_PORT}`))
 
-
 const APP_PORT = process.env.PORT || 8080;
+
 app.listen(APP_PORT, () => {
   console.log(`External CORS cache server started at port ${APP_PORT}`);
 });
 
+const data = qs.stringify({
+  client_id: `${process.env.REACT_APP_API_KEY_AMADEUS}`,
 
-const data = qs.stringify( {
-    'client_id': `${process.env.REACT_APP_API_KEY_AMADEUS}`,
-    'client_secret': `${process.env.REACT_APP_API_SECRET_AMADEUS}`,
-    'grant_type': 'client_credentials'
-  })
-  
-  const config = {
-    method: 'post',
-    url: 'https://test.api.amadeus.com/v1/security/oauth2/token',
-    headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-    data : data
-  };
+  client_secret: `${process.env.REACT_APP_API_SECRET_AMADEUS}`,
 
-app.get(`/hi`,(req,res) =>{
-    res.send('hiiii')
-})
+  grant_type: "client_credentials",
+});
 
+const config = {
+  method: "post",
 
-app.get('/:country', cors(), (req,res,next)=>{
+  url: "https://test.api.amadeus.com/v1/security/oauth2/token",
 
-    const country = req.params.country
-      
-    //  res.send(country)
+  headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
-        axios(config)
-            .then((authorization) =>{
-              
-              const config2 = {
-                method: 'get',
-                url: `https://test.api.amadeus.com/v1/duty-of-care/diseases/covid19-area-report?countryCode=${country}`,
-                // url: `https://test.api.amadeus.com/v1/reference-data/airlines?airlineCodes=${country}`,
-                headers: { Authorization : `Bearer ${authorization.data['access_token']}` },
-              };
-              axios(config2)
-              .then(result =>  res.send(result.data))
-            })
-            .catch((error) => console.log("error", error))
-      
-    
+  data: data,
+};
 
+app.get("/api/travel-info/:country", cors(), (req, res, next) => {
+  const country = req.params.country;
 
+  // res.send(country)
 
+  axios(config)
+    .then((authorization) => {
+      const config2 = {
+        method: "get",
 
+        url: `https://test.api.amadeus.com/v1/duty-of-care/diseases/covid19-area-report?countryCode=${country}`,
 
+        // url: `https://test.api.amadeus.com/v1/reference-data/airlines?airlineCodes=${country}`,
 
+        headers: {
+          Authorization: `Bearer ${authorization.data["access_token"]}`,
+        },
+      };
 
-})
+      axios(config2).then((result) => res.send(result.data));
+    })
 
+    .catch((error) => console.log("error", error));
+});
 
+app.get("/api/news/:city/:country/:date/:oldDate", cors(), (req, res, next) => {
+  const { city, country, date, oldDate } = req.params;
 
-// const data = qs.stringify( {
-//     'client_id': `B8fMDh1i59rGBJVA5VQ63272mOk7Loze`,
-//     'client_secret': `T40RL9KgpUlSee2H`,
-//     'grant_type': 'client_credentials'
-//   })
-  
-//   const config = {
-//     method: 'post',
-//     url: 'https://test.api.amadeus.com/v1/security/oauth2/token',
-//     headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-//     data : data
-//   };
-  
-//     axios(config)
-//         .then((authorization) =>{
-          
-//           const config2 = {
-//             method: 'get',
-//             url: 'http://0.0.0.0:8080/https://test.api.amadeus.com/v1/reference-data/airlines?airlineCodes=BA',
-//             headers: { Authorization : `Bearer ${authorization.data['access_token']}` },
-//           };
-          
-          
-//           axios(config2)
-//           .then(res => console.log(res.data.data))
-//         })
-//         .catch((error) => console.log("error", error))
-  
+  axios
+    .get(
+      `https://newsapi.org/v2/everything?qInTitle="${city}"+${country}&language=en&sortBy=popularity&to=${date}&from=${oldDate}&pageSize=3&apiKey=${process.env.REACT_APP_API_NEWS}`
+    )
+    .then((result1) => {
+      if (result1.data.articles.length < 5) {
+        axios
+          .get(
+            `https://newsapi.org/v2/everything?qInTitle=${country}&language=en&sortBy=popularity&to=${date}&from=${oldDate}&pageSize=${
+              5 - result1.data.articles.length
+            }&apiKey=${process.env.REACT_APP_API_NEWS}`
+          )
+          .then((result2) => {
+            res.send([...result1.data.articles, ...result2.data.articles]);
+          });
+      } else {
+        res.send(result1.data.articles);
+      }
+    })
+    .catch((err) => console.log(err));
+});
 
+app.get("/api/health-news/:country/:date", cors(), (req, res, next) => {
+  const { country, date } = req.params;
 
+  axios
+    .get(
+      `https://newsapi.org/v2/everything?qInTitle=(${country}%20AND%20coronaVirus)&from=${date}pageSize=1&language=en&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_NEWS}`
+    )
+    .then((result2) => {
+      res.send(result2.data.articles[0]);
+    });
+});
 
-
-
-
-
-
-
-// aaaa
-// https://test.api.amadeus.com/v1/reference-data/airlines?airlineCodes=BA
-
-// const data = qs.stringify( {
-//   'client_id': `${process.env.REACT_APP_API_KEY_AMADEUS}`,
-//   'client_secret': `${process.env.REACT_APP_API_SECRET_AMADEUS}`,
-//   'grant_type': 'client_credentials'
-// })
-
-// const config = {
-//   method: 'post',
-//   url: 'https://test.api.amadeus.com/v1/security/oauth2/token',
-//   headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
-//   data : data
-// };
-
-//   axios(config)
-//       .then((authorization) =>{
-//           console.log(authorization)
-//         // axios
-//         // .get('https://test.api.amadeus.com/v2/duty-of-care/diseases/covid19-area-report',
-//         // {
-         
-//         //   auth:{'Bearer': `${authorization.data['access_token']}`}
-//         // })
-//         // console.log(authorization.data['access_token'])
-//       })
-//       .catch((error) => console.log("error", error))
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
