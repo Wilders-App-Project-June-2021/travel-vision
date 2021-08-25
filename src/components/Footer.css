@@ -49,7 +49,7 @@
   text-decoration: none;
   font-family: 'Fredoka One', cursive;
 }
-.flight-link:hover, .go:hover {
+.flight-link:hover {
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
   background-color: rgb(255, 131, 137);
