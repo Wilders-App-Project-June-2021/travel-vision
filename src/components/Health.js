@@ -1,5 +1,6 @@
 import "./Health.css";
 import React, { useState } from "react";
+import parser from "html-react-parser";
 import logo from "./newspaper.svg";
 
 function Health(props) {
@@ -73,7 +74,11 @@ function Health(props) {
         <h3 className="health-news-title pale-pink">{`${props.title}`}</h3>
         {/* <img className="health-news-image pale-pink-2" src={`${props.image}`} alt={`${props.title}`} /> */}
         <div className="health-text-icon-wrapper">
-          <p className="health-news-description">{`${props.description}`}</p>
+          <p className="health-news-description">
+            {props.description.includes("<")
+              ? parser(props.description)
+              : props.description}
+          </p>
           <a href={`${props.url}`} className="health-news-link" target="new">
             <span className="health-news-icon"> 🗞 </span>
           </a>
