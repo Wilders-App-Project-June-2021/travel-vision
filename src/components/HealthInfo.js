@@ -123,7 +123,7 @@ function HealthInfo(props) {
               .travelDocumentationLink
           }
           travelDocuments={
-            travelInfo &&
+            travelInfo.areaAccessRestriction.diseaseVaccination.text &&
             parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)
           }
           testRequirement={
