@@ -30,8 +30,8 @@ function HealthInfo(props) {
             }/${props.getDate()}`
           )
           .then((covidNews) => {
-            console.log(covidNews);
-            setHealthNews(covidNews);
+            console.log(covidNews.data);
+            setHealthNews(covidNews.data);
             setApiResponse(true);
           });
       })
@@ -45,7 +45,7 @@ function HealthInfo(props) {
   const getTravelInfo = async ({ queryKey }) => {
     const countryCode = queryKey[1].country;
     return await axios
-      .get(`https://travel-vision.herokuapp.com/api/travel-info${countryCode}`)
+      .get(`https://travel-vision.herokuapp.com/api/travel-info/${countryCode}`)
       .then((res) => res.data);
   };
 
