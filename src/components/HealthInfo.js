@@ -67,7 +67,11 @@ function HealthInfo(props) {
     }
   );
 
-  console.log(whoop, data, isLoading);
+  console.log(whoop, data, isLoading, travelInfo);
+
+  if (travelInfo === "" && data) {
+    setTravelInfo(data.data);
+  }
 
   // travelInfo.areaAccessRestriction.declarationDocuments.text
   // travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink
