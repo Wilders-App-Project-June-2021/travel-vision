@@ -9,7 +9,7 @@
   height: auto;
 }
 
-.loader-wrapper{
+.loader-wrapper {
 display: flex;
 flex-direction: column;
 justify-content: center;

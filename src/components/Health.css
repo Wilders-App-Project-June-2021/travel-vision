@@ -204,4 +204,8 @@ button:focus, select:focus{
 .health-cases-div-container {
   display: flex;
 }
+.corona-graph {
+  display: block;
+  border-radius: 5px;
+}
 }

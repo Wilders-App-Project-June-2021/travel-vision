@@ -60,6 +60,7 @@ function HealthInfo(props) {
       enabled: props.countryCode.length > 0,
       onSuccess: (data) => {
         setTravelInfo(data.data);
+        setApiResponse(true);
       },
       refetchOnWindowFocus: true,
       cacheTime: 600000,
@@ -97,7 +98,7 @@ function HealthInfo(props) {
 
   return (
     <div>
-      {apiResponse ? (
+      {apiResponse || travelInfo ? (
         <Health
           key={healthInfo && healthInfo.ID}
           id={healthInfo && healthInfo.ID}
@@ -123,7 +124,7 @@ function HealthInfo(props) {
               .travelDocumentationLink
           }
           travelDocuments={
-            travelInfo &&
+            travelInfo.areaAccessRestriction.diseaseVaccination.text &&
             parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)
           }
           testRequirement={
