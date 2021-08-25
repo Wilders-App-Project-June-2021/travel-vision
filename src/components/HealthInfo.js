@@ -67,7 +67,7 @@ function HealthInfo(props) {
     }
   );
 
-  console.log(whoop, data);
+  console.log(whoop, data, isLoading);
 
   // travelInfo.areaAccessRestriction.declarationDocuments.text
   // travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink
@@ -93,7 +93,7 @@ function HealthInfo(props) {
 
   return (
     <div>
-      {apiResponse && travelInfo ? (
+      {apiResponse && !isLoading ? (
         <Health
           key={healthInfo && healthInfo.ID}
           id={healthInfo && healthInfo.ID}
