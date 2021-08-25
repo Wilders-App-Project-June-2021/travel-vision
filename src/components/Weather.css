@@ -53,7 +53,7 @@
     font-size: 20px;
 }
 .weather-icon {
-    width: 7vh;
+    width: 6vh;
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
 }

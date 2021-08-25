@@ -18,7 +18,7 @@ min-height: 60vh;
 }
 
 
-@media screen and (min-width:770px){
+@media screen and (min-width:760px){
 
 .container {
   display: flex;

@@ -27,7 +27,7 @@ const NewsList = (props) => {
   return (
     <div className="news-wrapper">
       {
-        countryNews?.length > 0 ? (
+        countryNews.length > 0 ? (
           countryNews.map((news, index) => {
             return (
               <News

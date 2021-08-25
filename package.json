@@ -11,7 +11,7 @@
     "cors": "^2.8.5",
     "cors-anywhere": "^0.4.4",
     "country-flag-emoji": "^1.0.3",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.2",
     "html-react-parser": "^1.2.8",
