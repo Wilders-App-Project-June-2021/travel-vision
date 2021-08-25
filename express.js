@@ -90,9 +90,20 @@ app.get("/api/news/:city/:country/:date/:oldDate", cors(), (req, res, next) => {
     .get(
       `https://newsapi.org/v2/everything?qInTitle="${city}"+${country}&language=en&sortBy=popularity&to=${date}&from=${oldDate}&pageSize=3&apiKey=${process.env.REACT_APP_API_NEWS}`
     )
-    .then((result) => {
-      console.log(result.data);
-      res.send(result.data);
+    .then((result1) => {
+      if (result1.data.articles.length < 5) {
+        axios
+          .get(
+            `https://newsapi.org/v2/everything?qInTitle=${country}&language=en&sortBy=popularity&to=${date}&from=${oldDate}&pageSize=${
+              5 - result1.data.articles.length
+            }&apiKey=${process.env.REACT_APP_API_NEWS}`
+          )
+          .then((result2) => {
+            res.send([...result1.data.articles, ...result2.data.articles]);
+          });
+      } else {
+        res.send(result1.data.articles);
+      }
     })
     .catch((err) => console.log(err));
 });
