@@ -10,7 +10,7 @@ const NewsList = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://travel-vision.herokuapp.com/api/news/${props.cities}/${
+        `https://travel-vision.herokuapp.com/${props.cities}/${
           props.countryName
         }/${props.getDate()}/${props.getOlderDate()}`
       )
@@ -41,7 +41,7 @@ const NewsList = (props) => {
   return (
     <div className="news-wrapper">
       {
-        countryNews.length > 0 ? (
+        countryNews?.length > 0 ? (
           countryNews.map((news, index) => {
             return (
               <News
