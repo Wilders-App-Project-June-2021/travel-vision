@@ -119,6 +119,7 @@
 }
 .health-news-link {
   margin: auto;
+  margin: 10px;
   text-decoration: none;
 }
 .fadeIn {
@@ -170,28 +171,6 @@ button:focus, select:focus{
   margin-top: -10px;
   margin-bottom: -5px;
 }
-
-/* @media screen and (min-width:770px) {
-  
-.shrink {
-  font-size: 1.5vw;
-}
-.health-case-detail, .no-news {
-  font-size: 1.8vw;
-}
-.health-cases-div, .new-total, .health-cases-div-title, .health-news-title , .health-travel-title{
-  font-size: 2vw;
-}
-.health-news-description, .health-travel-wrapper {
-  font-size: 1.8vw;
-}
-.corona-graph {
-  display: block;
-  border-radius: 5px;
-}
-
-}
-} */
 
 
 @media screen and (min-width:760px) {
