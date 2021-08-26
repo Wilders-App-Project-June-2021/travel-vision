@@ -119,6 +119,7 @@
 }
 .health-news-link {
   margin: auto;
+  margin: 10px;
   text-decoration: none;
 }
 .fadeIn {
@@ -170,7 +171,6 @@ button:focus, select:focus{
   margin-top: -10px;
   margin-bottom: -5px;
 }
-
 
 
 @media screen and (min-width:760px) {
