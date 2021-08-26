@@ -3,15 +3,25 @@ import "./Main.css";
 import React, { useState, useEffect } from "react";
 
 const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const resetForm = () => {
+    document.getElementById("contactForm").reset();
+  };
+
   return (
     <div className="contact-form-wrapper fadeIn">
       <span className="fill-form">
         Fill out the form and we'll get back to you shortly.
       </span>
       <form
-        action="http://localhost:8080/new-message"
+        id="contactForm"
+        action="https://travel-vision.herokuapp.com/new-message"
         method="POST"
-        onSubmit={(e) => e.preventDefault}>
+        onSubmit={(e) => {
+          resetForm();
+          return e.preventDefault;
+        }}>
         <div className="message-fields">
           <div className="contact-name-mobile">
             <input
