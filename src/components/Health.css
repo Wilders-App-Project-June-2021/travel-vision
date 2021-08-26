@@ -16,6 +16,7 @@
 }
 .health-container {
   margin: 4px;
+  overflow: hidden;
 }
 .health-cases-div-container {
   background-color: white;
@@ -148,6 +149,7 @@
   text-align: left;
   border-radius: 5px;
   box-shadow: 1px 1px 2px 1px rgba(5, 5, 5, 0.192);
+  overflow: hidden;
 }
 .expand-btn {
   width: 190px;
