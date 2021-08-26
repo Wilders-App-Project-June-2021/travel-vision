@@ -92,7 +92,7 @@ const Contact = () => {
           onClick={() => handleSubmit()}
         />
       </div>
-      <div>{isSubmitted.length > 0 ? isSubmitted : notSubmitted}</div>
+      <div className="fill-form">{isSubmitted.length > 0 ? isSubmitted : notSubmitted}</div>
     </div>
   );
 };
