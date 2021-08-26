@@ -39,6 +39,7 @@ Coming soon!
 - [Country State City API](https://countrystatecity.in/)
 - [Graph Countries](https://github.com/lennertVanSever/graphcountries)
 - [NewsAPI](https://newsapi.org/)
+- [NewsAPI](https://newsapi.org/)
 
 
 ## 🛫 Tools used:
