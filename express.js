@@ -123,24 +123,27 @@ app.get("/api/health-news/:country/:date", cors(), (req, res, next) => {
     });
 });
 
-app.post("/new-message", (req, res) => {
-  const { firstname, lastname, email, title, message } = req.body;
-  console.log(firstname, lastname, email, title, message);
-  database
-    .promise()
-    .query(
-      "INSERT INTO `user-messages` (firstname, lastname, email, title, message) VALUES (?, ?, ?, ?, ?)",
-      [firstname, lastname, email, title, message]
-    )
-    .then((result) => {
-      console.log(result[0]);
-      // res.json(result[0]);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).send("something went wrong");
-    });
-});
+app.post(
+  "/new-message/:firstname/:lastname/:email/:title/:message",
+  (req, res) => {
+    const { firstname, lastname, email, title, message } = req.params;
+    console.log(firstname, lastname, email, title, message);
+    database
+      .promise()
+      .query(
+        "INSERT INTO `user-messages` (firstname, lastname, email, title, message) VALUES (?, ?, ?, ?, ?)",
+        [firstname, lastname, email, title, message]
+      )
+      .then((result) => {
+        console.log(result[0]);
+        res.send(result[0]);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).send("something went wrong");
+      });
+  }
+);
 
 app.get("/all-messages", (req, res) => {
   database

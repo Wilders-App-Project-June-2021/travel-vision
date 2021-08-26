@@ -5,6 +5,7 @@ import logo from "./newspaper.svg";
 
 function Health(props) {
   const [showInfo, setShowInfo] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const coronaCases = (
     <div className="health-cases-wrapper fadeIn">
@@ -146,25 +147,30 @@ function Health(props) {
             <p className="health-texts">
               {" "}
               <b>One dose:</b>{" "}
-              {props.oneDoseVaccinated && props.oneDoseVaccinated.toFixed(0)}%
+              {props.oneDoseVaccinated
+                ? props.oneDoseVaccinated.toFixed(0)`%`
+                : "Not Specified"}
             </p>
             <p className="health-texts">
               {" "}
               <b>Fully:</b>{" "}
-              {props.fullyVaccinated && props.fullyVaccinated.toFixed(0)}%
+              {props.fullyVaccinated
+                ? props.fullyVaccinated.toFixed(0)`%`
+                : "Not Specified"}
             </p>
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">
               Valid Certification
             </h4>
-            {props.accepetedCertificates &&
-              props.accepetedCertificates.map((item) => (
-                <p className="health-texts" key={item}>
-                  {" "}
-                  {item}
-                </p>
-              ))}
+            {props.accepetedCertificates
+              ? props.accepetedCertificates.map((item) => (
+                  <p className="health-texts" key={item}>
+                    {" "}
+                    {item}
+                  </p>
+                ))
+              : "Not Specified"}
           </div>
         </div>
         <div className="health-travel-central-wrapper">
@@ -172,17 +178,20 @@ function Health(props) {
             <h4 className="health-travel-subtitle pale-pink-2">
               Qualified Vaccines / Immunity
             </h4>
-            {props.vaccinesList &&
-              props.vaccinesList.map((item) => (
-                <p className="health-texts" key={item}>
-                  {" "}
-                  {item}
-                </p>
-              ))}
+            {props.vaccinesList
+              ? props.vaccinesList.map((item) => (
+                  <p className="health-texts" key={item}>
+                    {" "}
+                    {item}
+                  </p>
+                ))
+              : "Not Specified"}
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Masks</h4>
-            <p className="health-texts top-gap">{props.maskInfo}</p>
+            <p className="health-texts top-gap">
+              {props.maskInfo ? props.maskInfo : "Not Specified"}
+            </p>
           </div>
         </div>
         <div className="travel-info-details">
@@ -201,12 +210,13 @@ function Health(props) {
     </div>
   );
   const coronaGraph = (
-    <div className="health-cases-div-container">
+    <div className={isError ? "hidden" : "health-cases-div-container"}>
       <div className="health-cases-div-title pale-pink bold">
         Current Coronavirus Cases
       </div>
       <img
         className="corona-graph"
+        onError={() => setIsError(true)}
         src={`https://corona.dnsforfamily.com/graph.png?c=${props.countryCode}`}
       />
     </div>
