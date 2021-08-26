@@ -47,7 +47,7 @@
 }
 .news-icon {
     font-size: -webkit-xxx-large;
-    padding: 20px;
+    padding: 10px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.719);
 }
 .text-icon-wrapper {
@@ -76,10 +76,13 @@
     font-size: 3.7vw;
     margin-bottom: -25px;
 }
-.news-icon {
-    padding: 0;
+.news-link {
+    margin: 25px 0 10px 80%;
 }
 .text-icon-wrapper {
     flex-direction: column;
+}
+.news-icon {
+    font-size: 24px;
 }
 }
