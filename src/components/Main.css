@@ -171,7 +171,7 @@ input:focus, textarea:focus, select:focus{
 }
 .fill-form {
   font-size: 13px;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 .contact-name-mobile {
   display: flex;
