@@ -154,7 +154,7 @@ function Health(props) {
               {" "}
               <b>One dose:</b>{" "}
               {props.oneDoseVaccinated ? (
-                props.oneDoseVaccinated.toFixed(0)`%`
+                props.oneDoseVaccinated.toFixed(0) + `%`
               ) : (
                 <span className="not-specified">Not Specified</span>
               )}
@@ -163,7 +163,7 @@ function Health(props) {
               {" "}
               <b>Fully:</b>{" "}
               {props.fullyVaccinated ? (
-                props.fullyVaccinated.toFixed(0)`%`
+                props.fullyVaccinated.toFixed(0) + `%`
               ) : (
                 <span className="not-specified">Not Specified</span>
               )}
