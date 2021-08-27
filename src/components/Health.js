@@ -126,7 +126,7 @@ function Health(props) {
             </p>
             <p className="health-texts">
               {" "}
-              <b>Accepeted Tests:</b> {props.testsType}
+              <b>Accepted Tests:</b> {props.testsType}
             </p>
             <p className="health-texts">
               [
