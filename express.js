@@ -7,7 +7,7 @@ const corsAnywhere = require("cors-anywhere");
 const CORS_PROXY_PORT = 5000;
 const cors = require("cors");
 const path = require("path");
-const database = require("./config");
+let { database, db_config } = require("./config");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -15,6 +15,7 @@ app.use(express.json());
 database.connect((err) => {
   if (err) {
     console.log(err);
+    database = mysql.createConnection(db_config);
   } else {
     console.log("connected to the database");
   }
