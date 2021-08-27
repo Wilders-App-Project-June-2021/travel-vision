@@ -1,4 +1,3 @@
-
 import "./Health.css";
 import React, { useState } from "react";
 import parser from "html-react-parser";
@@ -149,14 +148,14 @@ function Health(props) {
               {" "}
               <b>One dose:</b>{" "}
               {props.oneDoseVaccinated
-                ? props.oneDoseVaccinated.toFixed(0)`%`
+                ? props.oneDoseVaccinated.toFixed(0) + `%`
                 : "Not Specified"}
             </p>
             <p className="health-texts">
               {" "}
               <b>Fully:</b>{" "}
               {props.fullyVaccinated
-                ? props.fullyVaccinated.toFixed(0)`%`
+                ? props.fullyVaccinated.toFixed(0) + `%`
                 : "Not Specified"}
             </p>
           </div>
