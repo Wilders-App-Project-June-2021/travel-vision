@@ -7,19 +7,20 @@ const corsAnywhere = require("cors-anywhere");
 const CORS_PROXY_PORT = 5000;
 const cors = require("cors");
 const path = require("path");
-const database = require("./config");
-const { response } = require("express");
+const handleDisconnect = require("./config");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-database.connect((err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("connected to the database");
-  }
-});
+// database.connect((err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("connected to the database");
+//   }
+// });
+
+handleDisconnect();
 
 app.use(express.static(path.join(__dirname, "build")));
 
