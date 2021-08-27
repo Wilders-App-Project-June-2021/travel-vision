@@ -5,25 +5,31 @@ import axios from "axios";
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState("");
-  const [notSubmitted, setNotSubmitted] = useState("");
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
+  const clearForm = () => {
+    const inputs = document.querySelectorAll("input,textarea");
+    inputs.forEach((item) => (item.value = ""));
+  };
+
   const handleSubmit = () => {
     axios
       .post(
-        `http://localhost:8080/new-message/${firstname}/${lastname}/${email}/${title}/${message}`
+        `https://travel-vision.herokuapp.com/new-message/${firstname}/${lastname}/${email}/${title}/${message}`
       )
       .then((result) => {
         console.log(result);
-        setIsSubmitted(`Thank you ${firstname}! Your message has been sent.`)
+        setIsSubmitted(`Thank you ${firstname}! Your message has been sent.`);
       })
       .catch((err) => {
         console.log(err);
-        setNotSubmitted(`There was an error sending your message, please try again.`)
+        setIsSubmitted(
+          `There was an error sending your message, please fill out all the fields and try again.`
+        );
       });
   };
 
@@ -43,6 +49,7 @@ const Contact = () => {
             onChange={(e) => {
               setFirstName(e.target.value);
             }}
+            required
           />
           <input
             type="text"
@@ -53,6 +60,7 @@ const Contact = () => {
             onChange={(e) => {
               setLastName(e.target.value);
             }}
+            required
           />
           <input
             type="text"
@@ -63,6 +71,7 @@ const Contact = () => {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            required
           />
         </div>
         <input
@@ -74,6 +83,7 @@ const Contact = () => {
           onChange={(e) => {
             setTitle(e.target.value);
           }}
+          required
         />
         <textarea
           id="subject"
@@ -84,15 +94,19 @@ const Contact = () => {
           className="contact-input"
           onChange={(e) => {
             setMessage(e.target.value);
-          }}></textarea>
-        <input
+          }}
+          required></textarea>
+        <button
           type="button"
-          value="Submit"
           className="contact-input contact-form-button"
-          onClick={() => handleSubmit()}
-        />
+          onClick={() => {
+            handleSubmit();
+            clearForm();
+          }}>
+          Submit
+        </button>
       </div>
-      <div className="fill-form">{isSubmitted.length > 0 ? isSubmitted : notSubmitted}</div>
+      <div className="fill-form">{isSubmitted}</div>
     </div>
   );
 };
