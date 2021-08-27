@@ -15,9 +15,20 @@ app.use(express.json());
 database.connect((err) => {
   if (err) {
     console.log(err);
-    database = mysql.createConnection(db_config);
+    setTimeout((database = mysql.createConnection(db_config)), 2000);
   } else {
     console.log("connected to the database");
+  }
+});
+
+database.on("error", function (err) {
+  console.log("db error", err);
+  if (err.code === "PROTOCOL_CONNECTION_LOST") {
+    // Connection to the MySQL server is usually
+    setTimeout((database = mysql.createConnection(db_config)), 2000); // lost due to either server restart, or a
+  } else {
+    // connnection idle timeout (the wait_timeout
+    throw err; // server variable configures this)
   }
 });
 
