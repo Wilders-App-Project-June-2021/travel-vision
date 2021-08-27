@@ -19,7 +19,7 @@ const Contact = () => {
   const handleSubmit = () => {
     axios
       .post(
-        `https://travel-vision.herokuapp.com/new-message/${firstname}/${lastname}/${email}/${title}/${message}`
+        `https://travel-vision.netlify.app/new-message/${firstname}/${lastname}/${email}/${title}/${message}`
       )
       .then((result) => {
         console.log(result);

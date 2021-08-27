@@ -10,7 +10,7 @@ const NewsList = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://travel-vision.herokuapp.com/api/news/${props.cities}/${
+        `https://travel-vision.netlify.app/api/news/${props.cities}/${
           props.countryName
         }/${props.getDate()}/${props.getOlderDate()}`
       )
