@@ -106,13 +106,18 @@ function Health(props) {
             Travel Regulations
           </h4>
           <p className="health-texts top-gap">{props.travelDoc}</p>
-          <p className="health-texts">
-            [
-            <a href={props.travelDocLink} target="new" className="health-texts">
-              Click here for more info
-            </a>
-            ]
-          </p>
+          {props.travelDocLink && (
+            <p className="health-texts">
+              [
+              <a
+                href={props.travelDocLink}
+                target="new"
+                className="health-texts">
+                Click here for more info
+              </a>
+              ]
+            </p>
+          )}
           <p className="health-texts"> </p>
           <br />
           <p className="health-texts top-gap">{props.travelDocuments}</p>
@@ -128,17 +133,18 @@ function Health(props) {
               {" "}
               <b>Accepted Tests:</b> {props.testsType}
             </p>
-            <p className="health-texts">
-              [
-              <a
-                href={props.testRequirementLink}
-                target="new"
-                className="health-texts">
-                Click here for more info
-              </a>
-              ]
-            </p>
-            {/* {props.testRequirementDetails} */}
+            {props.testRequirementLink && (
+              <p className="health-texts">
+                [
+                <a
+                  href={props.testRequirementLink}
+                  target="new"
+                  className="health-texts">
+                  Click here for more info
+                </a>
+                ]
+              </p>
+            )}
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">
@@ -147,30 +153,36 @@ function Health(props) {
             <p className="health-texts">
               {" "}
               <b>One dose:</b>{" "}
-              {props.oneDoseVaccinated
-                ? props.oneDoseVaccinated.toFixed(0)`%`
-                : <span className="not-specified">Not Specified</span>}
+              {props.oneDoseVaccinated ? (
+                props.oneDoseVaccinated.toFixed(0)`%`
+              ) : (
+                <span className="not-specified">Not Specified</span>
+              )}
             </p>
             <p className="health-texts">
               {" "}
               <b>Fully:</b>{" "}
-              {props.fullyVaccinated
-                ? props.fullyVaccinated.toFixed(0)`%`
-                : <span className="not-specified">Not Specified</span>}
+              {props.fullyVaccinated ? (
+                props.fullyVaccinated.toFixed(0)`%`
+              ) : (
+                <span className="not-specified">Not Specified</span>
+              )}
             </p>
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">
               Valid Certification
             </h4>
-            {props.accepetedCertificates
-              ? props.accepetedCertificates.map((item) => (
-                  <p className="health-texts" key={item}>
-                    {" "}
-                    {item}
-                  </p>
-                ))
-              : <span className="not-specified">Not Specified</span>}
+            {props.accepetedCertificates ? (
+              props.accepetedCertificates.map((item) => (
+                <p className="health-texts" key={item}>
+                  {" "}
+                  {item}
+                </p>
+              ))
+            ) : (
+              <span className="not-specified">Not Specified</span>
+            )}
           </div>
         </div>
         <div className="health-travel-central-wrapper">
@@ -178,19 +190,25 @@ function Health(props) {
             <h4 className="health-travel-subtitle pale-pink-2">
               Qualified Vaccines / Immunity
             </h4>
-            {props.vaccinesList
-              ? props.vaccinesList.map((item) => (
-                  <p className="health-texts" key={item}>
-                    {" "}
-                    {item}
-                  </p>
-                ))
-              : <span className="not-specified">Not Specified</span>}
+            {props.vaccinesList ? (
+              props.vaccinesList.map((item) => (
+                <p className="health-texts" key={item}>
+                  {" "}
+                  {item}
+                </p>
+              ))
+            ) : (
+              <span className="not-specified">Not Specified</span>
+            )}
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Masks</h4>
             <p className="health-texts top-gap">
-              {props.maskInfo ? props.maskInfo : <span className="not-specified">Not Specified</span>}
+              {props.maskInfo ? (
+                props.maskInfo
+              ) : (
+                <span className="not-specified">Not Specified</span>
+              )}
             </p>
           </div>
         </div>
