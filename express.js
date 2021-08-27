@@ -8,6 +8,7 @@ const CORS_PROXY_PORT = 5000;
 const cors = require("cors");
 const path = require("path");
 let { database, db_config } = require("./config");
+const mysql = require("mysql2");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
