@@ -60,6 +60,7 @@ function HealthInfo(props) {
       enabled: props.countryCode.length > 0,
       onSuccess: (data) => {
         setTravelInfo(data.data);
+        console.log(data, whoop, travelInfo);
         setApiResponse(true);
       },
       refetchOnWindowFocus: true,
@@ -68,26 +69,9 @@ function HealthInfo(props) {
     }
   );
 
-  console.log(whoop, data, isLoading, travelInfo);
-
   if (travelInfo === "" && data) {
     setTravelInfo(data.data);
   }
-
-  // travelInfo.areaAccessRestriction.declarationDocuments.text
-  // travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink
-  // travelInfo.diseaseTesting.requirement
-  // travelInfo.diseaseTesting.minimumAge
-  // travelInfo.diseaseTesting.testType
-  // travelInfo.diseaseTesting.rules
-  // travelInfo.diseaseTesting.text
-  // travelInfo.diseaseVaccination.qualifiedVaccines
-  // travelInfo.diseaseVaccination.acceptedCertificates
-  // travelInfo.diseaseVaccination.text
-  // travelInfo.entry.text
-  // travelInfo.exit.text
-  // travelInfo.mask
-  // travelInfo.areaRestrictions[0].text
 
   useEffect(() => {
     getData();
@@ -124,6 +108,7 @@ function HealthInfo(props) {
               .travelDocumentationLink
           }
           travelDocuments={
+            travelInfo.areaAccessRestriction &&
             travelInfo.areaAccessRestriction.diseaseVaccination.text &&
             parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)
           }
@@ -143,12 +128,12 @@ function HealthInfo(props) {
             parser(travelInfo.areaAccessRestriction.diseaseTesting.text)
           }
           vaccinesList={
-            travelInfo &&
+            travelInfo.areaAccessRestriction &&
             travelInfo.areaAccessRestriction.diseaseVaccination
               .qualifiedVaccines
           }
           accepetedCertificates={
-            travelInfo &&
+            travelInfo.areaAccessRestriction &&
             travelInfo.areaAccessRestriction.diseaseVaccination
               .acceptedCertificates
           }
