@@ -110,6 +110,7 @@
   font-size: -webkit-xxx-large;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.719);
   padding: 20px;
+  margin: auto;
 }
 .health-news-img {
   height: 200px;
@@ -127,7 +128,9 @@
 .corona-graph {
   display: none;
 }
-
+.not-specified {
+  margin: 5px;
+}
 .health-travel-subtitle {
   padding: 10px;
   margin: 0;

@@ -150,14 +150,14 @@ function Health(props) {
               <b>One dose:</b>{" "}
               {props.oneDoseVaccinated
                 ? props.oneDoseVaccinated.toFixed(0)`%`
-                : "Not Specified"}
+                : `<p className="not-specified">Not Specified</p>`}
             </p>
             <p className="health-texts">
               {" "}
               <b>Fully:</b>{" "}
               {props.fullyVaccinated
                 ? props.fullyVaccinated.toFixed(0)`%`
-                : "Not Specified"}
+                : `<p className="not-specified">Not Specified</p>`}
             </p>
           </div>
           <div className="travel-info-details">
@@ -171,7 +171,7 @@ function Health(props) {
                     {item}
                   </p>
                 ))
-              : "Not Specified"}
+              : `<p className="not-specified">Not Specified</p>`}
           </div>
         </div>
         <div className="health-travel-central-wrapper">
@@ -186,12 +186,12 @@ function Health(props) {
                     {item}
                   </p>
                 ))
-              : "Not Specified"}
+              : `<p className="not-specified">Not Specified</p>`}
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Masks</h4>
             <p className="health-texts top-gap">
-              {props.maskInfo ? props.maskInfo : "Not Specified"}
+              {props.maskInfo ? props.maskInfo : `<p className="not-specified">Not Specified</p>`}
             </p>
           </div>
         </div>
