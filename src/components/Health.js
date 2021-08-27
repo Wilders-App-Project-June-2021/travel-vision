@@ -126,7 +126,7 @@ function Health(props) {
             </p>
             <p className="health-texts">
               {" "}
-              <b>Accepeted Tests:</b> {props.testsType}
+              <b>Accepted Tests:</b> {props.testsType}
             </p>
             <p className="health-texts">
               [
@@ -148,15 +148,15 @@ function Health(props) {
               {" "}
               <b>One dose:</b>{" "}
               {props.oneDoseVaccinated
-                ? props.oneDoseVaccinated.toFixed(0) + `%`
-                : "Not Specified"}
+                ? props.oneDoseVaccinated.toFixed(0)`%`
+                : <span className="not-specified">Not Specified</span>}
             </p>
             <p className="health-texts">
               {" "}
               <b>Fully:</b>{" "}
               {props.fullyVaccinated
-                ? props.fullyVaccinated.toFixed(0) + `%`
-                : "Not Specified"}
+                ? props.fullyVaccinated.toFixed(0)`%`
+                : <span className="not-specified">Not Specified</span>}
             </p>
           </div>
           <div className="travel-info-details">
@@ -170,7 +170,7 @@ function Health(props) {
                     {item}
                   </p>
                 ))
-              : "Not Specified"}
+              : <span className="not-specified">Not Specified</span>}
           </div>
         </div>
         <div className="health-travel-central-wrapper">
@@ -185,12 +185,12 @@ function Health(props) {
                     {item}
                   </p>
                 ))
-              : "Not Specified"}
+              : <span className="not-specified">Not Specified</span>}
           </div>
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Masks</h4>
             <p className="health-texts top-gap">
-              {props.maskInfo ? props.maskInfo : "Not Specified"}
+              {props.maskInfo ? props.maskInfo : <span className="not-specified">Not Specified</span>}
             </p>
           </div>
         </div>
