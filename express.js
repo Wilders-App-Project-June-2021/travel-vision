@@ -8,7 +8,6 @@ const CORS_PROXY_PORT = 5000;
 const cors = require("cors");
 const path = require("path");
 const database = require("./config");
-const { response } = require("express");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
