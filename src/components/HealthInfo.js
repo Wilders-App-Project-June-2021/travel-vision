@@ -98,51 +98,8 @@ function HealthInfo(props) {
           description={healthNews && healthNews.description}
           url={healthNews && healthNews.url}
           // image={healthNews && healthNews.urlToImage}
-          travelDoc={
-            travelInfo &&
-            parser(travelInfo.areaAccessRestriction.declarationDocuments.text)
-          }
-          travelDocLink={
-            travelInfo &&
-            travelInfo.areaAccessRestriction.declarationDocuments
-              .travelDocumentationLink
-          }
-          travelDocuments={
-            travelInfo.areaAccessRestriction &&
-            travelInfo.areaAccessRestriction.diseaseVaccination.text &&
-            parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)
-          }
-          testRequirement={
-            travelInfo &&
-            travelInfo.areaAccessRestriction.diseaseTesting.requirement
-          }
-          testsType={
-            travelInfo &&
-            travelInfo.areaAccessRestriction.diseaseTesting.testType
-          }
-          testRequirementLink={
-            travelInfo && travelInfo.areaAccessRestriction.diseaseTesting.rules
-          }
-          testRequirementDetails={
-            travelInfo &&
-            parser(travelInfo.areaAccessRestriction.diseaseTesting.text)
-          }
-          vaccinesList={
-            travelInfo.areaAccessRestriction &&
-            travelInfo.areaAccessRestriction.diseaseVaccination
-              .qualifiedVaccines
-          }
-          accepetedCertificates={
-            travelInfo.areaAccessRestriction &&
-            travelInfo.areaAccessRestriction.diseaseVaccination
-              .acceptedCertificates
-          }
-          entryInfo={
-            travelInfo && parser(travelInfo.areaAccessRestriction.entry.text)
-          }
-          maskInfo={
-            travelInfo && parser(travelInfo.areaAccessRestriction.mask.text)
-          }
+
+          travelInfo={travelInfo.areaAccessRestriction}
           oneDoseVaccinated={
             travelInfo && travelInfo.areaVaccinated[0].percentage
           }
@@ -160,22 +117,51 @@ function HealthInfo(props) {
         />
       )}
       {
-        //  travelInfo &&
-        // <div>
-        // {/* {parser(travelInfo.areaAccessRestriction.declarationDocuments.text)} */}
-        // {/* {travelInfo.areaAccessRestriction.declarationDocuments.travelDocumentationLink} */}
-        // {/* {travelInfo.areaAccessRestriction.diseaseTesting.requirement} */}
-        // {/* {travelInfo.areaAccessRestriction.diseaseTesting.testType} */}
-        // {/* {travelInfo.areaAccessRestriction.diseaseTesting.rules}  */}
-        // {/* {parser(travelInfo.areaAccessRestriction.diseaseTesting.text)} */}
-        // {/* {travelInfo.areaAccessRestriction.diseaseVaccination.qualifiedVaccines.map((item)=> <p key={item} > {item}</p>)} */}
-        // {/* {travelInfo.areaAccessRestriction.diseaseVaccination.acceptedCertificates.map((item)=> <p key={item} > {item}</p>)} */}
-        // {parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)}
-        // {/* {parser(travelInfo.areaAccessRestriction.entry.text)} */}
-        // {parser(travelInfo.areaAccessRestriction.exit.text)}
-        // {/* {parser(travelInfo.areaAccessRestriction.mask.text)} */}
-        // {parser(travelInfo.areaRestrictions[0].text)}
-        // </div>
+        // travelDoc={
+        //   travelInfo.areaAccessRestriction.declarationDocuments.text &&
+        //   parser(travelInfo.areaAccessRestriction.declarationDocuments.text)
+        // }
+        // travelDocLink={
+        //   travelInfo.areaAccessRestriction &&
+        //   travelInfo.areaAccessRestriction.declarationDocuments
+        //     .travelDocumentationLink
+        // }
+        // travelDocuments={
+        //   travelInfo.areaAccessRestriction &&
+        //   travelInfo.areaAccessRestriction.diseaseVaccination.text &&
+        //   parser(travelInfo.areaAccessRestriction.diseaseVaccination.text)
+        // }
+        // testRequirement={
+        //   travelInfo.areaAccessRestriction &&
+        //   travelInfo.areaAccessRestriction.diseaseTesting.requirement
+        // }
+        // testsType={
+        //   travelInfo &&
+        //   travelInfo.areaAccessRestriction.diseaseTesting.testType
+        // }
+        // testRequirementLink={
+        //   travelInfo && travelInfo.areaAccessRestriction.diseaseTesting.rules
+        // }
+        // testRequirementDetails={
+        //   travelInfo &&
+        //   parser(travelInfo.areaAccessRestriction.diseaseTesting.text)
+        // }
+        // vaccinesList={
+        //   travelInfo.areaAccessRestriction &&
+        //   travelInfo.areaAccessRestriction.diseaseVaccination
+        //     .qualifiedVaccines
+        // }
+        // accepetedCertificates={
+        //   travelInfo.areaAccessRestriction &&
+        //   travelInfo.areaAccessRestriction.diseaseVaccination
+        //     .acceptedCertificates
+        // }
+        // entryInfo={
+        //   travelInfo && parser(travelInfo.areaAccessRestriction.entry.text)
+        // }
+        // maskInfo={
+        //   travelInfo && parser(travelInfo.areaAccessRestriction.mask.text)
+        // }
       }
     </div>
   );
