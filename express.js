@@ -13,23 +13,23 @@ const mysql = require("mysql2");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-database.connect((err) => {
-  if (err) {
-    console.log(err);
-    setTimeout((database = mysql.createConnection(db_config)), 2000);
-  } else {
-    console.log("connected to the database");
-  }
-});
+// database.connect((err) => {
+//   if (err) {
+//     console.log(err);
+//     setTimeout((database = mysql.createConnection(db_config)), 2000);
+//   } else {
+//     console.log("connected to the database");
+//   }
+// });
 
-database.on("error", function (err) {
-  console.log("db error", err);
-  if (err.code === "PROTOCOL_CONNECTION_LOST") {
-    setTimeout((database = mysql.createConnection(db_config)), 2000);
-  } else {
-    throw err;
-  }
-});
+// database.on("error", function (err) {
+//   console.log("db error", err);
+//   if (err.code === "PROTOCOL_CONNECTION_LOST") {
+//     setTimeout((database = mysql.createConnection(db_config)), 2000);
+//   } else {
+//     throw err;
+//   }
+// });
 
 app.use(express.static(path.join(__dirname, "build")));
 
@@ -130,7 +130,8 @@ app.get("/api/health-news/:country/:date", cors(), (req, res, next) => {
     )
     .then((result2) => {
       res.send(result2.data.articles[0]);
-    });
+    })
+    .catch((err) => console.log(err));
 });
 
 app.post(
