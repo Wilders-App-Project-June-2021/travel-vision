@@ -107,7 +107,7 @@
   font-size: 3.7vw;
 }
 .health-news-icon {
-  font-size: -webkit-xxx-large;
+  font-size: 28px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.719);
   padding: 20px;
   margin: auto;
@@ -140,13 +140,11 @@
   border-top-right-radius: 5px;
   box-shadow: 1px 1px 1px rgba(5, 5, 5, 0.192);
 }
-
 .health-travel-central-wrapper {
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
 }
-
 .travel-info-details {
   width: -webkit-fill-available;
   margin: 3px;
@@ -180,7 +178,7 @@ button:focus, select:focus{
 .shrink, .health-case-detail, .no-news {
   font-size: 17px;
 }
-.health-cases-div, .new-total, .health-cases-div-title, .health-news-title , .health-travel-title{
+.health-cases-div, .new-total, .health-cases-div-title, .health-news-title , .health-travel-title {
   font-size: 20px;
 }
 .health-news-description, .health-travel-wrapper {
@@ -197,8 +195,10 @@ button:focus, select:focus{
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
 .hidden{
   display: none;
+}
+.health-news-icon {
+  font-size: -webkit-xxx-large;
 }
 }

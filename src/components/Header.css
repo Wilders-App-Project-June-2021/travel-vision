@@ -119,7 +119,10 @@ input:focus, textarea:focus, select:focus{
   width: 45%;
   margin: 15px 5px 10px 5px;
 }
-
+.header-wrapper {
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
+}
 .logo-img-desktop {
   display: none;
 }

@@ -37,6 +37,10 @@ body {
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
 }
+.envision {
+    font-family: 'Fredoka One', cursive;
+    font-size: 5vw;
+}
 .driveInLeft {
     animation-duration: 4s !important;
 }
