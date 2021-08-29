@@ -117,22 +117,24 @@ function Health({
               travelInfo.declarationDocuments.text &&
               parser(travelInfo.declarationDocuments.text)}
           </p>
-          {travelInfo.declarationDocuments.travelDocumentationLink && (
-            <p className="health-texts">
-              [
-              <a
-                href={travelInfo.declarationDocuments.travelDocumentationLink}
-                target="new"
-                className="health-texts">
-                Click here for more info
-              </a>
-              ]
-            </p>
-          )}
+          {travelInfo &&
+            travelInfo.declarationDocuments.travelDocumentationLink && (
+              <p className="health-texts">
+                [
+                <a
+                  href={travelInfo.declarationDocuments.travelDocumentationLink}
+                  target="new"
+                  className="health-texts">
+                  Click here for more info
+                </a>
+                ]
+              </p>
+            )}
           <p className="health-texts"> </p>
           <br />
           <p className="health-texts top-gap">
-            {travelInfo.diseaseVaccination.text &&
+            {travelInfo &&
+              travelInfo.diseaseVaccination.text &&
               parser(travelInfo.diseaseVaccination.text)}
           </p>
         </div>
@@ -141,13 +143,15 @@ function Health({
             <h4 className="health-travel-subtitle pale-pink-2">Tests</h4>
             <p className="health-texts">
               {" "}
-              <b>Test requirement:</b> {travelInfo.diseaseTesting.requirement}{" "}
+              <b>Test requirement:</b>{" "}
+              {travelInfo && travelInfo.diseaseTesting.requirement}{" "}
             </p>
             <p className="health-texts">
               {" "}
-              <b>Accepted Tests:</b> {travelInfo.diseaseTesting.testType}
+              <b>Accepted Tests:</b>{" "}
+              {travelInfo && travelInfo.diseaseTesting.testType}
             </p>
-            {travelInfo.diseaseTesting.rules && (
+            {travelInfo && travelInfo.diseaseTesting.rules && (
               <p className="health-texts">
                 [
                 <a
@@ -187,7 +191,8 @@ function Health({
             <h4 className="health-travel-subtitle pale-pink-2">
               Valid Certification
             </h4>
-            {travelInfo.diseaseVaccination.acceptedCertificates ? (
+            {travelInfo &&
+            travelInfo.diseaseVaccination.acceptedCertificates ? (
               travelInfo.diseaseVaccination.acceptedCertificates.map((item) => (
                 <p className="health-texts" key={item}>
                   {" "}
@@ -204,7 +209,7 @@ function Health({
             <h4 className="health-travel-subtitle pale-pink-2">
               Qualified Vaccines / Immunity
             </h4>
-            {travelInfo.diseaseVaccination.qualifiedVaccines ? (
+            {travelInfo && travelInfo.diseaseVaccination.qualifiedVaccines ? (
               travelInfo.diseaseVaccination.qualifiedVaccines.map((item) => (
                 <p className="health-texts" key={item}>
                   {" "}
@@ -218,7 +223,7 @@ function Health({
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">Masks</h4>
             <p className="health-texts top-gap">
-              {travelInfo.mask.text ? (
+              {travelInfo && travelInfo.mask.text ? (
                 parser(travelInfo.mask.text)
               ) : (
                 <span className="not-specified">Not Specified</span>
