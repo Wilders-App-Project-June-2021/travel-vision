@@ -6,9 +6,8 @@ const About = () => {
   return (
     <div className="about-wrapper fadeIn">
         <p>
-            If you're planning a trip,
-            <b>Travel Vision</b> allows you to envision any location around the world by giving you
-            the most relevant information before you get there:
+            If you're planning a trip, <b>Travel Vision</b> allows you to envision any location
+            around the world by giving you the most relevant information before you get there:
         </p>
         <ul>
             <li>Local time</li>
