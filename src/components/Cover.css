@@ -86,7 +86,7 @@ input:focus, textarea:focus, select:focus {
 @media screen and (min-width:770px) {
    
 .logo {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 30vh;
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);

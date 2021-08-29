@@ -43,7 +43,7 @@ body {
 .greeting-container {
   text-align: center;
   font-weight: bold;
-  margin: 30px 30px -30px 30px;
+  margin: 30px 20px -30px 20px;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
