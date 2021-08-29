@@ -12,7 +12,6 @@ const Cover = (props)=>{
             <div className="second-bg">
                 <img className="logo swoopInTop" src="../img/landscape.png" alt="Logo" />
                 <h1 className="title driveInLeft">Travel Vision</h1>
-                <br />
                 <h3 className="envision">Envision your travel destination!</h3>
                 <div className="input-wrapper">
                     <form onSubmit={(e)=>props.submitInfo(e)}>

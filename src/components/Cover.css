@@ -112,7 +112,9 @@ input:focus, textarea:focus, select:focus {
     width: 10%;
     background-color: #ee6161;
 }
-
+.envision {
+    font-size: 2.8vw;
+}
 }
 
 

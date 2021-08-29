@@ -231,18 +231,18 @@ input:focus, textarea:focus, select:focus{
 .contact-button, .contact-form-button {
   font-size: 2vw;
 }
-
-
 .contact-name-mobile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 #fname, #lname {
   width:33%;
 }
-
+.main-components {
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0));
+  filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0));
+}
 }
 
 
