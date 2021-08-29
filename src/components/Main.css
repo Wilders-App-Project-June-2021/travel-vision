@@ -64,7 +64,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  border-bottom: solid 5px rgb(0, 0, 0);
+  border-bottom: solid 4px rgb(0, 0, 0);
 }
 .tab-div {
   display: flex;
@@ -73,7 +73,7 @@ body {
   height: 45px;
   width: 100%;
   background-color: rgb(255, 100, 108);
-  margin: 0 1px -5px 1px;
+  margin: 0 1px -4px 1px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
@@ -101,9 +101,11 @@ body {
   align-items: stretch;
   border-bottom-right-radius: 8px;
   border: solid 1px rgba(0, 0, 0, 0.301);
+  border-top: 0;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
+
 
 .contact-div {
   display: flex;
@@ -252,9 +254,8 @@ input:focus, textarea:focus, select:focus{
   -webkit-filter: drop-shadow(0 0 0 #222);
   filter: drop-shadow(0 0 0 #222);
 }
-
 .tabs-container {
-  border-bottom: solid 1px rgb(0, 0, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
 }
 .tab-text, #health {
   font-size: 2.5vw;
@@ -262,14 +263,11 @@ input:focus, textarea:focus, select:focus{
 .tab-div {
   height: 45px;
   width: 90%;
-  margin: 0 1px -5px 1px;
+  margin: 0 1px -2px 1px;
   padding: 0 9px 0 9px;
-  border: solid 1px rgb(0, 0, 0);
-  margin-bottom: -7;
   white-space: nowrap;
 }
 .active {
-  /* margin-bottom: -1em; */
   border-bottom: solid 3px rgb(197, 244, 255);
 }
 .main-components {
@@ -283,8 +281,6 @@ input:focus, textarea:focus, select:focus{
 .fill-form {
   font-size: 18px;
 }
-
-
 }
 
 
