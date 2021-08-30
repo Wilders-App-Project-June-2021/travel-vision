@@ -14,6 +14,7 @@ const Footer = ()=> {
     return (
 
     <div className="footer-wrapper">
+    <div className="flight-link"><a href="https://www.skyscanner.fr/" target="new" className="flight-a">Book a flight</a></div>
         <div className="footer">
                 <span className="made-by">Made by <a href="http://wildcodeschool.com" target="new" className="a">Wild Code School</a> Students</span>
                 <div className="students">
@@ -32,7 +33,6 @@ const Footer = ()=> {
                 </div>
                 <span className="small">© 2021 Travel Vision</span>
         </div>
-        <div className="flight-link"><a href="https://www.skyscanner.fr/" target="new" className="flight-a">Book a flight</a></div>
     </div>
 
     )
