@@ -1,5 +1,9 @@
-# Travel Vision 
-App project @ [Wild Code School](http://wildcodeschool.com), June 2021 EN remote.
+# Travel Vision
+###### App project @ [Wild Code School](http://wildcodeschool.com), June 2021 EN remote.
+
+[Link](SOONhttps://travel-vision.herokuapp.com/) COMING SOON
+
+SCREENSHOTS COMING SOON!
 
 ## 🛫 Students:
 
@@ -24,11 +28,6 @@ Upon entering a chosen country and city, it displays the following data for that
 - Greeting 'Hello' in chosen country's language
 - A book a flight link (redirecting to skyscanner)
 - A contact form powered by back-end
-
-
-## 🛫 Layout: 
-
-Coming soon!
 
 
 ## 🛫 APIs used: 
