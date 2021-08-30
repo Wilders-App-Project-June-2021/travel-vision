@@ -36,14 +36,14 @@ body {
   margin-bottom: 5px;
 }
 .city-country {
-  font-size: 9vw;
+  font-size: 8.5vw;
   margin: 0px 15px -15px 15px;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-container {
   text-align: center;
   font-weight: bold;
-  margin: 30px 30px -30px 30px;
+  margin: 30px 20px -30px 20px;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
@@ -64,7 +64,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  border-bottom: solid 5px rgb(0, 0, 0);
+  border-bottom: solid 4px rgb(0, 0, 0);
 }
 .tab-div {
   display: flex;
@@ -73,7 +73,7 @@ body {
   height: 45px;
   width: 100%;
   background-color: rgb(255, 100, 108);
-  margin: 0 1px -5px 1px;
+  margin: 0 1px -4px 1px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
@@ -86,9 +86,9 @@ body {
 }
 .active {
   background-color: rgb(197, 244, 255);
-  border-bottom: solid 3px rgb(197, 244, 255);
+  border-bottom: solid 5px rgb(197, 244, 255);
   box-shadow: 2px -2px 2px rgba(53, 53, 53, 0.171);
-  margin-bottom: -7px;
+  margin-bottom: -4px;
 }
 
 
@@ -101,7 +101,9 @@ body {
   align-items: stretch;
   border-bottom-right-radius: 8px;
   border: solid 1px rgba(0, 0, 0, 0.301);
+  border-top: 0;
 }
+
 
 .contact-div {
   display: flex;
@@ -109,23 +111,23 @@ body {
 .contact-button {
   white-space: nowrap;
   text-align: center;
-  margin-top: -1px;
+  margin: 0 0 0 2px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 7px 15px 7px 15px;
   background-color: rgb(255, 100, 108);
   font-weight: bold;
   border: 0;
-  border-top: solid 1px rgba(0, 0, 0, 0.301);
   font-size: 3vw;
   cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 1px 1px #222);
-  filter: drop-shadow(0px 0px 1px 1px #222);
+  box-shadow: 1px 1px 1px rgba(5, 5, 5, 0.192);
 }
 .contact-button-active {
   background-color: rgb(197, 244, 255);
   border-top: solid 1px rgb(197, 244, 255);
-  box-shadow: 0 0 0 rgba(53, 53, 53, 0);
+  box-shadow: 2px 2px 2px rgba(5, 5, 5, 0.192);
+  margin-top: -1px;
+  z-index: 2;
   border-bottom: solid 1px rgba(0, 0, 0, 0.301);
   border-left: solid 1px rgba(0, 0, 0, 0.301);
   border-right: solid 1px rgba(0, 0, 0, 0.301);
@@ -184,6 +186,18 @@ input:focus, textarea:focus, select:focus{
   display: none;
 }
 
+/* ABOUT PAGE */
+.about-wrapper {
+  text-align: left;
+  margin: 10px 20px 10px 20px;
+  font-size: 13px;
+}
+.signature {
+  margin: 20px 10px 10px 10px;
+  font-size: 16px;
+  font-family: 'Fredoka One', cursive;
+  text-align: right;
+}
 
 @media screen and (min-width:450px){
 
@@ -210,24 +224,24 @@ input:focus, textarea:focus, select:focus{
   margin: 0;
 }
 .city-country {
-  font-size: 5vw;
+  font-size: 4.5vw;
   margin: 0 15px 0 15px;
 }
 .contact-button, .contact-form-button {
   font-size: 2vw;
 }
-
-
 .contact-name-mobile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 #fname, #lname {
   width:33%;
 }
-
+.main-components {
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0));
+  filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0));
+}
 }
 
 
@@ -237,9 +251,8 @@ input:focus, textarea:focus, select:focus{
   -webkit-filter: drop-shadow(0 0 0 #222);
   filter: drop-shadow(0 0 0 #222);
 }
-
 .tabs-container {
-  border-bottom: solid 1px rgb(0, 0, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
 }
 .tab-text, #health {
   font-size: 2.5vw;
@@ -247,14 +260,12 @@ input:focus, textarea:focus, select:focus{
 .tab-div {
   height: 45px;
   width: 90%;
-  margin: 0 1px -5px 1px;
+  margin: 0 1px -2px 1px;
   padding: 0 9px 0 9px;
-  border: solid 1px rgb(0, 0, 0);
-  margin-bottom: -7;
   white-space: nowrap;
+  border: solid 1px rgb(0, 0, 0);
 }
 .active {
-  /* margin-bottom: -1em; */
   border-bottom: solid 3px rgb(197, 244, 255);
 }
 .main-components {
@@ -268,8 +279,9 @@ input:focus, textarea:focus, select:focus{
 .fill-form {
   font-size: 18px;
 }
-
-
+.about-wrapper {
+  font-size: 18px;
+}
 }
 
 

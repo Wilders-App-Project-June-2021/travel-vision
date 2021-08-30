@@ -3,7 +3,6 @@ import "./Cover.css";
 import nations from "../data/nations";
 import "./vivify.min.css";
 import React from "react";
-import Loader from "react-loader-spinner";
 
 const Cover = (props) => {
   return (
@@ -15,6 +14,7 @@ const Cover = (props) => {
           alt="Logo"
         />
         <h1 className="title driveInLeft">Travel Vision</h1>
+        <h3 className="envision">Envision your travel destination!</h3>
         <div className="input-wrapper">
           <form onSubmit={(e) => props.submitInfo(e)}>
             <select
