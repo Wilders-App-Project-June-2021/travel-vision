@@ -57,6 +57,10 @@ Coming soon!
 - MySQL
 - Heroku
 
+## 🛫 Future Implementations:
+
+We'd like to add an interactive map via Google Maps, where the user can scan their chosen destination and have a display of restaurants, hotels and points of interest. This alongside a login feature through which they can save their favourite destinations and create itineraries based on their chosen points of interest from the map.
+
 ## 🛫 Comments:
 
 ### Salvatore
