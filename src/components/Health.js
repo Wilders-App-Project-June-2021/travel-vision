@@ -130,6 +130,7 @@ function Health({
                 ]
               </p>
             )}
+
           <p className="health-texts"> </p>
           <br />
           <p className="health-texts top-gap">
@@ -137,6 +138,11 @@ function Health({
               travelInfo.diseaseVaccination.text &&
               parser(travelInfo.diseaseVaccination.text)}
           </p>
+          {!travelInfo.declarationDocuments.text &&
+            !travelInfo.diseaseVaccination.text &&
+            !travelInfo.declarationDocuments.travelDocumentationLink && (
+              <span className="not-specified">Not Specified</span>
+            )}
         </div>
         <div className="health-travel-central-wrapper">
           <div className="travel-info-details">
@@ -231,20 +237,22 @@ function Health({
             </p>
           </div>
         </div>
-        <div className="travel-info-details">
-          <h4 className="health-travel-subtitle pale-pink-2">
-            Entry into the Country
-          </h4>
-          <p className="health-texts">
-            {showInfo && travelInfo.entry && parser(travelInfo.entry.text)}
-          </p>
-          <button
-            onClick={() => setShowInfo((prev) => !prev)}
-            className="expand-btn health-texts">
-            {" "}
-            {showInfo ? "Show less" : "Click here to expand"}
-          </button>
-        </div>
+        {travelInfo.entry.text && (
+          <div className="travel-info-details">
+            <h4 className="health-travel-subtitle pale-pink-2">
+              Entry into the Country
+            </h4>
+            <p className="health-texts">
+              {showInfo && travelInfo.entry && parser(travelInfo.entry.text)}
+            </p>
+            <button
+              onClick={() => setShowInfo((prev) => !prev)}
+              className="expand-btn health-texts">
+              {" "}
+              {showInfo ? "Show less" : "Click here to expand"}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
