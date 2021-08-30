@@ -151,12 +151,20 @@ function Health({
             <p className="health-texts">
               {" "}
               <b>Test requirement:</b>{" "}
-              {travelInfo && travelInfo.diseaseTesting.requirement}{" "}
+              {travelInfo && travelInfo.diseaseTesting.requirement ? (
+                travelInfo.diseaseTesting.requirement
+              ) : (
+                <span className="not-specified">Not Specified</span>
+              )}{" "}
             </p>
             <p className="health-texts">
               {" "}
               <b>Accepted Tests:</b>{" "}
-              {travelInfo && travelInfo.diseaseTesting.testType}
+              {travelInfo && travelInfo.diseaseTesting.testType ? (
+                travelInfo.diseaseTesting.testType
+              ) : (
+                <span className="not-specified">Not Specified</span>
+              )}
             </p>
             {travelInfo && travelInfo.diseaseTesting.rules && (
               <p className="health-texts">
