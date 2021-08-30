@@ -46,6 +46,12 @@ const Input = (props) => {
               .splice(0, 10)
               .map((city, i) => <option key={i}>{city.name}</option>)}
         </datalist>
+        {props.error && (
+          <h1>
+            Sorry we couldn't find any information on this city, try again
+          </h1>
+        )}{" "}
+        <br />
         <button className="go" type="submit">
           GO
         </button>
