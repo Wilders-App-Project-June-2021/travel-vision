@@ -116,7 +116,7 @@ input:focus, textarea:focus, select:focus{
   font-size: 4.5vw;
 }
 .input-city-desktop, .input-country-desktop {
-  width: 45%;
+  width: 35%;
   margin: 15px 5px 10px 5px;
 }
 .header-wrapper {
