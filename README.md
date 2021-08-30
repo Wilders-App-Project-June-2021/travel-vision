@@ -33,16 +33,17 @@ Coming soon!
 
 ## 🛫 APIs used: 
 
-- [Covid 19 API](https://covid19api.com/)
 - [Corona Graph](https://t.me/CoronaNotify)
 - [OpenWeather](https://openweathermap.org/api)
 - [Country State City API](https://countrystatecity.in/)
-- [Graph Countries](https://github.com/lennertVanSever/graphcountries)
 - [NewsAPI](https://newsapi.org/)
+- [Graph Countries](https://github.com/lennertVanSever/graphcountries)
+- [Amadeus](https://developers.amadeus.com/)
 
 
 ## 🛫 Tools used:
 
+- HTML / CSS / JavaScript
 - Visual Studio Code
 - Jira
 - React
@@ -51,18 +52,34 @@ Coming soon!
 - Photoshop
 - Google Docs
 - [Vivify](http://vivify.mkcreative.cz/)
+- NPM
+- Express
+- MySQL
+- Heroku
 
 ## 🛫 Comments:
 
 ### Salvatore
 
-> Coming soon
-
+> Travel-Vision is my first project after two months and a half of learning React. 
+I must say that I've enjoyed every single moment while building it. It was challenging, fun and at times stressful but I'm extremely proud of the result and what I've learned through it.
+Since you never really finish building an app/website I'm looking forward to further develop new features and functionalities while improving current ones.
 
 ### Lorianne
 
-> Coming soon
+> We divided components between us at first and eventually the collaboration became more merged via each others' strengths and weaknesses, thus developing an idea into a completed (though is it?) product.
+>
+> I put a lot of focus on the design and structure of the site, being pretty comfortable with HTML, CSS and design, though I enjoyed challenging myself with what we'd been recently learning on the bootcamp, such as React, making API calls, general JavaScript and the last implementation of back-end through the contact form.
+>
+> We managed to finish what we set out to do ahead of schedule and were then able to improve upon it. The <code>HealthInfo.js</code> component was in my roster and formerly calling to a rather vague API, but Salvo later found a more complete one which he had to tweak through back-end implementation, making the component what it came out to be which we're very pleased with.
+>
+> Another one of my tasks, components <code>Weather.js</code> and <code>WeatherInfo.js</code> was pretty straighforward, the Open Weather API has been a dream right from the start.
+>
+> The <code>Greeting.js</code> component was pulling the "Hello"s from an API we found to have more than half of the greetings missing, so we turned it into <code>hello.js</code> and added the greetings manually, thanks Google for that.
+>
+> At the end of it we see how much and how quick we've progressed in our journey, because there are things we now would have done differently, but we'll leave that for later projects and see Travel Vision as a great stepping stone on our journey to become web developers.
 
 ### Natalie
 
 > Coming soon
+
