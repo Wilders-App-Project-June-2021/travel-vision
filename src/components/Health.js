@@ -138,7 +138,8 @@ function Health({
               travelInfo.diseaseVaccination.text &&
               parser(travelInfo.diseaseVaccination.text)}
           </p>
-          {!travelInfo.declarationDocuments.text &&
+          {travelInfo &&
+            !travelInfo.declarationDocuments.text &&
             !travelInfo.diseaseVaccination.text &&
             !travelInfo.declarationDocuments.travelDocumentationLink && (
               <span className="not-specified">Not Specified</span>
@@ -237,7 +238,7 @@ function Health({
             </p>
           </div>
         </div>
-        {travelInfo.entry.text && (
+        {travelInfo && travelInfo.entry.text && (
           <div className="travel-info-details">
             <h4 className="health-travel-subtitle pale-pink-2">
               Entry into the Country
