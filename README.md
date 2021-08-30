@@ -60,7 +60,9 @@ Coming soon!
 ## 🛫 Comments:
 
 ### Salvatore
-
+Travel-Vision is my first project after two months and a half of learning React. 
+I must say that I've enjoyed every single moment while building it. It was challenging, fun and at times stressful but I'm extremely proud of the result and what I've learned through it.
+Since you never really finish building an app/website I'm looking forward to further develop new features and functionalities while improving current ones.
 > Coming soon
 
 
