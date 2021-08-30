@@ -190,10 +190,11 @@ input:focus, textarea:focus, select:focus{
 .about-wrapper {
   text-align: left;
   margin: 10px 20px 10px 20px;
+  font-size: 13px;
 }
 .signature {
-  margin: 10px;
-  font-size: 18px;
+  margin: 20px 10px 10px 10px;
+  font-size: 16px;
   font-family: 'Fredoka One', cursive;
   text-align: right;
 }
@@ -276,6 +277,9 @@ input:focus, textarea:focus, select:focus{
   margin: -10px 0 0 0;
 }
 .fill-form {
+  font-size: 18px;
+}
+.about-wrapper {
   font-size: 18px;
 }
 }
