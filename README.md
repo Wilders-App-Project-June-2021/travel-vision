@@ -33,16 +33,17 @@ Coming soon!
 
 ## 🛫 APIs used: 
 
-- [Covid 19 API](https://covid19api.com/)
 - [Corona Graph](https://t.me/CoronaNotify)
 - [OpenWeather](https://openweathermap.org/api)
 - [Country State City API](https://countrystatecity.in/)
-- [Graph Countries](https://github.com/lennertVanSever/graphcountries)
 - [NewsAPI](https://newsapi.org/)
+- [Graph Countries](https://github.com/lennertVanSever/graphcountries)
+- [Amadeus](https://developers.amadeus.com/)
 
 
 ## 🛫 Tools used:
 
+- HTML / CSS / JavaScript
 - Visual Studio Code
 - Jira
 - React
@@ -51,6 +52,10 @@ Coming soon!
 - Photoshop
 - Google Docs
 - [Vivify](http://vivify.mkcreative.cz/)
+- NPM
+- Express
+- MySQL
+- Heroku
 
 ## 🛫 Comments:
 
