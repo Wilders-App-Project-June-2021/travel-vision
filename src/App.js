@@ -110,10 +110,6 @@ function App() {
     }
   }, [countryCodeInput]);
 
-  // useEffect(() => {
-  //   getCountryInfo();
-  // }, []);
-
   // Props for Country Info
   // countryLanguage={countryInfo.iso2}
   // countryCurrency={countryInfo.currency}

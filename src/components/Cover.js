@@ -9,7 +9,7 @@ const Cover = (props) => {
     <div className="wrapper">
       <div className="second-bg">
         <img
-          className="logo swoopInTop"
+          className="logo swoopInTop "
           src="../img/landscape.png"
           alt="Logo"
         />
