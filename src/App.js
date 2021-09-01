@@ -7,7 +7,7 @@ import Main from "./components/Main"
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Header from "./components/Header";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
   const [longitude,setLongitude]= useState("")
   const [latitude,setLatitude]=useState("")
   const [countryInfo, setCountryInfo] = useState("");
-
+  const [currency, setCurrency] = useState("");
   
   const getCityInfo=(e)=>{
     e.preventDefault()
@@ -36,6 +36,7 @@ function App() {
     })
     // if(e){e.preventDefault()} else {null}
   }
+
   useEffect(()=>{
     // setLongitude("")
     // setLatitude("")
@@ -53,20 +54,51 @@ const handleCountryInput =(e)=>{
   }
 
   // CURRENCY
-  const getCountryInfo = () => {
-    axios.get(`https://api.countrystatecity.in/v1/countries/${countryCode}`,
+  const getCurrency = async (e) => {
+    let countryInfoUrl = "https://api.countrystatecity.in/v1/countries/";
+    e.preventDefault();
+    try {
+      const axiosRes = await axios({
+        url: countryCode,
+        method: "get",
+        baseURL: countryInfoUrl,
+        headers: {
+          "X-CSCAPI-KEY": process.env.REACT_APP_API_GEO_INFO
+        }
+      })
+      let currency = axiosRes.data.currency;
+      setCurrency(currency);
+      console.log(currency);
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  const getCountryInfo = (e) => {
+    e.preventDefault();
+    axios.get(`https://api.countrystatecity.in/v1/countries/`,
     {headers: {"X-CSCAPI-KEY": `${process.env.REACT_APP_API_GEO_INFO}`}})
-      .then((result) => setCountryInfo(result.data))
+      .then((result) => {
+      console.log("country info here?",result.data),
+      setCountryInfo(result.data.currency)
+      
+      
+      })
       .catch((error) => console.log("error", error))
   };
-  
-  useEffect(() => {
-    getCountryInfo();
-  }, []);
 
+  const submitHandler = (e) => {
+    getCityInfo(e);
+    getCurrency(e);
+  }
+
+  // useEffect(() => {
+  //   getCountryInfo();
+  // }, []);
+   
   // Props for Country Info
     // countryLanguage={countryInfo.iso2}
-    // countryCurrency={countryInfo.currency}
+  //  countryCurrency={countryInfo.currency}
     // currencySymbol={countryInfo.currency_symbol}
     // flagEmoji1={countryInfo.emojiU}
     // flagEmoji2={countryInfo.emoji}
@@ -81,6 +113,7 @@ const handleCountryInput =(e)=>{
           getCityInfo={getCityInfo}
           handleCityinput={handleCityinput}
           handleCountryInput={handleCountryInput}
+          submitHandler={submitHandler}
           error={error}
       />}
       
@@ -101,6 +134,7 @@ const handleCountryInput =(e)=>{
             cities={cityInfo.name}
             countryCode={countryCode}
             countryName={countryName}
+            currency={currency}
           />}
 
         {/* <Main 
@@ -112,7 +146,7 @@ const handleCountryInput =(e)=>{
           countryName={countryName}
         />} */}
         {latitude && <Footer />}
-
+        {/* <Route exact path="/currency" render= {()=><Currency currency={countryInfo.currency} />}></Route> */}
       </div>
 
     </div>

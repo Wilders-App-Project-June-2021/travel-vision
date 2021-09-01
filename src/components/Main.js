@@ -9,6 +9,7 @@ import NewsList from "./NewsList";
 import HealthInfo from "./HealthInfo";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import NewCurrency from './NewCurrency';
 
 
 const Main = (props)=>{
@@ -107,6 +108,13 @@ const Main = (props)=>{
                 getDate={getDate}
                 getOlderDate={getOlderDate}
                 />}
+            {activeTab[2].currency && 
+                <NewCurrency
+                countryCode={props.countryCode}
+                countryName={props.countryName}
+                currency={props.currency}
+                />
+            }
             {activeTab[3].health && 
                 <HealthInfo
                 countryName={props.countryName}

@@ -13,7 +13,7 @@ const Cover = (props)=>{
                 <img className="logo swoopInTop" src="../img/landscape.png" alt="Logo" />
                 <h1 className="title driveInLeft">Travel Vision</h1>
                 <div className="input-wrapper">
-                    <form onSubmit={(e)=>props.getCityInfo(e)}>
+                    <form onSubmit={(e)=>props.submitHandler(e)}>
                         <select className="input-country" id="country" placeholder= "Country" required onChange={(e)=>props.handleCountryInput(e) } >
                             <option value="">Select a Country</option>
                             {nations.map((country,i)=> <option id={country.name} key={i} value={country.code} > {country.name} </option>)}

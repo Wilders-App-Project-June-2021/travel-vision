@@ -241,7 +241,7 @@ const nations = [
     {name: 'Western Sahara', code: 'EH'}, 
     {name: 'Yemen', code: 'YE'}, 
     {name: 'Zambia', code: 'ZM'}, 
-    {name: 'Zimbabwe', code: 'ZW'} 
+    {name: 'Zimbabwe', code: 'ZW', currencyCode: ''} 
   ]
 
 
@@ -253,7 +253,7 @@ const nations = [
 //       const match = nations.filter((nation)=>nation.name === upperCaseCountry)
 //       console.log(match)
 //       return match.length >0 ? match[0].code : "Sorry we couldn't find this nation"
-//   }
+//   , currencyCode: ''}
 
 
 
