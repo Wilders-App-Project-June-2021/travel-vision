@@ -1,5 +1,9 @@
+
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
@@ -11,31 +15,35 @@
   width: 200px;
 }
 .blue {
-  color: rgb(56, 76, 255)
+  color: rgb(51, 176, 204);
 }
 .pink {
-  color: rgb(253, 74, 106);
+  color: rgb(255, 74, 83);
 }
-
 
 /* GREETING */
-.greeting {
-  font-size: 8vw;
-  font-family: 'Fredoka One', cursive;
+.greetingMobile {
+  display: block;
 }
-.city-country {
-  font-size: 11vw;
-  margin: -20px 15px -15px 15px;
+.greetingDesktop {
+  display: none;
+}
+.greeting, .greeting-hello {
+  font-size: 7vw;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-hello {
-  font-size: 8vw;
+  margin-bottom: 5px;
+}
+.city-country {
+  font-size: 8.5vw;
+  margin: 0px 15px -15px 15px;
   font-family: 'Fredoka One', cursive;
 }
 .greeting-container {
   text-align: center;
   font-weight: bold;
-  margin: 30px 30px -15px 30px;
+  margin: 30px 20px -30px 20px;
   -webkit-filter: drop-shadow(1px 1px 1px #222);
   filter: drop-shadow(1px 1px 1px #222);
 }
@@ -45,9 +53,10 @@
 
 
 /* TABS */
-.tab-text {
-  white-space: nowrap;
+.tab-text, #health {
+  /* white-space: nowrap; */
   font-size: 4vw;
+  font-family: 'Fredoka One', cursive;
 }
 .tabs-container {
   display: flex;
@@ -55,18 +64,16 @@
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  border-bottom: solid 5px rgb(0, 0, 0);
+  border-bottom: solid 4px rgb(0, 0, 0);
 }
 .tab-div {
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 45px;
   width: 100%;
   background-color: rgb(255, 100, 108);
-  margin: 0 1px -5px 1px;
-  padding: 0 15px 0 15px;
+  margin: 0 1px -4px 1px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
@@ -74,74 +81,206 @@
   border: solid 2px rgb(0, 0, 0);
   cursor: pointer;
 }
-.tab-div:hover {
-  background-color: rgb(214, 240, 250);
+.tab-div:hover, .contact-button:hover {
+  background-color: rgb(197, 244, 255);
 }
-.active{
-  background-color: rgb(214, 240, 250);
-  border-bottom: solid 2px rgb(214, 240, 250) !important;
+.active {
+  background-color: rgb(197, 244, 255);
+  border-bottom: solid 5px rgb(197, 244, 255);
   box-shadow: 2px -2px 2px rgba(53, 53, 53, 0.171);
+  margin-bottom: -4px;
 }
-.tab-text {
-  font-family: 'Fredoka One', cursive;
-}
-
 
 
 .main-components {
-  background-color: rgb(214, 240, 250);
+  background-color: rgb(197, 244, 255);
   padding: 10px;
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  border-bottom-right-radius: 8px;
+  border: solid 1px rgba(0, 0, 0, 0.301);
+  border-top: 0;
 }
 
 
-
-
-@media screen and (min-width:770px){
-
-.greeting {
+.contact-div {
+  display: flex;
+}
+.contact-button {
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 0 0 2px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 7px 15px 7px 15px;
+  background-color: rgb(255, 100, 108);
+  font-weight: bold;
+  border: 0;
   font-size: 3vw;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(5, 5, 5, 0.192);
+}
+.contact-button-active {
+  background-color: rgb(197, 244, 255);
+  border-top: solid 1px rgb(197, 244, 255);
+  box-shadow: 2px 2px 2px rgba(5, 5, 5, 0.192);
+  margin-top: -1px;
+  z-index: 2;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.301);
+  border-left: solid 1px rgba(0, 0, 0, 0.301);
+  border-right: solid 1px rgba(0, 0, 0, 0.301);
+}
+
+/* CONTACT FORM */
+.contact-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px 10px 20px;
+}
+.message-fields {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.contact-input {
+  padding: 5px;
+  margin: 5px ;
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.432);
+}
+.contact-form-button {
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(255, 100, 108);
+  font-weight: bold;
+  font-size: 3vw;
+  text-align: center;
+  padding: 5px;
+  border: solid 1px black;
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+.contact-form-button:hover {
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+  background-color: rgb(255, 131, 137);
+}
+.fill-form {
+  font-size: 13px;
+  margin: 10px;
+}
+.contact-name-mobile {
+  display: flex;
+  flex-direction: column;
+}
+.messageShow {
+  display: block;
+}
+.messageHidden {
+  display: none;
+}
+
+/* ABOUT PAGE */
+.about-wrapper {
+  text-align: left;
+  margin: 10px 20px 10px 20px;
+  font-size: 13px;
+}
+.signature {
+  margin: 20px 10px 10px 10px;
+  font-size: 16px;
+  font-family: 'Fredoka One', cursive;
+  text-align: right;
+}
+
+@media screen and (min-width:450px){
+
+.tab-text {
+  font-size: 23px;
+}
+#health {
+  font-size: 20px;
+}
+.tab-div {
+  height: 50px;
+}
+.greetingMobile {
+  display: none;
+}
+.greetingDesktop {
+  display: block;
+}
+.greeting {
+  font-size: 4.5vw;
 }
 .greeting-hello {
-  font-size: 4.5vw;
+  font-size: 5.5vw;
   margin: 0;
 }
 .city-country {
-  font-size: 4vw;
+  font-size: 4.5vw;
   margin: 0 15px 0 15px;
 }
+.contact-button, .contact-form-button {
+  font-size: 2vw;
+}
+.contact-name-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#fname, #lname {
+  width:33%;
+}
+.main-components {
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0));
+  filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0));
+}
+}
+
+
+@media screen and (min-width:760px){
+
 .greeting-container {
-  margin: 30px 30px -15px 30px;
   -webkit-filter: drop-shadow(0 0 0 #222);
   filter: drop-shadow(0 0 0 #222);
 }
-
-    
 .tabs-container {
-  border-bottom: solid 1px rgb(0, 0, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
 }
-.tab-text {
-  font-size: 2vw;
+.tab-text, #health {
+  font-size: 2.5vw;
 }
 .tab-div {
   height: 45px;
   width: 90%;
-  margin: 0 1px -5px 1px;
+  margin: 0 1px -2px 1px;
   padding: 0 9px 0 9px;
+  white-space: nowrap;
   border: solid 1px rgb(0, 0, 0);
 }
-  
-  
+.active {
+  border-bottom: solid 3px rgb(197, 244, 255);
+}
 .main-components {
-  min-height: 50vh;
   border: solid 1px grey;
   border-top: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
   margin-bottom: 10px;
+}
+.contact-div {
+  margin: -10px 0 0 0;
+}
+.fill-form {
+  font-size: 18px;
+}
+.about-wrapper {
+  font-size: 18px;
 }
 }
 
@@ -149,10 +288,9 @@
 
 @media screen and (min-width:1070px){
 
-.tab-text {
+.tab-text, #health {
   font-size: 23px;
 }
-
 .greeting {
   font-size: 40px;
 }
@@ -161,5 +299,11 @@
 }
 .city-country {
   font-size: 42px;
+}
+.tab-div {
+  height: 50px;
+}
+.contact-button, .contact-form-button {
+  font-size: 18px;
 }
 }

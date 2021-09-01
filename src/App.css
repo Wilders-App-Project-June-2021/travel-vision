@@ -9,9 +9,16 @@
   height: auto;
 }
 
+.loader-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+min-height: 60vh;
+}
 
 
-@media screen and (min-width:770px){
+@media screen and (min-width:760px){
 
 .container {
   display: flex;

@@ -1,0 +1,124 @@
+.currency-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-currency {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 20px;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+    text-align: center;
+    background-color: #ace9fc;
+    font-size: 20px;
+  }
+  .input-currency {
+    border: solid 2px black ;
+    text-align-last:center;
+  }
+  
+  .input-currency select, .input-currency option {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+  }
+  
+  .convert {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ee6161;
+    font-size: 1.5vw;
+    border-radius: 10px;
+      cursor: pointer;
+      padding: 10px 30px 10px 30px;
+      background-color: rgb(255, 100, 108);
+      font-weight: bold;
+      text-align: center;
+      border: solid 1px black;
+      -webkit-filter: drop-shadow(1px 1px 2px #222);
+      filter: drop-shadow(1px 1px 2px #222);
+  }
+  
+  /* New CSS */
+  
+  .currency-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .currency-converter-row {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    padding: 10px;
+  }
+  
+  .currency-converter-col {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin: 0 10px;
+    font-size: 1.8vw;
+    font-weight: bold;
+  }
+  .button-convert{
+    background-color: rgb(255, 100, 108);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    background-color: rgb(255, 100, 108);
+    font-weight: bold;
+    font-size: 1.5vw;
+    text-align: center;
+    border: solid 1px black;
+    -webkit-filter: drop-shadow(1px 1px 2px #222);
+    filter: drop-shadow(1px 1px 2px #222);
+  }
+  .button-swap{
+    background-color: rgb(255, 100, 108);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    background-color: rgb(255, 100, 108);
+    font-weight: bold;
+    font-size: 1vw;
+    text-align: center;
+    border: solid 1px black;
+    -webkit-filter: drop-shadow(1px 1px 2px #222);
+    filter: drop-shadow(1px 1px 2px #222);
+  }
+  .uses{
+    font-size: 1.8vw;
+    font-weight: bold;
+  }
+  .currency-input{
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    font-weight: bold;
+    font-size: 1vw;
+    text-align: center;
+    border: solid 1px black;
+    -webkit-filter: drop-shadow(1px 1px 2px #222);
+    filter: drop-shadow(1px 1px 2px #222);
+  }
+  .select-currency{
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    font-weight: bold;
+    font-size: 1vw;
+    text-align: center;
+    border: solid 1px black;
+    -webkit-filter: drop-shadow(1px 1px 2px #222);
+    filter: drop-shadow(1px 1px 2px #222);
+  }
+  
+  

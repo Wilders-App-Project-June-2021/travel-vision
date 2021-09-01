@@ -18,12 +18,22 @@ const Header = (props)=> {
                     </div>
                 </div>
             </div>
-            <Input 
-            //  getCityInfo={props.getCityInfo}
-            countryName={props.countryName}
-            handleCityinput={props.handleCityinput}
-            handleCountryInput={props.handleCountryInput}
-            error={props.error}/>
+        <Input 
+        countryInputHandler={props.countryInputHandler}
+        cityInputHandler={props.cityInputHandler}
+        submitInfo={props.submitInfo}
+        countryName={props.countryName}         
+        error={props.error}
+        
+        citiesList={props.citiesList}
+        fullCitiesList={props.fullCitiesList}
+        cityInput={props.cityInput}
+        countryCodeInput={props.countryCodeInput}
+        />
+        
+        
+
+        
         </div>
         )
 
