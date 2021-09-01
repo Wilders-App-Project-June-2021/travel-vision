@@ -82,11 +82,11 @@ input:focus, textarea:focus, select:focus {
   filter: drop-shadow(1px 1px 2px #222);
 }
 .button-swap{
-  background-color: rgb(255, 100, 108);
+  position: &nbsp;
+  background-color: white;
   border-radius: 10px;
   cursor: pointer;
   padding: 10px 30px 10px 30px;
-  background-color: rgb(255, 100, 108);
   font-weight: bold;
   font-size: 1vw;
   text-align: center;

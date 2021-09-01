@@ -172,6 +172,7 @@ function NewCurrency(props){
         </div>
 
         <div className="currency-converter-col">
+          <p>&nbsp;</p>
           <button className="button-swap"onClick={swapCurrencies}>Swap</button>
         </div>
 
