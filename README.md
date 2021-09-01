@@ -1,7 +1,7 @@
 # Travel Vision
 ###### App project @ [Wild Code School](http://wildcodeschool.com), June 2021 EN remote.
 
-[Link](SOONhttps://travel-vision.herokuapp.com/) COMING SOON
+[Link](https://travel-vision.herokuapp.com/)
 
 SCREENSHOTS COMING SOON!
 
@@ -10,9 +10,6 @@ SCREENSHOTS COMING SOON!
 - **[Salvatore](https://github.com/sal9110)** [📋 linkedin](http://linkedin.com/in/salvatore-patti-9b5198141) [✍ notes](https://github.com/Wilders-App-Project-June-2021/travel-vision#salvatore)
 
 - **[Lorianne](https://github.com/Grailsidhe)** [📋 linkedin](https://www.linkedin.com/in/lorianne-aguilar/) [✍ notes](https://github.com/Wilders-App-Project-June-2021/travel-vision#lorianne)
-
-- **[Natalie](https://github.com/Natalito96)** [📋 linkedin](https://www.linkedin.com/in/natalie-huaman-730bb4213/) [✍ notes](https://github.com/Wilders-App-Project-June-2021/travel-vision#natalie)
-
 
 ## 🛫 Concept, functionality and features: 
 
@@ -81,7 +78,3 @@ Since you never really finish building an app/website I'm looking forward to fur
 > The <code>Greeting.js</code> component was pulling the "Hello"s from an API we found to have more than half of the greetings missing, so we turned it into <code>hello.js</code> and added the greetings manually, thanks Google for that.
 >
 > At the end of it we see how much and how quick we've progressed in our journey, because there are things we now would have done differently, but we'll leave that for later projects and see Travel Vision as a great stepping stone on our journey to become web developers.
-
-### Natalie
-
-> Coming soon
