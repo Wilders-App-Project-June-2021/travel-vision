@@ -25,27 +25,27 @@ const Footer = () => {
           Students
         </span>
         <div className="students">
-          <div className="student-box">
-            <a href="https://github.com/Natalito96" target="new">
-              <img
-                className="footer-img"
-                src={natalie}
-                onMouseOver={() => setNatalie(`${github}`)}
-                onMouseOut={() => setNatalie("./img/natalie.jpg")}
-                alt="Natalie"
-              />
-            </a>
-            <p className="names">
-              <a
-                href="https://www.linkedin.com/in/natalie-huaman-730bb4213/"
-                target="new"
-                className="a">
-                Natalie
-              </a>
-              <br />
-              <span className="surnames">Huaman</span>
-            </p>
-          </div>
+//           <div className="student-box">
+//             <a href="https://github.com/Natalito96" target="new">
+//               <img
+//                 className="footer-img"
+//                 src={natalie}
+//                 onMouseOver={() => setNatalie(`${github}`)}
+//                 onMouseOut={() => setNatalie("./img/natalie.jpg")}
+//                 alt="Natalie"
+//               />
+//             </a>
+//             <p className="names">
+//               <a
+//                 href="https://www.linkedin.com/in/natalie-huaman-730bb4213/"
+//                 target="new"
+//                 className="a">
+//                 Natalie
+//               </a>
+//               <br />
+//               <span className="surnames">Huaman</span>
+//             </p>
+//           </div>
           <div className="student-box">
             <a href="https://github.com/Grailsidhe" target="new">
               <img
